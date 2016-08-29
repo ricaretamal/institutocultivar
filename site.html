@@ -1,0 +1,2642 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+ 
+    <b:include data='blog' name='all-head-content'/>
+
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<title><data:blog.pageTitle/></title>
+<b:else/>
+<b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+<title><data:blog.pageName/> - <data:blog.title/></title>
+</b:if></b:if>
+<b:if cond='data:blog.pageType == &quot;error_page&quot;'>
+<title>Page Not Found - <data:blog.title/></title>
+<meta content='3;/' http-equiv='refresh'/>
+</b:if>
+
+<!-- [ Social Media meta tag ] -->
+<b:if cond='data:blog.url == data:blog.homepageUrl'> 
+<b:if cond='data:blog.pageType == &quot;item&quot;'> 
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>  
+<b:if cond='data:blog.url'>
+<meta expr:content='data:blog.url' property='og:url'/>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:blog.pageName'>
+<meta expr:content='data:blog.pageName' property='og:title'/>
+</b:if></b:if></b:if></b:if>
+ 
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<meta content='article' property='og:type'/>
+<b:else/>
+<meta content='website' property='og:type'/>
+</b:if>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<b:if cond='data:blog.postImageUrl'>
+<meta expr:content='data:blog.postImageUrl' property='og:image'/>
+<b:else/>
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+<b:else/>
+<meta expr:content='data:blog.blogspotFaviconUrl' property='og:image'/>
+</b:if></b:if>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<meta content='en_US' property='og:locale'/>
+
+<!-- Customize meta tags here -->
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'> 
+<meta content='YOUR-KEYWORD-HERE' name='keywords'/>
+<meta content='AUTHOR-NAME-HERE' name='Author'/>
+<link href='AUTHOR-URL-HERE' rel='author'/>
+</b:if>
+
+<meta content='GOOGLE-META-TAG' name='google-site-verification'/>
+<meta content='BING-META-TAG' name='msvalidate.01'/>
+<meta content='ALEXA-META-TAG' name='alexaVerifyID'/>
+
+
+<meta content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1' name='viewport'/>
+
+<link href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet'/>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'/>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'/>
+
+<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'/>
+
+<b:skin><![CDATA[/*
+---*****************************
+
+Platform: Blogger
+Name:     DuosMag Blogger Template
+Designer: Bloggertheme9
+URL:      http://www.bloggertheme9.com
+License: Free Version 
+
+---*****************************/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, figure { margin: 0; padding: 0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+table {border-collapse: separate; border-spacing: 0;}
+caption, th, td {text-align: left; font-weight: normal;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: "";}
+blockquote, q {quotes: "" "";}
+sup{ vertical-align: super; font-size:smaller; }
+code{ font-family: 'Courier New', Courier, monospace; font-size:12px; color:#272727; }
+a img{border: none;}
+ul ul, ol ol { padding: 0; }
+
+ol, ul { padding: 0px;  margin: 0; }
+ol li { list-style-type: none;  padding:0;  }
+ul li { list-style-type: none;  padding: 0;  }
+
+h1, h2, h3, h4, h5, h6 {color: #777; font-family:'Crete Round', serif; font-weight:normal;}
+
+
+a{ color: #333; outline:none; text-decoration: none; }
+a:hover { color: #7a7b7b; text-decoration:none; }
+body{ background: #E9E9E9; color: #666; height: 100%; padding: 0; font-family:Arial, Helvetica, sans-serif; font-size: 14px; line-height: 24px; }
+.clear { clear:both; float:none; }
+
+
+.ct-wrapper {background:#fff; padding:0px 0px; position:relative; margin: 0 auto;}
+.outer-wrapper { position: relative; padding:0px 0 }
+.header-wrapper {display: inline-block; float: left; padding: 0; width: 100%; -moz-box-sizing: -webkit-border-box; box-sizing: border-box; }
+.main-wrapper { width:auto; margin-right:330px; }
+#content { box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; position: relative;}
+.main-inner-wrap {float:left; position: relative; width:100%;}
+.sidebar-wrapper { width:300px; float: right;}
+.container {margin: 0 auto; padding: 0 15px; position: relative; max-width: 1150px;}
+
+
+body#layout #top-nav { margin-top: 40px; } 
+body#layout #header, body#layout .header-right { width: 50%; }
+body#layout .main-wrapper { margin-right: 300px; }
+body#layout .widget-content { margin: 0; }
+body#layout #content {}
+body#layout .outer-wrapper, body#layout .sidebar-wrapper, body#layout .ct-wrapper { margin: 0; padding: 0; }
+.ct-wrapper, .crosscol, .post, .sidebar-wrapper, .buzed{overflow:hidden;}
+
+
+#header{ float:left; width: 32%; }
+#header-inner{ margin: 22px 0 22px 18px; padding: 0; }
+#header h1, #header h2 { font-size: 40px; text-transform: uppercase; font-varient: small-caps; line-height: 46px; letter-spacing:.4px;}
+#header h1 a, #header h2 a{ color:#444; }
+#header h1 a:hover,#header h2 a:hover { color:#7a7b7b; }
+#header p.description{font-family: georgia; color:#444; font-size: 14px; letter-spacing: 0.8px; font-style: italic; text-transform: capitalize; disply: inline-block; }
+#header img{ border:0 none; background:none; height:auto;}
+
+
+.lefter{margin-left:10px; margin-right:10px;}
+
+
+.header-right { float: right; }
+.header-right .widget-content { margin: 12px 0px 0 0; }
+
+
+#peekar{position:relative; width:auto; float:right; padding:6px 0px 0 0px; }
+#peekar input{float:left; font-size:12px; margin: 0px 0 0; padding: 9px 0px; text-indent:7px; width:140px; color:#c5c5c5; border:1px solid #ccc; -o-transition:width .7s,color .4s;-webkit-transition:width .7s,color .4s;-moz-transition:width .7s,color .4s;transition:width .7s,color .4s;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0}
+#peekar input:focus{}
+#peekar button{border: 0; background:#63704b; line-height: 22px; cursor: pointer; color:#fff; font-size:16px; padding:6px;}
+
+.top-nav{background:#63704b; border-bottom:1px solid #dbdbdb; width: 100%;}
+
+.top-nav .Pagemenu{}
+.Pagemenu {display: block;}
+.Pagemenu li {display: inline-block; position: relative; z-index: 10; margin:0;}
+.Pagemenu li a {font-size: 12px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 12px 15px; border-right:0px solid #dbdbdb; display: block; color: #fff; transition: all 0.2s ease-in-out 0s;}
+.Pagemenu li a:hover,.Pagemenu li:hover>a {color:#dfe3d6;}
+
+.main-nav {background:#63704b; border-top:1px solid rgba(255, 255, 255, 0.5); border-bottom:1px solid #eaeaea; display: block; width:100%;}
+
+.menu {display: block; }
+
+.menu li {display: inline-block; position: relative; z-index: 10;}
+
+.menu li.home, .menu ul li ul li{margin:0;}
+
+.menu ul li a, .menu ul li ul li a{border:0;}
+.menu ul li::after, .menu ul li ul li::after{height:0;}
+
+.menu li{margin-left: -4px;}
+
+.menu li a {border-left: 1px solid #63704b; border-right: 1px solid #fff; font-size: 14px; font-weight: bold; padding: 15px 20px; text-transform: uppercase; text-decoration: none; line-height:18px; display: block; color: #fff; transition: all 0.2s ease-in-out 0s;}
+
+.menu li::after {content: '';display: block; width: 0; height: 3px; background: #fff; transition: width .3s;}
+.menu li:hover::after, .menu li.home::after{width: 100%; //transition: width .3s;}
+
+.menu li a:hover,.menu li:hover>a {}
+
+.menu ul {visibility: hidden; opacity: 0; margin: 0; padding: 0; width: 160px; position: absolute; left: 0px;  background: #fff; z-index: 9;    transform: translate(0,20px); transition: all 0.2s ease-out;}
+
+.menu ul:after {line-height: 14px; bottom: 100%; left: 20%; border: solid transparent; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-bottom-color: #fff; border-width: 6px; margin-left: -6px;}
+
+.menu ul li {display: block; float: none; background: none; margin: 0; padding: 0;}
+
+.menu ul li a, .menu ul li ul li a{border-bottom:1px solid #fff;}
+
+.menu ul li a {font-size: 12px; font-weight: 600; display: block; color: #fff; background: #63704b;}
+
+.menu ul li a:hover,.menu ul li:hover>a {color: #dfe3d6;}
+
+.menu li:hover>ul {visibility: visible; opacity: 1; transform: translate(0,0);}
+
+.menu ul ul {left: 149px; top: 0px; visibility: hidden; opacity: 0; transform: translate(20px,20px); transition: all 0.2s ease-out;}
+
+.menu ul ul:after {content: " "; left: -6px; top: 10%; border: solid transparent; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-right-color: #63704b; border-width: 6px; margin-top: -6px;}
+
+.menu li>ul ul:hover {visibility: visible; opacity: 1; transform: translate(0,0);}
+
+.resp-desk,.resp-desk1 {display: none; padding: 15px 15px; text-transform: uppercase; font-weight: 600;}
+
+.resp-desk {}
+.resp-desk1 {}
+
+.resp-desk a{color: #fff;}
+.resp-desk1 a{color: #fff;}
+
+.social-ico{float:right; display:inline; line-height:48px; margin-right:13px;}
+.social-ico a{padding:0px 6px; font-size:20px; opacity:.9; color:#fff;}
+.social-ico a:hover{opacity:1}
+
+a.homer {}
+
+.denim {background-color:#2ba6e1; border:2px solid #dddddd; padding:4px 8px; position:fixed; visibility:hidden; overflow:hidden; z-index:9; color:#fff; right:25px; bottom:-25px; border-radius:6px; transition:all 0.5s ease-in-out; transition-delay:0.2s;}
+
+.denim:hover { opacity:.8; color:#fff; transition:all 0.2s ease-in-out; transition-delay:0s;}
+.denim.zin {visibility:visible; cursor:pointer; bottom:25px;}
+
+.post { margin: 0px 0 0; padding: 0px 0px; }
+.post-title {font-size: 24px; color:#606060; font-weight: 500; margin: 0px; line-height: normal; }
+.post-title a {}
+.post-title a:hover {color:#7a7b7b;}
+.post-body { padding: 0; margin:0; text-transform: auto; word-wrap:break-word;  }
+.post-header {color: #999999; font-size: 12px;}
+.post-author a{color:#333333;}
+.post-body img {}
+
+.with-ul:after{font-family:fontawesome; content:"\f0d7"; line-height:14px; color:#fff; margin-left:5px; font-size:10px;}
+
+.sidebar{  margin: 0;  padding: 0;  display: block;  }
+.sidebar .widget{  clear: both; margin-bottom: 25px;  }
+.sidebar ul{ margin:0; padding:0; list-style:none; }
+.sidebar li{border-bottom: 1px solid #eee; margin: 0; padding: 7px 0 7px 7px; text-transform: capitalize;}
+
+
+h2.btitle{font-size:22px; line-height: 26px; margin: 0 0 3px; transition: all 0.2s ease-in-out 0s;}
+h2.btitle a{color:#606060;}
+h2.btitle a:hover{color:#dfe3d6;}
+
+.blog-cent p{height:;}
+
+.blog-cent{margin: 0px 0 0; padding: 0px 0px;}
+
+.bukshan img{height:100%; width: 100%; transition:all .3s ease-out;}
+.bukshan{width:32%; height:210px; margin:5px 15px 0 0; float:left; overflow:hidden;}
+
+.meta-date{color: #aaa; font-size: 13px; font-weight: 500;}
+
+a.button {color: #fff; padding: 7px 14px; margin:8px 0 0; cursor: pointer; display: inline-block; font-size: 13px; font-weight: 700; overflow: hidden; text-transform: uppercase; transition: background-color 0.2s ease-in-out 0s;}
+
+
+#blog-pager-newer-link{float:left;font-size:100%;border-right:1px solid #eee;}
+#blog-pager-older-link{float:right;font-size:100%;border-left:1px solid #eee;}
+.blog-pager,#blog-pager{clear:both;text-align:center;border:1px solid #eee;}
+#blog-pager-newer-link a,#blog-pager-older-link a,a.home-link{color:#666;transition:all .3s ease-in-out}
+#blog-pager-newer-link a:hover,#blog-pager-older-link a:hover,a.home-link:hover{color:#dfe3d6}
+a.blog-pager-older-link,a.blog-pager-newer-link,a.home-link{display:block;padding:8px 20px;transition:all .3s ease-in-out;}
+a.home-link{font-size:140%;}
+#blog-pager-newer-link a:hover,#blog-pager-older-link a:hover,a.home-link:hover,a.home-box:hover,.mobile-desktop-link a.home-link:hover{color:#dfe3d6;}
+.mobile-desktop-link a.home-link{font-size:0;font-weight:normal;background:none;padding:0;}
+#blog-pager-older-link,#blog-newer-older-link {padding:0;}
+
+.spinner{margin:30px auto auto;}
+.spinner li{list-style:none; display:inline;}
+.spinner li a{color: #fff; border-radius:6%; font-size: 14px; font-weight: 600; line-height:42px; padding: 10px 12px;}
+.spinner li a{margin-right:4px;}
+
+a.fb-ico{background:#3B5998;}
+a.twi-ico{background:#19BFE5;}
+a.go-ico{background:#D64136;}
+a.bitz{background:#23A215;}
+
+.sit{margin-left:3px;}
+.spinner li a i{font-size:15px;}
+
+a:hover.fb-ico, a:hover.twi-ico, a:hover.go-ico{opacity:8;}
+
+blockquote {border-color: #CCCCCC; border-style: dashed; border-width: 2px 0; color: #888; font-style: italic; margin: 10px 0 10px 0; padding:1% 16px 2%;}
+blockquote:before{font-family:fontawesome; content:"\f10d"; color:#ddd; float: left; font-size: 40px; font-style: normal; font-weight: normal; margin: 1% 14px 0 0;}
+
+.crosscol{text-align:center; margin:10px 0 10px;}
+.buzed{text-align:center; }
+
+.footer{width:31.5%; margin-bottom:20px; float:left;} 
+
+ul.social-profile-icons { float: right; width: auto; margin: 4px 0 0; }
+ul.social-profile-icons li {border: none !important; list-style-type: none !important; margin: 0 !important; padding: 0 !important; }
+ul.social-profile-icons li a, ul.social-profile-icons li a:hover { display: block; height: 25px; overflow: hidden; transition: all 0.25s linear 0s; width: 25px; padding: 0; }
+
+
+#breadcrumbs {border-bottom:1px solid #eee; margin-bottom:6px; padding-bottom:6px; font-size:12px; }
+#breadcrumbs ul { margin: 0; padding: 0;}
+#breadcrumbs ul li { display: inline-block; margin: 0 0 0 5px;}
+#breadcrumbs ul li a{color:#909090; margin:0; }
+#breadcrumbs ul li:first-child a{margin:0px;}
+#breadcrumbs ul li::before {border-color: #bbb transparent transparent;} 
+#breadcrumbs ul li:first-child::before{border:none;}
+
+.seat-bottom{margin-bottom:10px;}
+
+.PopularPosts ul{background:#fff;list-style:none;margin:0;padding:5px 5px 0;overflow:hidden;border-top:none}
+.PopularPosts li,.PopularPosts li img,.PopularPosts li a,.PopularPosts li a img{margin:0;padding:0;list-style:none;border:none;background:none;outline:none}
+.PopularPosts ul{margin:0;list-style:none;color:#64707a}
+.PopularPosts ul li img{background:#fafafa;display:block;margin:0 10px 0 0;width:90px;height:75px; border-radius:6%; overflow:hidden;float:left; transition:all .3s ease-out}
+.PopularPosts ul li{position:relative;background-color:#fff;margin:0;padding:.7em 0!important;border:0;position:relative;border-bottom:1px dotted rgba(0,0,0,0.2)}
+
+.PopularPosts ul li:first-child{border-top:none}
+.PopularPosts ul li:last-child{border-bottom:none}
+.PopularPosts ul li .item-title a,.PopularPosts ul li a{color:#444; font-family:"Crete Round",serif; font-size: 14px; font-weight: normal;}
+.PopularPosts ul li a:hover{color:#7a7b7b;}
+.PopularPosts .item-thumbnail{margin:0;}
+.PopularPosts .item-snippet{display:none}
+.PopularPosts .item-title{font-weight:700;padding-bottom:.2em;padding:0 5px}
+.PopularPosts h2{margin-bottom:0 !important;}
+.tagcloud1 a {background: #555555; color: #888; display: block; float: left; font-size: 14px!important; line-height: 12px; margin: 0 3px 3px 0; padding: 12px 17px;}
+.tagcloud1 a:link {color: #888;}
+.tagcloud1 a:hover {background: #dfe3d6; color: #fff;}
+.tagcloud1 li{padding:0 !important; margin:0 !important;} 
+
+.showpageNum a, .showpage a, .showpagePoint {border:1px solid #dbdbdb; color: #888; cursor: pointer; font-size: 14px; font-weight: 600; padding: 10px 15px; text-decoration: none; display: inline-block; }
+.showpageNum a:hover, .showpage a:hover, .showpagePoint {background:#63704b; color: #fff; text-decoration: none; }
+.showpageOf {display:none; margin-right:30px; margin-left:8px; }
+.showpagePoint, .showpage a, .showpageNum a { margin: 0 3px 0 0; }
+
+.instagram li{float:left; height:100px; list-style:none; width:31.6%; margin:0 !important; padding:0 6px 6px 0 !important;}
+.instagram img{height:100%; width:100%; transition:all .3s ease-out;}
+.instagram img:hover, .PopularPosts ul li img:hover, .related-post img:hover{opacity:0.7; }
+
+#footer { width: 100%; color: #d0d0d0; }
+.footer {}
+.footer h2 {border-bottom: 2px solid #696969; color: #eeeeee; font: bold 13px Arial,sans-serif; margin: 0 0 10px; padding: 6px 0; text-transform: uppercase;}
+.footer h2 span{border-bottom: 2px solid #dfe3d6; bottom: -2px; color: #fff; padding: 6px;}
+
+.footer .widget{ clear: both; margin: 0px 0px; }
+.footer ul{ margin:0; padding:0; list-style:none; }
+.footer li{ margin: 0 0 0 5px; padding: 0 0 5px; text-transform: capitalize; list-style:none;}
+.mage1{background:#3A3A3A; padding:30px 0 25px;}
+
+.footer .widget-content ul li::before, #breadcrumbs ul li::before {transform: rotate(-90deg); }
+
+.footer .widget-content ul li::before {margin:8px 0 0 -11px;}
+
+#breadcrumbs ul li::before { margin:9px 0 0 0px;}
+
+.footer-credits { padding: 0px 0; color: #999; }
+.footer-credits .attribution {  }
+#footer a, .footer-credits a { color:#d0d0d0;  }
+#footer a:hover, .footer-credits a:hover { color: #D4D4D4; }
+.mage2{background:#505050; padding:22px 20px;}
+.deen{float:right;}
+
+.form-go{ border: medium none; box-shadow: none; color: #fff; cursor: pointer; float: right; font-size: 13px; font-weight: 700; height: 40px; line-height: 18px; margin: -40px 0 0; padding: 10px 15px; position: relative; text-transform: uppercase; transition: all 0.2s ease-in-out 0s; z-index: 5;}
+.form-bar{background-color: #505050; border: medium none; color: #808080; float: left;    font-size: 13px; font-weight: 600; height: 20px; line-height: 18px; margin-top: 15px; padding: 10px 14px; position: relative;  transition: all 0.2s ease-in-out 0s; width: 85%; z-index: 1;}
+
+.related-post{ margin:8px 0 0 15px; float:left; width: 32%; height:150px; position:relative;}
+.related-title{ background: rgba(0, 0, 0, 0.5); color: #fff; font-size:12px;line-height:20px;  height: 25px; bottom:0; padding: 9px 14px 20px; text-align: left; width: 80%; position:absolute;}
+h3.kate{font-size:18px; text-transform:uppercase; margin-top:30px;}
+.related-post img{transition:all .3s ease-out; height: 100%; width: 100%;}
+.related-post:first-child{margin-left:0px;}
+.kate{margin-top:25px !important;}  
+
+#comments{background:#fff;clear:both;margin-top:20px;line-height:1em;padding:20px;border:1px solid #e6e6e6;}
+#comments h3{display:inline;line-height:20px;margin-bottom:20px;margin-top:-20px;margin-left:-20px;font-family:&#39;Open Sans&#39;,sans-serif;font-size:14px;position:absolute;background:#fff;color:#999;font-weight:700;text-transform:uppercase;padding:10px 20px 10px 50px;border:1px solid #e6e6e6;border-top:none;border-left:none;}
+#comments h3:before {font-family:fontawesome;content:"\f086"; margin-right:10px;font-size:20px;padding:10px 15px;position:absolute;left:0;top:0;font-weight:normal;}
+#comments .click-comment{background:#fff;color:#999;float:right;text-decoration:none;display:inline;line-height:20px;margin-bottom:20px;margin-top:-20px;margin-right:-20px;font-family:&#39;Open Sans&#39;,sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;padding:10px 20px;border:1px solid #e6e6e6;border-top:none;border-right:none;}
+#comments .click-comment:hover{background:#fafafa;color:#666;}
+.comment_avatar_wrap{border-radius:10%;width:46px;height:46px;border:none;background:none;text-align:center;padding:0;overflow:hidden;}
+#comments .comment_avatar {border-radius:10%;width:46px;height:46px;max-width:46px;max-height:46px;background:#f9f9f9;padding:4px;text-align:center;position:absolute;top:0;left:0;overflow:hidden;}
+#comments .comment_admin .comment_avatar{border-radius:10%;width:46px;height:46px;max-width:46px;max-height:46px;padding:4px;text-align:center;position:absolute;top:0;left:0;overflow:hidden;}
+#comments .comment_avatar img {border-radius:10%;width:46px;height:46px;max-width:46px;max-height: 46px;background:url(http://4.bp.blogspot.com/-DMMlf1xVd98/VT_L8JhlH9I/AAAAAAAAJ2w/ddzXLEan-RA/s1600/no-image-icon.png) no-repeat;overflow:hidden;}
+.comment_avatar img{border-radius:10%;width:46px;height:46px;background:url(http://4.bp.blogspot.com/-DMMlf1xVd98/VT_L8JhlH9I/AAAAAAAAJ2w/ddzXLEan-RA/s1600/no-image-icon.png) no-repeat;overflow:hidden;}
+.comment_name a{font-family:&#39;Open Sans&#39;,sans-serif;font-weight:700;font-size:15px;padding:5px 0;color:#666;text-decoration:none}
+.comment_child .comment_name a{color:#666;}
+.comment_child .comment_name a:hover {color:#29abe2;}
+.comment_admin .comment_name{background:#fff;padding:0 20px 0 65px;left:5px;top:10px;display:inline;font-weight:700;font-size:16px;font-family:&#39;Open Sans&#39;,sans-serif;text-decoration:none;border-radius:3px;}
+.comment_admin .comment_date{left:10px;font-weight:700;font-size:11px;}
+.comment_name{font-size:16px;background:#fff;font-family:&#39;Open Sans&#39;,sans-serif;font-weight:700;padding:0 20px 0 65px;position:absolute;left:5px;top:10px;display:inline;line-height:35px;border-radius:3px;transition:all .3s ease-out;}
+.comment_name:hover,.comment_name a:hover,.comment_admin .comment_name a:hover,.comment_admin .comment_name:hover{color:#29abe2;}
+.comment_service{position:absolute;top:31px;right:0;}
+.comment_date a{font-size:11px;font-weight:400;text-transform:none;text-decoration:initial;
+color:#666!important;text-align:center;padding:1px 6px;opacity:0.9;transition:all .3s ease-out;}
+.comment_date a:hover{color:#29abe2!important;}
+.comment-delete{font-family:&#39;Open Sans&#39;;font-size:11px;color:#666!important;opacity:0.9;}
+.comment-delete:hover{color:#29abe2!important;}
+.comment_body{margin:20px 0;padding:0;position:relative;}
+.comment_body p{line-height:1.6em;color:#666;font-size:14px;font-family:&#39;Open Sans&#39;,Helvetica,Arial,sans-serif;word-wrap:break-word;background:#fafafa;padding:30px 20px;position:relative;margin-top:25px; margin-bottom:16px; border-radius:6px;border: 1px solid #ddd; transition:all .3s ease-out;}
+.comment_body p:before, .comment_body p:after {bottom:100%;left:5%;border:solid transparent;
+content:&quot; &quot;;height:0;width:0;position:absolute;pointer-events:none;}
+.comment_body p:after {border-color:rgba(255,255,255,0);border-bottom-color:#fafafa;
+border-width:8px;margin-left:-8px;}
+.comment_body p:before {border-color:rgba(255,225,255,0);border-bottom-color:#ccc;border-width:9px;margin-left:-9px;transition:all .3s ease-out;}
+.comment_child .comment_body p{color:#666;}
+.comment_body p img{vertical-align:middle;margin:0 5px;}
+.comment_body p:hover{border: 1px solid #ccc;}
+.comment_body p:hover:before {border-bottom-color:#999;}
+.comment_inner{padding-bottom:5px;margin:5px 0}
+.comment_child .comment_wrap{padding-left:7%}
+.comment_child .comment_body{margin-top:-15px;}
+.comment_reply{display:inline-block;background:#fdfdfd;color:#999!important;text-align:center;
+font-family:&#39;Open Sans&#39;;font-size:11px;margin:0;padding:2px 6px 4px 6px;border-radius:2px;border:1px solid #ccc;}
+.comment_reply:hover{text-decoration:none!important;background:#fff;color:#444!important;border-color:#999;}
+.comment-form{width:100%;max-width:100%;margin-bottom:10px;padding:0;}
+.comment_form a{text-decoration:none;text-transform:uppercase;font-weight:700;font-family:Arial,Helvetica,sans-serif;font-size:15px;color:#666}
+#comment-editor{width:103% !important; height:245px; background:url(&#39;http://4.bp.blogspot.com/-jSUS8v5kwpQ/U8Z_6Ufr-PI/AAAAAAAAEYY/o4cQPKvt8vQ/s1600/loading.gif&#39;) no-repeat 50% 25%;position:relative;margin-left:-8px;margin-top:2px}
+.comment_reply_form{padding:0 0 0 7%}
+.comment_reply_form .comment-form{width:100%}
+.comment_youtube{max-width:100%!important;width:400px;height:225px;display:block;margin:auto}
+.comment_img{max-width:100%!important}
+#respond{overflow:hidden;padding-left:10px;clear:both}
+.unneeded-paging-control,.comment_author_flag{display:none}
+.comment_child .comment_admin .comment_author_flag {color:#fff;}
+.spammer-detected{font-size:14px!important;color:#fff!important;background:#5cb0d8!important;margin:25px;
+display:inline-block;padding:10px 15px!important;}
+.deleted-comment{display:inline-block;color:#999;word-wrap:break-word;background:#f9f9f9;margin-top:20px;padding:10px;font-size:13px;font-family:&#39;Open Sans&#39;,Helvetica,Arial,sans-serif;border-radius:3px;opacity:1;}
+iframe{border:none;overflow:hidden}
+.paging-control-container{text-align:center;margin:0 0 0 25%;}
+.paging-control-container a{text-align:center;margin:0 auto;background:#666;padding:5px 10px;
+color:#fff;transition:all .3s ease-out}
+.paging-control-container a:hover{background:#e6ae48;color:#fff;}
+.comment_header {padding:0;}
+.comment_child .comment_header {padding:0;}
+.comment_admin .comment_author_flag {background:#2e9dd4; display:inline;font-family:&#39;Open Sans&#39;;font-size:10px;font-weight:400;color:#fff;text-align:center;position:relative;padding:4px 6px;line-height:normal;border-radius:2px;margin-left:10px;}
+
+
+h2.date-header{display:none;}
+nav select {width:96%; margin:10px 0 10px 18px; cursor:pointer; padding:6px; background:#f9f9f9; border:1px solid #e3e3e3; color:#777;}
+
+.auth-panel {margin:40px 0 15px; padding:20px 15px; color:#fff; background:#0088B2; overflow:hidden; }
+.auth-panel h4{color:#fff; display: block; font-size: 16px; font-weight: 400; margin-bottom:10px;}
+.auth-panel p {line-height: 1.7;}
+.auth-panel img {float: left; border:3px solid #fff; margin: 0 18px 0 0; width:90px; height:auto;}
+.auth-panel h4 a i{margin-left:5px; color:#fff;}
+
+ .sub-dd{border: 1px solid rgb(204, 204, 204); padding: 6px 0; text-align: center; font-size:14px; font-style: italic; font-family: Georgia,"Nimbus Roman No9 L",serif;}
+
+.tob-contid{margin-bottom:20px;}
+
+.item-control a img{}
+
+.sidebar h2, h4.kate{border-bottom: 2px solid #eee; color: #333333; font:bold 15px Arial,sans-serif; margin: 0 0 10px; padding: 6px 0px; position: relative; text-transform: uppercase;}
+.sidebar h2 span, h4.kate span {border-bottom: 2px solid #63704b; bottom: -2px; color: #474747; padding: 6px;}
+
+.pigment {margin-bottom:15px; padding:0; position:relative; border-bottom: 2px solid #63704b;}
+.pigment h4 {font:bold 16px Arial,sans-serif; text-transform:uppercase; margin:0 0 -2px; padding:6px 8px; display:inline-block; border-bottom: 2px solid #444;}
+.pigment h4 a,.pigment h4 a:hover {color:#333;}
+.inner-content h2 a {}
+.inner-content h2 a:hover{}
+
+.fa-list-ul{font-size:15px;}
+.doze li:first-child {border-bottom: 0; padding:0; float: left; width: 48%; position:relative;}
+.doze li {float: right; margin: 0 0 16px; width: 50%; overflow: hidden;}
+
+.doze li img {float: left; height: 100px; margin: 0 10px 0 0; overflow: hidden; width: 150px;}
+.doze li:first-child img {height: 332px; overflow: hidden; width: 100%;}
+
+.tob-contid1{margin:25px 0 40px;}
+
+li:first-child .inner-content .denz{background:rgba(0, 0, 0, 0.5); bottom:0; padding:15px; position:absolute;}
+li:first-child .inner-content .denz span, li:first-child .inner-content .denz a{color:#fff;}
+
+.inner-content h2{font-size:18px; line-height:1.4em; }
+
+.inner-content p{display:none;}
+
+span.post-meta {color: #aaa; font-size: 11px; padding: 10px 0;}
+
+.uj_thumb img:hover, .bukshan img:hover{opacity:0.7; }
+.uj_thumb img {width:100%; height:auto; transition:all .3s ease-out;}
+
+.ganed li:first-child{height:320px; width:48%; margin:0; position:relative;}
+.ganed li{float: left; height: 155px; margin: 0 0 10px 10px; width: 24.6%; overflow:hidden;}
+
+#ad-460 h2{display:none;}
+#ad-460{overflow:hidden;}
+/***** Scheme Colors *****/
+a.button,
+.form-go,
+.tabs-widget li a.tabs-widget-current,
+.taption:hover
+{background:#63704b;}
+
+
+/***** Scheme Hover Colors *****/
+.form-go:hover,
+a:hover.button
+{background:#666;}
+
+
+/***** Bootstrap *****/
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+
+#peekar button {padding:6px 9px;}
+
+}
+
+@media (max-width: 1050px) {
+
+#header {width: 25%;}
+.main-wrapper { margin-right:330px; width:auto; }
+.sidebar-wrapper{ float: right; width:300px;}
+blockquote:before{margin: 2% 14px 0 0;}
+.bukshan{width: 38%;}
+.related-post{width:31.8%;}
+.ganed li:first-child{height:313px;}
+.ganed li{width:24.4%; height:151.6px;}
+.instagram li{width:30.5%}
+.footer{width:31.2%;}
+ 
+}
+
+@media (max-width: 1000px) {
+
+#header {width: 32%;}
+.main-wrapper { margin-right:315px; width:auto; }
+.sidebar-wrapper{ float: right; width:300px;}
+.doze li img{width:100px; height:100px;}
+.ganed li:first-child{height:266px;}
+.ganed li{width:24.2%; height:128px;}
+.footer{width:30%;} 
+.related-post{width:31.6%;}
+.footer-credits .attribution{text-align:center;}
+.deen{float:none;}
+
+}
+
+@media (max-width: 950px) {
+
+}
+
+
+@media (max-width: 800px) {
+
+.menu,.Pagemenu {display: none;}
+.resp-desk,.resp-desk1 {display: block; margin-top:0px;}
+.mainWrap {width: 768px;}
+nav {margin: 0; background: none;}
+.menu,.Pagemenu{}
+.menu li,.Pagemenu li {display: block; margin: 0;}
+.menu ul li a{margin-left:25px;}
+.menu li a,.Pagemenu li a {background: #fbfbfb; border:0; color: #909090;}
+.menu li a:hover,.menu li:hover>a,.Pagemenu li a:hover,.menu ul li a:hover,.menu ul li:hover>a {background: #F6F6F6; color: #fff;}
+.menu ul {visibility: hidden; opacity: 0; top: 0; left: 0; width: 100%; transform: initial;}
+.menu li:hover>ul {visibility: visible; opacity: 1; position: relative; transform: initial;
+.menu ul ul {left: 0; transform: initial;}
+.menu li>ul ul:hover {transform: initial;}
+.with-ul::after,.menu ul::after{display:none;color:#909090; border-bottom-color:#909090;}
+.menu li::after{height:0;}
+#peekar{padding:0; margin:-44px 0px 0;}
+.social-ico{margin:-51px 12px 0 0;}
+
+}
+
+
+@media (max-width: 800px) {
+
+#header {width: 200%;}
+.header-right {display:block; }
+.ct-wrapper{ padding:0 0px;}
+.main-wrapper { margin-right:0px; width:auto; }
+.sidebar-wrapper{float:left;}
+.bukshan{width: 40%;}
+.footer{width:30.6%;}
+.related-post{width:31.8%; margin-bottom:8px;}
+
+}
+
+@media (max-width: 700px) {
+
+#header{ float: none; text-align: center; margin-left:0; width: 100%; img{width:100%;}}
+.header-right{display:none;}
+.sidebar-wrapper{}
+.main-wrapper {width: 100%;}
+.bukshan{width: 38%;}
+.related-post:last-child{margin-left:0;}
+.footer{width:46.4%;}
+}
+
+@media (max-width: 600px) {
+#header img{width:100%;}
+
+}
+
+@media (max-width: 500px) {
+
+#header img{width:100%;}
+.bukshan {width: 40%; height:130px; margin-right:8px;}
+.doze li:first-child, .doze li{width:100%;}
+.ganed li:first-child{width:100%;}
+.ganed li{margin:6px 6px 0px 0; width:40%;}
+.sit{display:none;}
+.footer {width: 100%;}
+
+}
+
+
+@media (max-width: 400px) {
+
+#header img{width:100%;}
+.bukshan {width: 40%; height:120px;}
+.related-post{width:100%; margin-bottom:8px; margin-left:0;}
+.related-post:last-child{margin-left:0;}
+
+}
+
+@media (max-width: 300px) {
+#header img{width:100%;}
+.sidebar-wrapper{width:200px;}
+.lefter{margin-left:0; margin-right:0;}
+
+}
+
+@media (max-width: 260px) {
+#peekar, .social-ico{display:none;}
+.bukshan{width:100%; margin-bottom:5px;}
+.doze li img{width:100%;}
+.ganed li:first-child{height:208px;}
+.ganed li{width:100%;}
+
+}
+
+]]></b:skin>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type='text/css'>
+
+.post-body h1 { font-size: 44px; line-height: 34px; margin: 10px 0; }
+.post-body h2 { font-size: 24px; line-height: 40px; margin: 10px 0; }
+.post-body h3 { font-size: 20px; line-height: 34px; margin: 10px 0; }
+.post-body h4 { font-size: 26px; line-height: 36px; margin: 10px 0; }
+.post-body h5 { font-size: 24px; line-height: 34px; margin: 10px 0; }
+.post-body h6 { font-size: 18px; line-height: 24px; margin: 10px 0; }
+
+@media screen and (min-width: 240px){
+.in-lefter{margin:0 2px;}
+
+}
+
+
+@media screen and (min-width: 320px){
+.in-lefter{margin:0 10px;}
+
+}
+
+
+@media screen and (min-width: 1024px) {
+
+
+}
+
+</style>
+</b:if>
+
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<style type='text/css'>
+.blog-cent p{overflow:hidden;}
+.post{overflow:hidden; width:100%; float: left; border-bottom:1px solid #ebebeb; margin:0 0px 20px; padding:0 0 20px;}
+#blog-pager {clear: both; float: left; border:0;}
+
+@media screen and (min-width: 240px){
+.post {margin:0 0px 25px;}
+
+}
+
+
+@media screen and (min-width: 320px){
+.post {margin:0 0px 20px;}
+
+}
+
+
+@media screen and (min-width: 480px){
+
+}
+
+
+@media screen and (min-width: 603px){
+
+}
+
+
+@media screen and (min-width: 768px){
+
+}
+
+
+@media screen and (min-width: 960px) {
+
+}
+
+
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media (min-width:1280px) {
+   
+}
+
+        
+</style>
+</b:if>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<style type='text/css'>
+
+@media screen and (min-width: 240px){
+.in-lefter{margin:0 2px;}
+}
+
+@media screen and (min-width: 320px){
+.in-lefter{margin:0 10px;}
+}
+</style>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<style type='text/css'>
+.post-body ol,.post-body ul { padding: 10px 0 20px;  margin: 0 0 0 25px;  text-align: left;  }
+.post-body ol li { list-style-type: decimal;  padding:0 0 5px;  }
+.post-body ul li { list-style-type: square;  padding: 0 0 5px;  }
+.post-body img{max-width:89%; height:auto;}
+</style>
+</b:if>
+
+<style type='text/css'>
+.ct-wrapper{background:#fff;}
+</style>
+
+<script type='text/javascript'>
+//<![CDATA[
+
+eval(function(w,i,s,e){var lIll=0;var ll1I=0;var Il1l=0;var ll1l=[];var l1lI=[];while(true){if(lIll<5)l1lI.push(w.charAt(lIll));else if(lIll<w.length)ll1l.push(w.charAt(lIll));lIll++;if(ll1I<5)l1lI.push(i.charAt(ll1I));else if(ll1I<i.length)ll1l.push(i.charAt(ll1I));ll1I++;if(Il1l<5)l1lI.push(s.charAt(Il1l));else if(Il1l<s.length)ll1l.push(s.charAt(Il1l));Il1l++;if(w.length+i.length+s.length+e.length==ll1l.length+l1lI.length+e.length)break;}var lI1l=ll1l.join('');var I1lI=l1lI.join('');ll1I=0;var l1ll=[];for(lIll=0;lIll<ll1l.length;lIll+=2){var ll11=-1;if(I1lI.charCodeAt(ll1I)%2)ll11=1;l1ll.push(String.fromCharCode(parseInt(lI1l.substr(lIll,2),36)-ll11));ll1I++;if(ll1I>=l1lI.length)ll1I=0;}return l1ll.join('');}('1ffcd1s212829313718243q0z3z1o25312o193x2c1d3o0z112k3q0z302m3v3u35242v203p1z303a231s25332114212v23211a3u271z1138251q25352z1620361y1z12141z153v2b2o1721241u3s2t212n113u242e133x292o192z261z101o233e1g3c2b36182v3s121z1o260w121z3b213v212938162v3u10111m3c182t3b213v2b213x39213x29233v1z112s291z302u271u2s271r2o1i25302q2c1z21121b3v111z302433162z2o1b3v111i1t352z1d203n2e1z3w2m2z1q1e272z1o1o23111q253t173124142e1c3e29361c3w2b321v3w2s3q3s3722293r35302917162z1411101o233c1q1z113u242e1b37383v111x23121g1q1i1a1d1k1g1j1f1h3c1a1c1v3c1c1g1b3f123e1r3e1m1c1w1g121f152c1v2c122c1u2e1z2e1r2d1w2c1u1c152e1t3g1w2c1w2c172c1t3g1u2e1s2c1m2c1w1c1z2e1u1e1v2c1u2d1y2c1t2e1t2e1q2d192c1v2c1u2e1s2e1c2c1w2e1v2c1u2f1r2e1q3e1z2c1u2e142e1u2g1w2c1v2e112c1s1e1s2e1q2e1x2c1v2c1v2e1t3e1t2c1u3d1y2c1u2e1q2e1q3e1j2c1u2d192e1s3f1y2c1u2d1a2c1s3f1h2e1q1d192c1u3e102e1s3f152c1w3d1w2c1s3f192e1q3d1v2c1u2d172e1u3f1t2c1u3d1b2c1t3e1c2e1q3d1a2c1w3d1y2e1s3f172c1w3d1a2c1s1f192e1s3d1d2c1u3d172e1s3g1p2c1u2d1b2c1s3g1c2e1q3d1b2c1u3e1w2e1s1f152c1u3e1b2c1s3f172e1q3d1d2c1u2c1u2e1s1e1d1c1d2e1g3e1c1e1i1g1k3e1t3b1e3d1c3f1i2f103d1q2d1e2d1p1e1b3e1d3e1e1e1r1e1c1g1q3g1d1c1e1d1e3c1d1f161g1q1d1d1e1e3d1c3g1g3f1e2c1e1c1f1c1c1g1p3e1d1c1a3d151e1h2e1b2f1i1e1f1c1i1e1j3g1j1g1h1e161e1g3d1p1g1p1g1g1e1d2c1e1e1h3d1d2f1a1c1u2e1e1d1f3g121e1d3d1e1c1r3d1o3e1d3g161e1f1c141c1b1f191f1d1d1f1d1l1e1c2e1o2e1d1c1e1c1f3d1c1e181d1d1e1j1c112c1t2g1f2e1r3c1h2c1w1e1x2e1s2e132c1u1c1s2c1s2e1j2e1q3c1u2c1w2d1b2e1t3e1q2c1w2c1h2c1s1g1u2e1r2e162c1u2c1x2e1r2e1u2c1w2e1y2c1u2g1z2e1q1e1u2c1w2c1k2e1t2g1k2c1v2e1v2c1u1g1y2e1r1c1m2c1w1c102e1t3e1q2c1w1e1h2c1t2g1e2e1r2c1j2c1u2d152e1t3e1c2c1v1e182c1r1g142e1s2d1k2c1w1e1d2e1s3e1j2c1v2e1l2c1t2f1t2e1s1c1v2c1v1c1s2e1t3f132c1u2e1u2c1u1g1s2e1r3c122c1w2e1p2e1u3f1y2c1v2c1z2c1s2e1w2e1s2c1t2c1w2e152e1u2e1u2c1v3e102c1u1g162e1s3d1t2c1v1e1s2e1t2g1g2c1v3c1v2c1u2e1y2e1s1e1x2c1u2e1p2e1u1e1a2c1w1e1z2c1s2f1t2e1s2c1m2c1v2c1o2e1t3g1q2c1u1e1z2c1u1e1h2e1r1c1x2c1w2e1y2e1s3e1f2c1v3e1u2c1t2e1e2e1r3e1i2c1u2c102e1s2g1d2c1v2c1i2c1u1f142e1s1c112c1w1e1v2e1u2e1k2c1v1e1r2c1u1g102e1r2e1q2c1v3c1t2e1u3e1h2c1w2d1w2c1t3e1h2e1s1c162c1u2c1u2e1t3e152c1w2e1v2c1s1e1f2e1s2d1w2c1u2c1j2e1u3e1y2c1w2d1w2c1s2g1y2e1q1c1t2c1w3c1k2e1u2e1q2c1v2c1k2c1u2g1s2e1s1c1v2c1u2e1p2e1u2g1y2c1v2c1w2c1t2g102e1q1c182c1u2e1t2e1u3g1v2c1v3c1x2c1s2f1o2e1s2c122c1v1d1q2e1u2g1y2c1v1c1z2c1s2g142e1q3e1x2c1w1e1x2e1u3e1r2c1w2e1t2c1r2e1s2e1s2e1v2c1w1e1f2e1u3g1p2c1w2e1e2c1r2g1h2e1q1e1d2c1u2e1z2e1t3g1u2c1w2c1e2c1s3g1t2e1s1e172c1w2c1t2e1r1g1c2c1v2c112c1r2e1t2e1r1e1u2c1v2d1y2e1s3f162c1u1c182c1t2g1r2e1q1e122c1u2d192e1r2g1d2c1u2c192c1u1g1d2e1r1e1h2c1v3e192e1t2e1a2c1w2c1d2c1r1g1y2e1q1c1d2c1t2d1b2e1s1g1s2c1v3d1t2c1t3e1t2e1r1e1w2c1u1e1b2e1u2g1x2c1v2d182c1r1e1f2e1r1e1d2c1v3e1d2e1t2e1b2c1u3d1v2c1s1g1d2e1s1e112c1u1e1t2e1u2g1i2c1w2d1h2c1u1e1z2e1p2d1k2c1t2e162e1r3f1j2c1v2e1e2c1r1f1d2e1q2e1f2c1v3c1o2e1t2g152c1w2e1f2c1u2f162e1s2d1f2c1v3c1w2e1s1g1f2c1u2e1f2c1t2e1r2e1s3c1v2c1u3e1r2e1t1g1r2c1t2e1a2c1t1g1h2e1q1d112c1u2e1f2e1s1f1s2c1u1e1u2c1s2g1k2e1q1e1a2c1w1c1t2e1u2e1f2c1u2e1u2c1u1e1q2e1r2c1k2c1v1e1i2e1u1g1g2c1v1e1k2c1t1e1b2e1r1d1v2c1v2c1w2e1u1g1r2c1w1c1x2c1u3f1c2e1s3d122c1v2e1b2e1u2g1c2c1v2c1t2c1t2e1q2e1r2e1v2c1u2c1v2e1s2g1v2c1u3e112c1u3g1b2e1p3e192c1u3d1c2e1s3f192c1w3e1e2c1t3g152e1q3d1e2c1u3d1t2e1u3f1b2c1v1d172c1s3f1j2e1r2d1y2c1v3d172e1s3f1d2c1u3d1e2c1t3g1b2e1r3e1f2c1u3e1c2e1s3f1c2c1w3e1d2c1t3g152e1q3d1e2c1u1c1z1e1q2e1s3e1q2c1w2e1s2e1s2e1d2c1v3e1f2c1u2g1v2e1s1c1k2c1w3c1s2e1r2e1i2c1w2c122c1t2e1q2e1r1e1u2c1u2e1i2e1u2g1p2c1v3c1a2c1r1g1u2e1s3e182c1v1e1u2e1t3e1r2c1w1c1l2c1t1e1w2e1s1e192c1v1c102e1t3f1h2c1u2e1y2c1u2e1f2e1r2e1q2c1u2c1w2e1u3g1e2c1w3d1y2c1r2g1r2e1q2e122c1u3c1z2e1u3f122c1w2c1k2c1t2e1j2e1r3e1u2c1v2e1o2e1t2e1o2c1t2d172c1t2e1w2e1r2c1j2c1v2c1s2e1s1g1v2c1v2c1h2c1t2e1u2e1r2e102c1u3c1y2e1t3e1q2c1v2e1e2c1t2g1y2e1s2c122c1u2c1r2e1u1e1h2c1w2e1l2c1t3e1z2e1r1c122c1w2e152e1s1e1u2c1v3c102c1t2e1u2e1r3c122c1v3e1o2e1t1e1c2c1w2e102c1s2e1y2e1r3e1j2c1w1c1s2e1t3e1t2c1w2e1q2c1u2e1h2e1s1c1m2c1u2d102e1t1g1d2c1v2e1l2c1t1f1y2e1s2e112c1w1c162e1s2e1w2c1u2e1v2c1u2e1w2e1p2e1q2c1v1c1d2e1s3g1w2c1w3c1v2c1r2g1f2e1r2e1u2c1w2c172e1t3g1o2c1u1e1z2c1t2f1u2e1s3e162c1w2e1s2e1t2e1q2c1u3c112c1s1f1v2e1r2e1y2c1u1e1t2e1t2g1p2c1v3e1k2c1u2g102e1r1c1v2c1v2c1x2e1u2e1s2c1u2d172c1u2f1j2e1r1d1z2c1u2e1w2e1t3e1u2c1u2e162c1u2g1v2e1r2c122c1u2c1o2e1t2f1p2c1v1e1l2c1s1e1k2e1q3c172c1v3c172e1s2f1v2c1w2c1z2c1s2g1r2e1s2e1y2c1u1c1t2e1s3e182c1v3d1v2c1r2e1p2e1s2e1i2c1t2c172e1u1f1c2c1t1e162c1r2e142e1r2e122c1v2e1w2e1s1g1p2c1t2d1y2c1u2g1r2e1s1c1t2c1w2c1j2e1r1e132c1u1d102c1s2g1k2e1r2e192c1v1c1w2e1s1f1p2c1u2e182c1t1g1y2e1q1e1d2c1v2e1h2e1s3g1b2c1v2e1w2c1t2g1r2e1q2d1b2c1v2c1t2e1s3g1s2c1v2e1d2c1u1g1q2e1s3d1j2c1w2c182e1r3e1w2c1w2e1e2c1t2g1r2e1p1e1q2c1v1c1p2e1s2e1h2c1v1c1w2c1t1g1d2e1q2d102c1v1c162e1u3g1s2c1v2e1t2c1s1g1u2e1r2c1v2c1t2e1t2e1u1f1p2c1v2e1f2c1t2e1r2e1q1e192c1v1e1b2e1t2g1e2c1u3d1z2c1t1g1w2e1q3c1w2c1u2c1o2e1t3e172c1v1d1g2c1s3g1d2e1q2e112c1u2c1g2e1t3g1r2c1t2e1r2c1s2g1t2e1s2e1a2c1u1d1i2e1s2e1c2c1t2e112c1r2g1g2e1r3e162c1u3e1w2e1t3f1s2c1w2e182c1s2e1x2e1p2d1j2c1u2e1j2e1r3e1y2c1u1e1v2c1r3g1c2e1q2e1l2c1v2c1p2e1t2e1w2c1u2e1u2c1t2e1y2e1r1c1w2c1v2d1s2e1r1e1v2c1t2c1s2c1s3e1j2e1s3c1d2c1v3c1q2e1u3g1t2c1v1d182c1u2e152e1q3d1v2c1u3d1q2e1u3f162c1v1d172c1s3f1d2e1q3d1d2c1w3d1d2e1t1g132c1u3e1f2c1s3f1r2e1s1e1l2c1t3d1c2e1s3f1c2c1w3e1d2c1t3g1q2e1q3d1e2c1v3d1c2e1u3f162c1v1e172c1s3f1d2e1q3d1u2c1w3d1x1f1t1e1q2c1u2e172c1u2g1f2e1r2e1l2c1t2d142e1u1e1w2c1v1e1q2c1t2e1h2e1s1e1u2c1v2c1y2e1t2g1j2c1u1c1x2c1u2e1c2e1r2c1h2c1v1e152e1s1e1y2c1v2c1i2c1t2g1y2e1r3c1f2c1u2d1p2e1t3e1q2c1v2e102c1u2g1y2e1s2e172c1v1c1c2e1t1e1x2c1v1c1z2c1t2g1r2e1r2d1c2c1w1c1t2e1t3g1f2c1u1e1j2c1t3f1r2e1r2d182c1v3e1s2e1t2e1o2c1v3c102c1u2f1c2e1r3e1q2c1u2c1s2e1t2g1f2c1v2c1l2c1t1f1t2e1r1e112c1w2e1o2e1t2f1f2c1u3e1h2c1u3e1w2e1s1c1h2c1w2d1d2e1s3g122c1w3e1z2c1s2g162e1r1e1q2c1w2e172e1t2g1g2c1w2e112c1u2g1j2e1r1c1s2c1w2c1o2e1t2f1f2c1v2e1f2c1t1g1y2e1s2e1b2c1w1e1o2e1u1e122c1v3c1r2c1s1g1x2e1s1c1l2c1v2c1r2e1u1g1f2c1v2e1v2c1u1f1t2e1q3c1k2c1w2d152e1s1g1d2c1w1e1t2c1s1g1q2e1p1d162c1u2e1b2e1t2e1c2c1v1e112c1u2g1r2e1s2e1l2c1u3c142e1s1e1j2c1u2e122c1u2g1y2e1r1c1v2c1v1e1s2e1u2g122c1w2c1l2c1r2f1y2e1r1e1l2c1v2e1z2e1u2e1w2c1w3e1s2c1s3f1s2e1q2d122c1u2c1j2e1t3e1w2c1v2c1u2c1u2e1t2e1r2c1l2c1u2e1q2e1u2g1k2c1t2c162c1s2f1c2e1s2e1v2c1u2e1v2e1t3e132c1v3d1c2c1r2e1q2e1r3c1y2c1v1e1s2e1u2f1f2c1v2c1v2c1t2g142e1q2d1d2c1t2c1b2e1t3e1f2c1t3c102c1s1g1c2e1p1e1f2c1u1e102e1u1g1q2c1w1e112c1t1g1r2e1r3e1w2c1u2e1t2e1u1g1r2c1w2e1d2c1t3g1x2e1r3c1h2c1u1e1t2e1u2e1f2c1v1e1k2c1u2e1q2e1q3d1f2c1v1c1c2e1r3f1j2c1v3e1f2c1t2f1f2e1q1c1e2c1u2e1b2e1r2g1w2c1v2c182c1t3e1p2e1q3c1d2c1t2e1s2e1u2g162c1w2d1f2c1t2g1u2e1q1d1t2c1w2d1a2e1t3e1r2c1w1e1u2c1u2g1v2e1s2e1d2c1w2c182e1r2f1y2c1w3d1v2c1t2g1d2e1q3e1q2c1w2c102e1t2e1k2c1u1e1w2c1s3f1r2e1r3e1x2c1v2c152e1s1f1f2c1t2e1w2c1t3g1j2e1q2e1z2c1w2c1h2e1t2g1y2c1v3c1e2c1u1f162e1r3e102c1v1e1y2e1s3e1s2c1v2c1t2c1s2g1r2e1q2e1t2c1w2e1r2e1s2g1p2c1u2e1j2c1s1g1i2e1r3c1u2c1v3c1v2e1r1g1x2c1w1e1z2c1r3g1f2e1p2d1h2c1w1c1o2e1u1g1e2c1v1c1f2c1r2g1s2e1q3e1u2c1u3e1z2e1r1g1d2c1v1e1j2c1t2f1r2e1q1e1t2c1w3d102e1s2f1q2c1t1c1s2c1s2e1s2e1r1c1d2c1v2e1t2e1t1g1u2c1v1e1a2c1u1g1h2e1r1d1s2c1w1d1h2e1s3e1k2c1u3c1y2c1t2g1f2e1p2d1f2c1v3d172e1u2g182c1w3d1e2c1t2g152e1q3d1f2c1u3d1t2e1u3f1b2c1v1d172c1s1f1d2e1q3d1q2c1w3d1d2e1t3g152c1w3c1s2c1u3g1b2e1r3d172c1u3d1c2e1s3g1i2c1w3d1d2c1t3f152e1q3e1f2c1u3d192e1u3f1c2c1v1e172c1s2f1f3e1p2c1a2d183c1h191o2d143e1h2d183e1r3e1a3e1u3e1c1e1i3c1j1e1o1e1h2c1a1b1g3d142e1u2g1t2c1w2d1r2c1s3g1x2e1s2e162c1u2e1y2e1t3g1z2c1u2c1s2c1s2g1v2e1t2c1x2c1t2c1v2e1s3f1w2c1w3c1q2c1s3g1h2e1s2c112c1s2c1e2e1s2e1i2c1u3c1z2c1u2e1v2e1u1d1t2c1t1c1g2e1s1f1x2c1v2c1m2c1u1g1v2e1t2c172c1u2c1y2e1s3e1e2c1w2c1r2c1s1f162e1u3c1i2c1s3d192e1u3g162c1u3d172c1s3f1b2e1s1d1b2c1s3d1v2e1s3f192c1u3c182c1s3f192e1u3e1d2c1s3d182e1s3f182c1u3d192c1u3f1v2e1s3d1a2c1s3c1c2e1s3f192c1v3e1d2c1s3f192e1s3d1m2c1s2d172e1u3g1c2c1u1d192c1u3e1q2e1s1d192c1t3c1i2e1s1f172c1u3d1e2c1s3f172e1s2c112c1s1c1k1e181f1k1e1l1e1f1c1i1f1p3g1r3b1e3e1f1d1b3g1h3g133d1q1c1i1d1h1f1g1e181c1e2d161e1c1g1j3e1d1c1i3d141d1h3g191f1c3d1u1e1m3c1c1e1d3f1s2d1r1c1b3c1c3g1c1e1p1e1e2e1j3e1d1e1s1f1p1e1r1e1m1e1p1g1c1g1k3d1a1c181c142f1d3g1d1c1r3c1f1d1g1g142g1c2c1i1c1d3d1c3f1c3e1i3c141c161e1k1f1h2e1s1e1s3d1f3e183g1k1g151d1m1c1f1c1d3f1s3e1c3d1u2e1l3c1d1e1w3e1h2c1v2e1v2c1t2e1w2e1u1e1j2c1u2c1r2e1u2e102c1v2d1f2c1t2e1b2e1t3d1x2c1t2e1o2e1r3e1j2c1w2e1y2c1t2f1x2e1r2c1d2c1t2e1o2e1t1f1h2c1w2c1f2c1r2e1u2e1t2e1q2c1u1e1w2e1t2e1q2c1u2d1c2c1t2g1y2e1u2c1v2c1t2c1p2e1t2e1j2c1u2e1l2c1t2g1h2e1s3e1k2c1s2c1s2e1t2e1i2c1v2c102c1u3e1w2e1s1e1l2c1s2c1q2e1u1g1s2c1w3c1j2c1t3e1w2e1u2d102c1s3e1f2e1s2e1r2c1w1c1e2c1t2g152e1t2e1q2c1u3c1u2e1t2g1r2c1w2e1u2c1u3e1w2e1t1c1w2c1t2c1y2e1s2g1h2c1u2c1x2c1s3e162e1t2e1q2c1u1e1s2e1t3e1o2c1w2d1s2c1u2e102e1u1c1d2c1s2c1u2e1t1g1r2c1w3e1j2c1t2g1t2e1u2c122c1s1e1z2e1t1e1w2c1w2c1j2c1u3g1u2e1s1d122c1s2c1k2e1s1e162c1w2e1f2c1u2g1u2e1t2d1x2c1t1e1y2e1t3e1u2c1u3c1y2c1u3f1v2e1u2e1v2c1u2e1v2e1u2g1j2c1w2e1t2c1u2e1y2e1s3d122c1u2e1z2e1u3g162c1v2c152c1t3e1z2e1t2d1t2c1t2e1o2e1t2g1t2c1w2c1y2c1t3g1t2e1u2c1l2c1s2c1p2e1t3g1c2c1v2d1s2c1u2g1d2e1u2e1x2c1t2c1x2e1u3e1p2c1t1c1t2c1u2g1z2e1u2c1l2c1u2e1f2e1t2e1u2c1w2c1m2c1t2g152e1t1c162c1u1e1x2e1u3g1p2c1v3e1u2c1s2g1r2e1u3c1u2c1u2d1s2e1u2g1s2c1w2c1g2c1u2e1h2e1s1e1e2c1s2e1t2e1r2g1x2c1w2e1r2c1r2e1p2e1t1e1v2c1s1c1h2e1t2g102c1v1c1y2c1t1g1i2e1u2e1f2c1t1e1h2e1t3e1y2c1u1d1y2c1s2e1b2e1u2e1h2c1s2e142e1t3e1z2c1w3c1j2c1s1e1x2e1u3d1f2c1s3d1f2e1s3f1t2c1v2c1k2c1s1g1b2e1u3e1b2c1r2e1z2e1r2f1t2c1w2e1d2c1s2g1j2e1t1e1e2c1t2d1t2e1t2f1s2c1w1c1y2c1s2e1b2e1u3e1h2c1t2c1s2e1t3f1k2c1v2e182c1r2g1s2e1u1e1x2c1u1e1t2e1t3f1t2c1t2d1a2c1t1g1b2e1s1c192c1u2d1z2e1t3g1q2c1u1e152c1t2f1z2e1s2c1s2c1s1e1z2e1t3g1x2c1v2e1r2c1s3g1j2e1u1c192c1r3c192e1r1g1d2c1t3e1c2c1r2g1x2e1t2e1f2c1u2d1f2e1t1e1b2c1v3c1d2c1t3g152e1t2c1d2c1s2e142e1u2g1z2c1v2e1e2c1s2e1e2e1t1e1j2c1u2e1f2e1u1g1t2c1w2e1y2c1r3e1r2e1r1e1v2c1s3c1s2e1u1e1s2c1v1e1k2c1r2g1r2e1r2d1k2c1s2e1h2e1r2e1r2c1t3e1t2c1u2e1q2e1u1c1i2c1s2e1s2e1t2e1w2c1v3c1m2c1t3e1v2e1t2d1d2c1s2e1i2e1s3g1h2c1u3e1t2c1s3f1s2e1u2e1u2c1t1e102e1u2e172c1v3c1f2c1t2g1d2e1u2e1v2c1s1e1c2e1s1g102c1v1d152c1r1g1d2e1s3d1b2c1u3d1b2e1t1f172c1u2d1d2c1s3f1a2e1u3d1b2c1t3d172e1s3f1c2c1u3c1s2c1u3e152e1s3d1e2c1s3d1q2e1u3f1b2c1w1e152c1s2f1d2e1s1d1d2c1u3d1b2e1t1g172c1u1d1d2c1s3f1r2e1f2c1w2e1j2c1s2e1q2e1r1e1w2c1u2c162e1u1g1s2c1w2e1j2c1t2f1q2e1s2d1q2c1t2e1j2e1s3g1p2c1w3e1r2c1u2e1u2e1s1c1v2c1r1d1q2e1t2g1f2c1t2c1r2c1u2f1r2e1r1d1u2c1u2e102e1u3g1j2c1w2d1f2c1u1e1t2e1t2e1u2c1t3e1s2e1u2e1h2c1w2c102c1r1g1k2e1s2d1x2c1u1c1x2e1t3g1b2c1u2c1i2c1t2e1t2e1u2e182c1t3d1d2e1t3g1y2c1w2e1y2c1t2g1j2e1t1e102c1u2c1w2e1t3g1e2c1u2c1y2c1s2e1i2e1t2c1u2c1t1c1t2e1r2e1i2c1w2e1w2c1s1f162e1t2e1q2c1t2c1s2e1t2e1v2c1u2e162c1t2g1f2e1s3c1f2c1u2e102e1t1g1q2c1v2c1z2c1r2e1r2e1t1e1w2c1t2e172e1t2e1t2c1w2e1w2c1t2g1j2e1u2c1y2c1t2c1w2e1u2e1t2c1w2d1r2c1s1e1y2e1u2d172c1t2c1h2e1t2g1g2c1w2e1x2c1u2g1x2e1t3e1l2c1s2e1o2e1t2g1t2c1v3c1v2c1t1e1w2e1s2c122c1s2c1y2e1s1g1y2c1u3c1y2c1t2e1y2e1t2c1i2c1s1e1z2e1s3e1r2c1v2c1i2c1s1g1t2e1u2e1t2c1s2e1o2e1t1e1j2c1v3e1s2c1u1e1i2e1s1c1x2c1t2c1x2e1t2e1t2c1u3e1j2c1s1f1s2e1t1d162c1s1c1o2e1s1g1z2c1w2c1m2c1t2g1z2e1s2c1w2c1u2d152e1u3g1o2c1v3c1z2c1u3g1q2e1s1c1t2c1s2e1z2e1s1e142c1w2c1f2c1s2e1y2e1s2c1b2c1u3d182e1u1g1t2c1w2e1s2c1u2e1r2e1s2c1q2c1t3c172e1s3g1r2c1v2c162c1s2g1r2e1t2e1r2c1t2d172e1t3g1f2c1w2e1f2c1t2f1t2e1t2d1u2c1s3e1f2e1s1e1t2c1w2e1x2c1t1g1c2e1s1e122c1s1e1h2e1s3e1j2c1w1e152c1u2e1s2e1t2e1x2c1s2c1a2e1s3g1y2c1t1d1i2c1u1g162e1s2e102c1t3e1t2e1s2f1r2c1w1e1s2c1s2e172e1t1c1h2c1s2e1b2e1u1g1j2c1v1d1u2c1u3f162e1t2e1u2c1t2e1o2e1r2f1d2c1v2e1e2c1t3e1r2e1u2d1c2c1u2d1c2e1t2g1b2c1w1e1r2c1u1g1f2e1s2c1f2c1t2c102e1u3g1d2c1w2d1u2c1t3f1t2e1s2e112c1t1c1f2e1t2f1h2c1w1e1h2c1s2g1g2e1t1e1y2c1s3d1t2e1t2g1r2c1v3e1r2c1r2g1r2e1u1e1f2c1t2e1y2e1s3e1q2c1u2e1l2c1s2e1b2e1t2c1f2c1s2e1g2e1t3f1y2c1t1c1d2c1s1e1f2e1s2d1u2c1u2c1r2e1s2g1w2c1u1d1x2c1t2g1r2e1t3e1t2c1t2d1i2e1t1e1y2c1v1e1q2c1t2g1r2e1s1e1t2c1r3e1i2e1t1g1r2c1u2c1r2c1t3g1t2e1s1c1v2c1s2d1z2e1t1e1d2c1v1c1i2c1r1e1t2e1t3e1l2c1r2e1x2e1t1g1v2c1w3e1f2c1u2e152e1s3d1x2c1u2c1k2e1u2g1y2c1w3d1f2c1s2g1j2e1s2e112c1s2e1s2e1u3f1b2c1v2c1d2c1s3f1r2e1u3d1f2c1t3d172e1s3f1d2c1u3d1l2c1u3g1b2e1t3e192c1s2d1c2e1s1f1d2c1w3d1b2c1u1g1t2e1s3d1e2c1u3d1b2e1t2g152c1u1c1t2c1s3f1b2e1u3d1f2c1t3d172e1s1f1d2c1u3d192c1u3g1b2e1r3d1m3c1u2d1h2e1t1e1s2c1v2c142c1u1e1j2e1u3d102c1t2c142e1r1g1t2c1v2c1e2c1r2f1q2e1s2d1h2c1t2c1u2e1u2e1d2c1w2c1j2c1u2e1y2e1s1e1r2c1u2e172e1s3g1s2c1u1c1s2c1t2g1z2e1u3e1k2c1s2e152e1s1g1z2c1w1c102c1u2e1t2e1u2d102c1u3c1u2e1s3g1v2c1u2e1g2c1u3f1y2e1t2c112c1s1e1k2e1s2e162c1v3c1j2c1t3g152e1r2e1l2c1t2e1i2e1t2g172c1v3e1t2c1t1e1y2e1u2e122c1s1e1t2e1t2g1y2c1v3e1s2c1u2g1x2e1t1c112c1t3c1o2e1s1g172c1u2e1f2c1t2e1x2e1t3c1b2c1t2e1h2e1t2g102c1v2c1w2c1u1e1z2e1t1c1v2c1u1e1s2e1u2g1z2c1t1e1y2c1s2f1w2e1t2c102c1t3c1o2e1u2g1z2c1v1c1x2c1t2g1j2e1t1c102c1t2c142e1s3e1x2c1v1c1j2c1u2e1d2e1u3c1u2c1u1e1h2e1s2g1z2c1u3c1r2c1t2e1f2e1t3c1u2c1u1e1v2e1s1e1s2c1w2c1u2c1s3e1y2e1t1c1z2c1s2c1z2e1u1e102c1v2c1i2c1t2g1t2e1s2e1u2c1u2e1y2e1t1e1u2c1u2c1r2c1u3f102e1u2e1q2c1u1d102e1t2g1x2c1u3e1h2c1s1e1j2e1u1c1k2c1s2d1s2e1u2g1v2c1u3c1q2c1u3g1y2e1u2c1l2c1t2d1v2e1s3g1s2c1u2e1t2c1u2f1s2e1u2e1l2c1u1d1j2e1s2f102c1u3c1i2c1t2e162e1u2e1v2c1t2d1r2e1r3e1k2c1v2e1f2c1s3e1j2e1u1c1k2c1t3c1e2e1t2e142c1v2d1j2c1u3f142e1u2e1h2c1r2c102e1s3g1j2c1t1e1t2c1u2f1d2e1s2e1u2c1r1c1z2e1u1g1g2c1v2e1f2c1t2g1c2e1r2c1j2c1u2e1s2e1u2e172c1t2d142c1r2g1k2e1s2e1d2c1u2d1v2e1u1e1s2c1v3c1u2c1s3f1d2e1s2d192c1t3e1d2e1s2g1f2c1u3c1d2c1s2e1j2e1u1e1s2c1u1e102e1t2g1b2c1w2c1f2c1s2g1t2e1u1e1t2c1u1d1t2e1r3g1b2c1w2d1y2c1t3g1q2e1t3d1h2c1s2e1t2e1s2g1c2c1t1e1b2c1t1e1t2e1u2d1a2c1u3d1c2e1t3e1o2c1u2e1r2c1t1e1r2e1u2e122c1s3d192e1u1g1j2c1u3e152c1t1f1k2e1t3e1t2c1s3e1t2e1s1g1z2c1v1d1f2c1t1e1d2e1t2e1c2c1u1d1f2e1u2f1k2c1t3d1r2c1r1f1s2e1s2e1q2c1s2c1d2e1r2g1c2c1v2c1u2c1s1f1q2e1u1e102c1r1e1r2e1t2g1t2c1w1e1g2c1s2f1r2e1r3e1g2c1t2e1c2e1u1g1k2c1w1d1w2c1s3g142e1u2c1f2c1u1e1j2e1t2e1g2c1w1c1t2c1t2e1e2e1t1e1r2c1u1c1v2e1u1g1t2c1t3e1s2c1u1g1c2e1r3d1x2c1s3d1v2e1t2e1r2c1v2c1q2c1t3e1r2e1u1c1t2c1u2d1c2e1s1e1c2c1w1e1y2c1r3g1d2e1r3c1t2c1r2c1z2e1s2f1v2c1t1e1r2c1s3f1i2e1s3d1f2c1u2d1d2e1t3f172c1u2d1d2c1s3f172e1u3d192c1t3d172e1s3f1c2c1u3d1r2c1u3g1b2e1t3d172c1s2d1c2e1u2e1w2c1v1d152c1s3f1d2e1s3d1c2c1u1d1b2e1t3f172c1u3d1r2c1s1f1r2e1u3d1d2c1t3d172e1s1f1c2c1w3d1f2c1r2f163e1t2d14121t2d1g1g1g3g1s1e1j2d1b1c1j1f191f1d1d1d1c1j1c1u1g1o3e1q3d1e2c1s2c1i2e1s3e1x2c1u2c1v2c1u1f1r2e1r1c1g2c1s1d1x2e1t2e1k2c1u1e1v2c1t2e152e1s2c1y2c1s3c1e2e1u2e1p2c1s1d162c1s2e1u2e1q2e1k2c1t3c1z2e1u2g1w2c1t2c1y2c1s3f1k2e1q2c182c1s3c1r2e1u2e1o2c1t1c1g2c1u2e142e1s2c1z2c1s2c1b2e1u2g1c2c1t3e1j2c1s2f182e1q3c1f2c1s1d192e1s3g1c2c1s3d182c1t3e192e1q3d172c1s3c1h2e1s2f162c1u3c1d2c1s1f192e1q3c1h2c1s3d182e1u3f172c1s3d192c1s3e1z2e1q2d192c1s3d1b2e1s1f172c1s3e1c2c1s3f172e1r3e1b2c1s2d182e1s3f162c1s2d172c1t3e1j2e1q2d182c1s3d192e1s3f152c1s3d1t2c1s2e1u2e1d1c1f3b143e1f2f181g1d2e1f1c1i1e1p3g1y1g1d2c1f1e1c1e1h3e1b1f1i1d183d1d3c1a1g1g3g121d1h1e121e1w2f1j3f163c121b1f1d1e3g1p1e193c1d3e1j3d133g1o1e1g1d1h1d1g2c181e1c1f141e1s1d1j3c181e181e161c181c1s1e1j3e1a1e181e123b1f1e1c1e1i2f1d3d1f1c121e143g1d3e1d3d1e3e1j1e1c2e192f121d1f1c1f3c1c1f1i3f181e1g1d1f1e1k3g1h2e1q3d1j3e152d1e3g142f1c2d1c1c1f2c1y2e1u1g1f2c1t2e1j2c1r1e1y2e1s2d1t2c1t2e172e1u3g1r2c1r2e1d2c1s3g1r2e1s2e102c1u2e1o2e1u1e1q2c1s3d1t2c1u2e1s2e1r1c1w2c1t3c1w2e1t2e1v2c1t2c1f2c1r1g1t2e1s1e1y2c1s2e1f2e1t3e1d2c1t1e1x2c1r2e1w2e1r2c1t2c1t2e102e1t1g1y2c1u2e102c1s1f1w2e1r2d1l2c1s2d142e1s3f132c1s2e152c1s1g1d2e1q3e1t2c1u2e1o2e1s2g1q2c1t2c1f2c1t3e1b2e1q2d1y2c1u3c1z2e1s2g1j2c1t2c1t2c1t2g1y2e1q2c1l2c1u1c1i2e1s2e1y2c1s2e1u2c1u2f1p2e1r2c1h2c1s1c1o2e1u3f1b2c1t2e1c2c1t1g1w2e1q1e1d2c1t2e1y2e1s3e1t2c1s2c1m2c1t2g1f2e1r2d1s2c1t1c1i2e1s1g1w2c1s1e1j2c1u2g152e1s1c1s2c1t2c1j2e1u2g1v2c1t2c1t2c1u3e1w2e1r2e102c1s2c102e1r1g1t2c1u2e1g2c1t3e1q2e1s1e1h2c1t2e1t2e1t2f1t2c1t3c1t2c1s1e1y2e1r1e1l2c1s2e1v2e1s1e1x2c1t2e152c1t3g1j2e1r1e1h2c1u2c152e1t2g1j2c1t3d102c1t3e1w2e1s1d102c1u2c102e1t2g1h2c1s2c102c1t2g1y2e1q3c1s2c1t2c1s2e1u3e182c1u2e1u2c1u2g182e1s2c1c2c1u2e1j2e1u2g162c1s1c1d2c1t2g1t2e1s1c1u2c1s2c162e1u2e1q2c1t2d1s2c1t2e1j2e1s1c142c1u1c1j2e1t1g1r2c1t1c1q2c1s2g1c2e1s3c102c1t2c1k2e1r2f1g2c1t2c1q2c1s1e1u2e1s1e1v2c1u2e1t2e1r2e1j2c1u2e1r2c1u1g1y2e1q3e1w2c1u1d1t2e1s2g1y2c1s1e1t2c1t2e1d2e1p1c1t2c1t2d1v2e1u3e1s2c1t2d1r2c1u1g1r2e1r1e1z2c1s2c102e1u2e162c1u2e1q2c1t3e162e1q3d102c1s3d1f2e1t3g1u2c1s2c162c1s1f162e1s2e1a2c1u3d1s2e1t1g1c2c1r2e1a2c1s1f1v2e1r3d1s2c1s3e1r2e1t3e1r2c1r2e1y2c1r2g1j2e1r2c1s2c1t3e1s2e1u1g1f2c1s2c1m2c1s1g1j2e1s1c182c1t3d1t2e1t3g1d2c1r1e142c1t2g142e1r3d1z2c1t1e1x2e1t1g182c1t3c1x2c1t2e1q2e1q2e1d2c1s2e1a2e1t1e152c1t1e1j2c1t2f1b2e1q2e1d2c1s1d102e1t1g122c1r2e1r2c1u2g1t2e1r3d1h2c1r2e1c2e1s2f1r2c1s1d1v2c1t2e152e1s1e102c1u2e1t2e1t1g1d2c1r2e1u2c1r2g1f2e1p1e1t2c1s1d1s2e1r1g1y2c1t2c1s2c1t2g1g2e1r2c1z2c1r2c1z2e1t1g1h2c1s2d1x2c1t3e1d2e1s1e1k2c1s2c1w2e1u1g1x2c1t2e1r2c1u2g1u2e1q1e1t2c1t2e1a2e1u2g1q2c1s3c1m2c1u3e1i2e1r2e1s2c1u2c1t2e1s1g1y2c1s3c182c1t2g1r2e1r1d1t2c1t2e1t2e1t2g152c1u1e1r2c1t2e1v2e1s1c192c1u1c1u2e1s3f1d2c1s1d1l2c1u3g1b2e1r3d172c1s3d1c2e1s3f1a2c1u3e182c1t3g152e1q3d1f2c1s3d1d2e1u2g1w2c1s2c1d2c1s3f1j2e1s3d1d2c1t3d172e1r2f1d2c1s3e1d2c1t3g1c2e1r3d172c1s2d1c2e1s3f1a2c1u3e1a2c1f2e1t1g1q2c1u2e1j2c1u1e1p2e1r2e1y2c1u1e1s2e1t1e1u2c1t3e1r2c1u3e1u2e1r2e1v2c1u2c102e1u2g1w2c1t2c1d2c1u2g1x2e1s3e162c1t2d1j2e1s3e1d2c1s3d1c2c1u3e1p2e1s1e1t2c1r1e152e1u3e1i2c1u3d1c2c1t1e1t2e1r2e1l2c1t2c1j2e1t2g1g2c1t2e1x2c1t3e1x2e1q2e1r2c1t2c182e1s2g1d2c1t2c1z2c1s2e1j2e1r3d162c1u1e1z2e1u1g1b2c1u1c1q2c1u2g1f2e1q2e1f2c1s2d1s2e1s2e1d2c1u2e1t2c1t2e1c2e1r2c1x2c1u3e1w2e1u1e1d2c1u3c1v2c1s1e1y2e1q2c1f2c1u2d1w2e1t1e1u2c1s2c1t2c1u2g1j2e1r2e182c1s2e1o2e1t3e1d2c1u2c1u2c1u2f1p2e1q1c1l2c1u2c1o2e1u1e1d2c1u2c1v2c1t2g1y2e1r2d1s2c1t2c1o2e1t3e1u2c1s2e1f2c1t3e1s2e1r2c1m2c1t2e1u2e1t2g1p2c1s1e1y2c1s1e1j2e1s1e102c1u2e1q2e1t2e1f2c1s2c1f2c1t2f152e1r2c1l2c1t1e1v2e1s2e1r2c1s2e1t2c1t2g1q2e1r1c1l2c1s2c102e1s2g1r2c1u1c1l2c1u1f1g2e1r1e1z2c1t2c102e1s1e1o2c1t2d1d2c1u2e1p2e1r2c152c1u2c1o2e1s1e152c1u3c142c1u3e1x2e1s3c102c1s1e1u2e1u2e1x2c1s1c1u2c1s2e1h2e1s3c102c1u2d1w2e1s2g1w2c1s1c1m2c1u2e1i2e1s1c1s2c1u2d1z2e1u2e1b2c1s3c1h2c1u2g182e1q3c1u2c1t1e1s2e1t2g1p2c1u2d102c1u2f1j2e1s2c1u2c1u1c1u2e1s2g1p2c1u2c1y2c1t1e1x2e1r3d182c1t2c102e1t1g1d2c1t3e142c1t3f1i2e1q1d1t2c1r2d1h2e1t1f1q2c1r2c1c2c1s1e1x2e1s1e1h2c1t2c1x2e1u1g1v2c1s2e1y2c1u1g1d2e1q2d182c1t1c192e1s3g1a2c1u1d172c1s1e162e1r2e1u2c1t3d1u2e1r2e1h2c1r2e1r2c1u2g152e1s1e1s2c1r2c1u2e1r3g1c2c1s3d1r2c1t2g1r2e1r1c1h2c1u3e1f2e1u1g1x2c1t2e1d2c1t3f1f2e1s3c1z2c1r2d1f2e1u2g1h2c1s1e1r2c1t2g1t2e1s2e1d2c1u2c162e1s3g1a2c1t3c1j2c1t1f1c2e1s2c1w2c1s3c162e1s2e1c2c1r1e1d2c1u1g1h2e1q3e172c1s2e1f2e1t2g1b2c1u2d1t2c1t1g1u2e1s2e1q2c1t2c1t2e1t1e1s2c1u3c1y2c1u2g1f2e1q1d152c1t3e1s2e1r2f1k2c1r2c1r2c1t3g1r2e1r2e1r2c1t1e162e1s3g1p2c1t2d1q2c1u1g1j2e1p3e1r2c1s2c1t2e1s1g1r2c1t1d142c1u1e1f2e1q1c1z2c1u2d142e1t2e1p2c1s1e1j2c1s2g1y2e1r3c1z2c1u2e1b2e1s2f1q2c1s2e102c1u2g1t2e1r1c1m2c1t2c1z2e1t1e1w2c1t3c1v2c1t3g1f2e1r2c1s2c1t2e1d2e1u3g1h2c1u1e102c1u2g1b2e1q1c1v2c1t3d172e1s2f162c1u3e1b2c1r3g152e1q3d1f2c1s3d1t2e1u3f192c1t1d152c1s2f1d2e1q3d1t2c1u3d1d2e1t3g132c1u2e1v2c1u3g1b2e1r3d172c1s2d1c2e1s2g1p2c1u3e1b2c1t3f1b2e1q3d1f2c1s3d1q2e1u3f192c1t1e152c1s3e162e1r3c142c1u2d1y2e1u2g1w2c1u2e1f2c1u3f1s2e1s2c1m2c1s1e1b2e1s2g1y2c1r3c1m2c1u3e1w2e1r2e162c1t2c1p2e1t2f1r2c1u2e1r2c1u1f1r2e1q2c1x2c1s1e1s2e1u2e1j2c1t2e1x2c1s1g1s2e1q1c1j2c1u1c1o2e1u3e1d2c1u3d1w2c1u3f1u2e1s2c152c1u1c1j2e1t1g1v2c1s3d1r2c1t2e1f2e1q2e1m2c1u2e1t2e1u2e1j2c1s1d1t2c1t1g1w2e1s2e1s2c1t1c1s2e1t2f1j2c1u2e1v2c1t1g1s2e1p1e1t2c1s2e1b2e1t1g1b2c1t2c1a2c1u2g1q2e1q2e1j2c1u1e1s2e1s1e1i2c1s2e1m2c1t2g102e1q1d1t2c1s2c1s2e1u2f1f2c1t2e1f2c1u2f1f2e1q1e1a2c1t1c102e1s1g1q2c1s3e1z2c1r2g1u2e1q2e1d2c1s2e1o2e1s2e1w2c1t2d1y2c1s2g152e1r2d102c1s3e1r2e1t2e1y2c1t2e1w2c1u2g1t2e1q1e1f2c1t1c102e1t2e1y2c1t2e1r2c1t2f1p2e1s2e1r2c1r2e1o2e1u3g1f2c1t2d1t2c1u2g1g2e1r2d142c1u2c1t2e1u2g1g2c1u2e1l2c1t1f142e1q2e102c1u2c1r2e1u2e1w2c1t3e1t2c1t1e1v2e1s3d1s2c1s1e1h2e1u1e132c1u2e1w2c1s2e1t2e1r3c1u2c1u2e152e1s2e1t2c1u2c1u2c1u2g1v2e1s3c1m2c1s2c152e1u1e1q2c1t3e1j2c1u1g1d2e1s3e1t2c1t3d1x2e1u2g1s2c1u3c1t2c1u2e162e1s3d1f2c1t2d1u2e1u1g152c1s2c1y2c1s2e1o2e1r2e1y2c1t2c1k2e1u3f1j2c1t3d1q2c1t1g1y2e1q2e1z2c1r1c102e1u1g1a2c1t3e1v2c1t1e1b2e1p3c1r2c1s1c1s2e1u1g1s2c1r2c1t2c1u2g1q2e1s2e1t2c1t2e1i2e1t3e1r2c1t2e1x2c1t2e1r2e1p3e1r2c1u2e1t2e1r2g162c1t3e1y2c1s3f1d2e1r2e1j2c1u1e1t2e1s2g1f2c1r2d1y2c1s1g1r2e1q2c1v2c1t1d1y2e1t3g1d2c1t1e1s2c1s1g1d2e1r3d1f2c1t1e1s2e1u3e1u2c1u2c1y2c1t3f1c2e1s1e1t2c1t2e1p2e1r1e172c1r2e182c1t3f1f2e1s3c1x2c1t2e1w2e1r2g1s2c1u2e182c1t1e1r2e1q3e162c1s2c1d2e1t2g1r2c1r3c182c1t2f1q2e1q1e1r2c1u1c1z2e1s3g1r2c1s3c1r2c1s1g162e1s3c1d2c1u3d1t2e1t3f1g2c1t3c1e2c1t1e1u2e1s2c1y2c1t2e172e1u2g1x2c1s3e1h2c1u1g1f2e1s1e1j2c1s2e1f2e1s1g1r2c1u3c1w2c1s1e1g2e1r1c1s2c1r1c1r2e1r3g1f2c1t2e1g2c1r2g1p2e1p2e1x2c1t2d1i2e1u2e1x2c1s2c1f2c1r1e1e2e1p2d1d2c1r1e102e1s1e142c1s2e1e2c1t3e1f2e1r3e1f2c1t2e1t2e1t2e1u2c1u2e1s2c1t2g1t2e1r3c1v2c1u2d102e1s2g1s2c1r1e1t2c1s2g182e1s2e1i2c1u3c1q2e1t1g1a2c1t3e1z2c1s3f1b2e1s3d152c1s3d1c2e1s3f152c1u3d1b2c1t3g152e1q3d1d2c1s3d1c2e1u3f1b2c1t1e152c1s3f1d2e1q3d1q2c1u2e1s2e1s3f1d2c1s3d1e2c1s3g1b2e1p3e152c1s3d1c2e1s3f1r2c1u3d172c1t3f152e1q3d1d2c1s3d1t2e1s3e1x3c1w3d1x2d1s3e172l1k1d1i1r2d1h1b2u2c1q14','878e4o3o1t3s221c271s3b3v211b3o01101o252z3q193x3c1i1b3v111i1a21173u3w1z311411133v3b2o1930241u3s2v302n113u263c133x392q1720361z211m233e1g2e29361y2v3u1z101o360y1z102b213x3z29381w2x3s1z121m2e162t213n113038251q27332c162z2x232c183s291z1z3a231s25333e1421361w1c3s291w2s29162u271s3u271q3c1z3w26111z3u281z3w243s3o3o011z2z3b3w141m252e2o111x21141z121m253e3o2o35203q1z213z29233v2236143q0z1e1c2t2e292q122s11101f3z1o113z3a23353w253w253r1536231z1z3a37113z141j1z1e1m2c182t212p2c2b213x3z2o1i27333c293y121o121f1e1c2f1c1c1j1c142d1k1e1c2g1k1c1c3e1a1e151g1k1e1i1d1h2c1u1d1r2e1t2g1r2c1u3c1y2c1s2g1e2e1s1c112c1u3c1r2e1u2e122c1u2e1r2c1u1e1k2e1s3c1j2c1w3d1z2e1s3e1x2c1v1d1w2c1s1f1u2e1q2c1w2c1v3e1v2e1u2e1t2c1w3e1b2c1u1f1y2e1r2e1s2c1u2d1y2e1t2g1j2c1v1c1w2c1t2e1s2e1q2c102c1u3c192e1u2g1y2c1u3c192c1t3g1t2e1q2d192c1u3d1x2e1s3f152c1u3d1d2c1s2f192e1q3d1c2c1u1d192e1t3g142c1u3d1a2c1s3f1v2e1q2d192c1v3d1c2e1s3f162c1u3d162c1s3f192e1s3d1c2c1u3d182e1s3f1f2c1u1d1b2c1s3f1d2e1q3d192c1u3d1t2e1s2f172c1u3d182c1s3f172e1r3c1k2c1u2d172e1s3g172c1u3d192c1u2e1u2e1q2c1g1c1h1c1p1g1c1e1i2d1f3c1d2c141e121g123d1u3d1e1e1u1f1w2f1h2d1a1e141b1c3g1e3g1k1c1d3c1e3d1j3g131g1j1c1k1e1j1d1g2e181e1d2d181e1u1d1j3e1c1e1e3e161d1j3e193g1c3f1q1e1r3c1e1c1c3f1c3f1d3d1e3d1e3d1c1f1b2f1c3d1g3d1d2e1s3e1f1e121e1u2e1h3d1r3d1c3f1d1c1e1c1a1c1c2g1b2e1a1e1d3d1i2c1c2e1c1g1i1c1f3c1i1d1g2e1j1f1r2c1u1e1l3c1d3g181e1b3e1k1e1h1c1g2f1r1g1x2c1w3e102c1u3f1j2e1p2c1t2c1w2d1j2e1t2e1y2c1v3c102c1s3g1r2e1s2c122c1w2c1u2e1u1g1j2c1u2e1t2c1u3f1y2e1r2c1q2c1v3c1y2e1s2e1q2c1w3e1f2c1t3g1t2e1s1e1t2c1v1c1o2e1t2e1j2c1v2e1l2c1t2e1j2e1s2e122c1w2c1h2e1u3e1q2c1u3c1w2c1u1e1y2e1s2e122c1w2e1h2e1s1e1h2c1w2c1t2c1s3g1j2e1q3c192c1v1c1s2e1t3e1p2c1v2c1k2c1t1e1j2e1s2c192c1w1e1s2e1t2e1j2c1w2e182c1u2g1s2e1r3c112c1w3e1r2e1u2e1p2c1u2e1w2c1u3f1t2e1s2e1w2c1w1e1b2e1s3e1b2c1w3c182c1u2g1f2e1r2d1t2c1w2e102e1t1e1w2c1v1c1i2c1u3g1o2e1r2c1h2c1w2e1h2e1u2e1p2c1v3c1z2c1t1e1t2e1r2e102c1w2d1h2e1t2e1g2c1u3e1h2c1t1g1t2e1q1c192c1v2e172e1t2f1x2c1u2c102c1u2g1z2e1r1c1u2c1w1c1o2e1s2e1i2c1u2e1l2c1t2e1j2e1q1e1u2c1w3d1d2e1r2g1b2c1w3e1s2c1t2g142e1s2d172c1w1e1o2e1t2g162c1w3d1l2c1t2g1z2e1q1e112c1v3e1u2e1u2g1h2c1w2c1v2c1s2e1z2e1q2e1c2c1w2e1s2e1s2e1x2c1u3e1k2c1t3e102e1q2c1q2c1w3e1t2e1u2e1y2c1v1c1h2c1s3g1u2e1r1e1q2c1v2e1s2e1u2g1s2c1u2c1k2c1s2g1q2e1s3c122c1v3c102e1u2g1w2c1t1c1s2c1s3g1j2e1r3d1u2c1v1e1h2e1t2e1p2c1u2c162c1t3g1j2e1s3e192c1v2c1u2e1u2g1r2c1t2d1z2c1t3e1f2e1s1c122c1u3e1s2e1t2g1x2c1w1c1i2c1s2e1t2e1q2c192c1u3e1v2e1u2e142c1w1c1f2c1s1e1x2e1r2c1j2c1t3e1t2e1t2f1y2c1v3e1h2c1u2f1s2e1r1e122c1u3d1f2e1s1f1r2c1w3d1g2c1t2e1p2e1r2c1u2c1u2d1s2e1t1g1f2c1v2e1d2c1t1e1a2e1q1d1v2c1v1c1z2e1u1g1j2c1v1e1d2c1r2g1q2e1s3e1m2c1t1e1a2e1t3e1c2c1u1e1d2c1r2g1d2e1s2e1q2c1w2e1x2e1u2g1b2c1u1e1j2c1s2g1c2e1p2d1t2c1v2e172e1t3g1d2c1u1e1h2c1t1e1d2e1r2e1u2c1t2c1v2e1t3e1j2c1t3e1t2c1u3f1t2e1q2e112c1t3c1t2e1r2g1b2c1v2e1q2c1t1g1c2e1p1c1u2c1u3c1u2e1t2e1r2c1v1c1w2c1r3g1c2e1q3e1m2c1v2e1s2e1t2e1r2c1t1e1f2c1u1g102e1s2e1e2c1u1e1o2e1t1g1f2c1w2c1g2c1t2g1p2e1p1c1i2c1w2c1h2e1u2f1p2c1u2e1i2c1s2g1h2e1q2d1t2c1t2c1r2e1u2g1h2c1w2e1t2c1r3g1j2e1s1e1h2c1u1e1c2e1s1g1h2c1v2c1k2c1r1g1y2e1r2e1d2c1w1e1b2e1t2e152c1v3e172c1s2g1s2e1r2e1q2c1w2e1o2e1u3g1q2c1u3e1t2c1t1e1x2e1s2c1y2c1u3d1b2e1u3g152c1u1e1f2c1s2f162e1s3e1b2c1v3e172e1s2f1d2c1u1d1f2c1u3g1b2e1r3d192c1u3d1c2e1s3f162c1v2d1u2c1s3g1d2e1q3d1c2c1w2d1d2e1t2f142c1u3e1f2c1s3f1b2e1s3e1b2c1v3e172e1s3f1d2c1u3d1a2c1u3e1k3e1k2c1u2c122c1u2f1w2e1s2c1t2c1u3e142e1u2e1r2c1w2c1l2c1r2e142e1r2c1w2c1v1c1y2e1s1g1p2c1w2e1h2c1t2g1r2e1r1c1u2c1w2d102e1r2g1c2c1v2c182c1u2e1b2e1s2e162c1w2d1h2e1t3e1k2c1u1c1d2c1u2g1j2e1q2d162c1v3e1y2e1u2e1q2c1w3e1x2c1s1e1x2e1r2c122c1w1e102e1s1e1q2c1v3e1w2c1s3e142e1q1e1f2c1u3e1p2e1t2e1r2c1u2e172c1t1f1t2e1r1c1v2c1u2c1v2e1s2g1o2c1t3c1y2c1u2g1y2e1r3e1j2c1u1e1y2e1u1g1p2c1v3c1x2c1s1f162e1r3c122c1w3c1s2e1u2g1w2c1u1e1y2c1s1e1y2e1s2d1d2c1u3c1y2e1t3g142c1w2e1j2c1u2g1w2e1s2e1f2c1w2d102e1u1g1p2c1v2e182c1s2g1c2e1s2c1m2c1v1c1s2e1u2g1o2c1w3e182c1t3e1j2e1r2c172c1u2e1s2e1s1g1o2c1u3e1i2c1u2g1s2e1s3e1m2c1v3c1s2e1u2f1c2c1w2d1w2c1u1e1i2e1q1e1z2c1w2e1y2e1s1g1p2c1u1e1z2c1u1e1i2e1r1e102c1v3d102e1u2g1o2c1w3e1y2c1u2g1t2e1s2e122c1u2c1h2e1t3g1q2c1w2d112c1s2g1t2e1r2c1x2c1v1c142e1t2g1b2c1v2e1x2c1u3e1k2e1r1e1z2c1w2d1c2e1t3g1q2c1w1c1k2c1s2g1v2e1q1c1u2c1w1e1o2e1t3g1r2c1v2d1h2c1u1e1s2e1r2d102c1w2d1p2e1u2g1q2c1t3c1t2c1t2e1r2e1q2e1q2c1v2d1h2e1t2e1d2c1u3d122c1s2f162e1q1c1w2c1u2c1x2e1t2g1u2c1u2e1t2c1t2f1h2e1r1e192c1v1c1b2e1u2f1r2c1w1d1u2c1s3e1o2e1r2e1h2c1v2c1h2e1t2g1w2c1v3c1v2c1s2f1x2e1q2d1d2c1v1e1t2e1t1f1r2c1w1c1i2c1u2f1w2e1q2e1h2c1v1e1b2e1s3g1w2c1v2d1y2c1t2g1d2e1r3d1h2c1v2e1x2e1t1f1h2c1w3e1d2c1t1g1s2e1q3d112c1v2e1o2e1r3f1q2c1t2d1v2c1t2g1r2e1s2c102c1v2e1r2e1s1f1d2c1t2e1a2c1u2e1r2e1q3e122c1v2e1y2e1u1g1x2c1w2d1f2c1t3f1g2e1p2e1v2c1t1e1i2e1s2f1k2c1u1e1x2c1t2f1b2e1q2c182c1v3c1t2e1u3g1b2c1t1e1t2c1s2e1x2e1r1d1f2c1v2e1t2e1u3f1p2c1u1e1h2c1t1g1h2e1p2e1v2c1w2d1c2e1t3e1b2c1v1e1e2c1s2f1r2e1s1c1a2c1v2c1f2e1u1e1b2c1t2e1t2c1r3g1x2e1q1e112c1t1d1z2e1s2f1r2c1v2d1u2c1t1e1j2e1s3c1v2c1u1e1z2e1t1g1v2c1v3e112c1s1g142e1r1e112c1u2e1t2e1r3g1v2c1w2e1z2c1u2g1p2e1s2c112c1u3c1i2e1s2e142c1w2e1v2c1r1f1r2e1r2d1u2c1t1c1z2e1r2e1o2c1w3e1l2c1u1g1v2e1s2c1m2c1v2c1w2e1r3g132c1w3c172c1u2e1c2e1p2c1e2c1v2c1b2e1t2g1r2c1u1d1b2c1u3g1b2e1r3d192c1u3d1c2e1s1f1a2c1w3e1d2c1t3g152e1q2d1e2c1u3d1c2e1u3f162c1v2c1l2c1s1e182e1s3d1c2c1v3d172e1s2f1b2c1v3d1a2c1u3g1b2e1p3d192c1u2d1c2e1s3f1a2c1w3e1d2c1t3g1a2e1d3d1l2c1v2d1y2e1u1e1q2c1u3e1r2c1u2g1r2e1s2c1h2c1w2c1d2e1s2e1x2c1u3e1d2c1u2f1y2e1q2e1u2c1u2e1b2e1t1e1w2c1w2d1u2c1u2g1j2e1q3e1i2c1v3c1z2e1r1f1t2c1w3e102c1t2e1p2e1r3e102c1v1c1y2e1u2f1w2c1w3e1v2c1u1f1d2e1r3c1l2c1v2e1i2e1u2e1q2c1u1c1w2c1u2e1i2e1p2e182c1t2d1i2e1t1g122c1u2c1z2c1u2e1a2e1r1e1z2c1u2e102e1u2g1y2c1w2e122c1s3g1u2e1r2e1z2c1u2d1s2e1u2g1j2c1v3c1l2c1u2g1r2e1s2e1z2c1w1e102e1s1g152c1v2e1f2c1u1g1y2e1r2e1e2c1v1c102e1s2e1y2c1v1c1d2c1t3f1v2e1s2e1v2c1w2e1u2e1t3e1q2c1u2c1h2c1u2g1t2e1r1e1z2c1u2e1s2e1u2f1b2c1w2e1s2c1t3e1h2e1r2d1l2c1w2e102e1u2e1f2c1v3c1h2c1u1e1t2e1r2c1l2c1w2c1z2e1t2f1e2c1w3e122c1t2g1y2e1s3e1h2c1w3c1g2e1u2e1h2c1t2e1k2c1s2g1t2e1p2c1z2c1t1e1h2e1t2g1q2c1w1c1v2c1u3e152e1q2e1i2c1w2e1s2e1u2e1x2c1w2e1l2c1u1e1j2e1r2e1x2c1w3c1r2e1u2e1r2c1u2e1m2c1u1g1y2e1r2c1w2c1v2e152e1s1e142c1u2e1t2c1u3g1v2e1s1d102c1v2e1v2e1s2g1q2c1v2c1u2c1s3e1z2e1q1d1x2c1v2e1w2e1s1g1r2c1v2e1t2c1t3g1s2e1s3d102c1u2d102e1u2g1w2c1u2e1a2c1t1g1j2e1s1e1s2c1v1d1s2e1s3g1y2c1u2d1z2c1u2e1s2e1p1c102c1v3c142e1r2e1b2c1v3d1l2c1s1g1d2e1p1e1d2c1v3c1c2e1t2g1f2c1v2c1b2c1t3g1r2e1s2e1j2c1v2e1t2e1r2e142c1w3c102c1t2g1d2e1q1c1z2c1w2c1h2e1s2e1u2c1u3e172c1s3f1d2e1q2d192c1t2d152e1t2g1x2c1u1e1d2c1t1f1q2e1s1e1t2c1t1d1t2e1t2g1a2c1u1e1a2c1u3g1r2e1q1e1t2c1u1d1x2e1u2g1q2c1v2d1h2c1r2g1s2e1q1c102c1w3c1f2e1t1e1q2c1v3e1u2c1t2f1r2e1q3e1t2c1w1e1d2e1t3g1o2c1v2e112c1s1g1y2e1s2e1z2c1v1d1f2e1r3f1d2c1t3c192c1t2g1u2e1s2d1h2c1u1e1t2e1s3g182c1v3c1z2c1t1f1x2e1r1e1s2c1u3d102e1t1f1b2c1w3e102c1r3e1d2e1r3e1e2c1u1d1z2e1s1g1t2c1w2e1x2c1r2g1p2e1r2d1r2c1w3c1t2e1s2f1f2c1u1e1f2c1t1g1d2e1r1c1i2c1v2c1c2e1u1g172c1v2e1t2c1s2g1f2e1q2e1h2c1v3e1h2e1t2f1u2c1w2d182c1u1e162e1p2e1h2c1w2e1h2e1u3g1x2c1u1e1h2c1r2g1a2e1p1e1x2c1w3c1e2e1u2g1t2c1w1e1j2c1t1f1q2e1s1e1h2c1w3e1k2e1u2g1d2c1v1e1d2c1t2g1b2e1q2d1c2c1u1c1c2e1t2g1q2c1u2c1w2c1t2g1d2e1q2c1w2c1v3d172e1s3f1r2c1u3d1c2c1u3g1c2e1r3e172c1u3d1c2e1s3f1b2c1w3d1a2c1t3g152e1q2d1f2c1u1c152e1u2g152c1u1d1f2c1s3f1a2e1s3e1d2c1v3e172e1s2f1d2c1u3d1b2c1u3g1c2e1r3e172c1u3d1c2e1s3f1y2c1a2c1t3c1s2e152e121k2u3e193d1q1e191e133e143c141e1i3f171g1e2e1m1c1x3e1i3g152e1t3e1x2c1u2c1v2e1u2g192c1w1d1y2c1t2g1q2e1s2d102c1t2e1o2e1t1e1u2c1v2c1s2c1s3e1y2e1s3c1b2c1u2e102e1s3e172c1v3e1z2c1s3e1w2e1u1c1q2c1t2c152e1s1e1o2c1u3e1f2c1u2e1e2e1s3e1i2c1u2d1x2e1t2g1j2c1w3e1t2c1u3g1z2e1s2c1e2c1u1c1x2e1u2e1h2c1u1d182c1u3f1a2e1s3d1b2c1s3d1a2e1s3f192c1w3d1l2c1s3f192e1t3c1f2c1s1d182e1u3g152c1u3d172c1t3f1d2e1s3d1a2c1u3e102e1s3f182c1u3d192c1s3f182e1s3c192c1s3d172e1s3e1d2c1u3d172c1s3g1o2e1s3d1b2c1u3d1c2e1s3f172c1u3d1j2c1s2f182e1u3d1d2c1s1d172e1s3f1b2c1u3c1z2c1s2e1k1e1h3c1e2d1e1c1h3d1c3f1c3c1d2c141c103d1d3g181d1b1d1f1e1g3f1g1e1c3d1e2d1k1c1o1e1i1f1h1d1e1c1h1c1b2f1k1f183d1e3c1a1d1g3f141g1h3c141d1w2d1j1f181e121b1f1e1e3d1p1e1b3e1c3d1l3e1e3d1e3g1e3f1e3c1e3d1f1d1k3g1k3f1w1d162c1e1c1b1e1d1g1h3d1r3c1y3e1c2g132e1a3d162d1f3c1g1e1i3e1c1c1u2d1m1c1c2g1b3f143e1f2e1i1d1k1g1h1e121d161c1a1d1r1g1b1e1e1c113c1u1c1o2e1r1g1z2c1v3c1j2c1u3e1w2e1t3e1x2c1t3d1u2e1s2f1x2c1u2e152c1s2f1s2e1s2e122c1u1e1p2e1r2f1s2c1v3d1y2c1t2g1z2e1s2d1j2c1r2e1q2e1r2e1t2c1u2e1w2c1u1e1g2e1u2d1q2c1s3e1o2e1t2g1y2c1w2e1y2c1t1g1x2e1t2c1t2c1u3e1o2e1s2f1y2c1w3c1a2c1t1f1z2e1t1d1u2c1r2e1t2e1t2e142c1v2e1j2c1u3e1s2e1u2d1d2c1t3c172e1t2g102c1v3c1y2c1u3e152e1u2e1u2c1s3c1h2e1s2e1z2c1w1d1q2c1t2e1a2e1u1c1u2c1s2c1u2e1s2e102c1u3e1j2c1u1e1y2e1t2c1q2c1t2e1o2e1u2g152c1u2d1t2c1s3e1b2e1s1e112c1u3c1s2e1u2g1o2c1u1c1d2c1u3e1y2e1u2d1m2c1s2c172e1u2g1y2c1t3c1z2c1u1f1f2e1t3c1m2c1s2e1s2e1t1e102c1w2e1l2c1u2e1t2e1t1c1m2c1s3e1r2e1u3e1s2c1u2e1s2c1r3g1j2e1t2c122c1u3c142e1t1g102c1w3c1q2c1u2f1u2e1t3c1v2c1u1e1t2e1r1g1o2c1w1c102c1t3e1s2e1s1e172c1r1c1z2e1t3e102c1w2c1z2c1t1e1u2e1t2d1t2c1s1e1v2e1s2g152c1v2c1v2c1u2e1u2e1s1d192c1u2c1o2e1t1f1x2c1u2e1u2c1t3e1w2e1s2c122c1t2e1j2e1s2g1v2c1u1d1t2c1s2e1p2e1s1c1z2c1s2c1s2e1u2e1w2c1v2c1j2c1u3e1j2e1t2e122c1t1d172e1t2g1v2c1w1d152c1s3g1o2e1t2c1w2c1u3e1r2e1u2g1t2c1v1c1j2c1u1f1t2e1u2e1v2c1r2c1u2e1t3g1t2c1u3e1j2c1u2e1b2e1s1c1v2c1s2e1c2e1r2f1k2c1w2d1q2c1t3e1g2e1s1d122c1u2d1k2e1t2g1t2c1v3c1z2c1t2g1t2e1s1e112c1s3c102e1u2g1h2c1w3c172c1s1e192e1s3e122c1s3e1t2e1t3g1b2c1u2d172c1t2g1o2e1t3e1t2c1t1e1t2e1t2g1r2c1u2c1d2c1t3f1s2e1t2c1w2c1t1c1h2e1u1f1s2c1w1c1e2c1t2g1t2e1r1c1b2c1t2e1y2e1s2e1s2c1w1e1d2c1u2g1j2e1r1e1f2c1t1e1s2e1s2e1d2c1u1c1j2c1u3e1v2e1u2d162c1r2e1f2e1s1g1t2c1u3c1r2c1t2g1d2e1r2e172c1t2e1w2e1s1g1d2c1v3c1j2c1t2f1c2e1r2d1h2c1u1e182e1t1g1s2c1u1e1z2c1r3e1r2e1s2c1f2c1r2e1c2e1u2g182c1w1c1w2c1s1g1p2e1u2e1q2c1t2e1y2e1s2e1z2c1w1d1d2c1r2g1p2e1r1c1j2c1s2e1s2e1r2f152c1v2e1k2c1s3f172e1t2c1k2c1t3e1h2e1t1e1s2c1v1e1x2c1s3g1u2e1t2d1t2c1u1e102e1t2e1u2c1v2c1e2c1u1g1r2e1s2e1v2c1s1e102e1t3g142c1w1d1s2c1u2g1q2e1t1e122c1u2c1a2e1u2g1c2c1u1e1q2c1s1e1h2e1s1c1y2c1s1d102e1s1g1o2c1w2c1v2c1t3f1h2e1u3d1d2c1s2d1c2e1s1e1c2c1v3d172c1t1g152e1s1d1e2c1s3d1t2e1u3f1d2c1v1d152c1s3f1d2e1s3d1e2c1u3d1a2e1t3e1a2c1u1d192c1u3g1b2e1r3e192c1s3c1c2e1s1f1t2c1w3d1f2c1t1g152e1s2d1e2c1s3d1c2e1u3f1d2c1u2e1u2c1s2e1u2e1p2c1v3e1f2c1u2f1z2e1t1c1j2c1u2e1q2e1r2g1u2c1v2e1x2c1s2g1u2e1r2c122c1u2c102e1u1e1r2c1v2d1j2c1r2e1j2e1u3e1z2c1r1c1t2e1u2e1r2c1v3c1d2c1t1e1x2e1u3c122c1u3c1z2e1t2f1j2c1v2e1z2c1s3f1c2e1t1e1r2c1s2c1u2e1u2e1f2c1v3c1s2c1s2f1g2e1u2e192c1s3e1s2e1t1f1t2c1v2d1w2c1s2f162e1u1c102c1u3d1y2e1s2e1t2c1w3e1j2c1t3e1x2e1s2c172c1u1c1x2e1t2g1s2c1v1e1x2c1t1e1i2e1u1c1x2c1t1c1w2e1t2f1f2c1w3c1v2c1t2g1w2e1t2c1q2c1s2c1o2e1t1g1y2c1w3e102c1t3e1y2e1s2c1h2c1s1c1z2e1u1e1y2c1u2c1f2c1u2g1y2e1u3c1w2c1t2c1w2e1s2e1x2c1v2c1q2c1u2g1y2e1u2c1q2c1t1c1w2e1s2e1j2c1v2c1y2c1u2g1s2e1u2e1q2c1u1c1w2e1t1e1w2c1w2c142c1u2e1p2e1r2e1q2c1t3c172e1u3g1f2c1v2c1z2c1s2e1t2e1s1e1j2c1s2c102e1s2g1r2c1t3e1y2c1s1e1f2e1t3c122c1u1e1t2e1s2e1f2c1v2e1u2c1u1e1t2e1t2c1m2c1s1c152e1u3g1f2c1v2e1j2c1s2g1z2e1u2e1y2c1u1e162e1s1e1f2c1u3c1g2c1s1e1j2e1s3c1h2c1s1c1s2e1t2e1v2c1u2c1u2c1t3e1u2e1t2c172c1s2e152e1u3e142c1u2d1j2c1u3e1t2e1s3d1l2c1s1c1s2e1s2e1v2c1w2e1x2c1s1f152e1u3c1m2c1t2e1u2e1u3e1t2c1v3c1u2c1s2f152e1t2e122c1s1e1t2e1u2g1o2c1u3e1y2c1u1g1s2e1s2d192c1t3e1w2e1r3e1r2c1v2e1x2c1u1g1c2e1t2d1l2c1t1c1v2e1u2g1b2c1v3e1k2c1u3e1f2e1u2d192c1r3e1h2e1r2g1u2c1v3d1y2c1s1g1y2e1s1c1a2c1t1e1h2e1t3g1f2c1t2e1x2c1s3g1c2e1u1d1r2c1r3d1d2e1s1f1t2c1w1c1d2c1t3g1q2e1t1d1f2c1t3e1d2e1s3g182c1v1d1y2c1s2g1s2e1u1e1t2c1t3e1r2e1t2g152c1v2e1s2c1s1g1y2e1u2c1t2c1s1d1h2e1u3g1f2c1u3e1y2c1u2g1r2e1u1e102c1u3c1t2e1s1f182c1v3d1z2c1s3g1j2e1s2d1v2c1t2d1f2e1r1e1v2c1u2d1d2c1r3g1d2e1r1e1v2c1s3d102e1s1g1p2c1w2e1d2c1t2g1r2e1t3e1e2c1s2d1t2e1s1g1z2c1u3e1s2c1u3f1z2e1t2e162c1s2d1j2e1t2g1g2c1v1e1s2c1t1e1r2e1u3c1v2c1s3e1g2e1u3e1r2c1t3d1d2c1s2e1x2e1s1e1e2c1r1e1c2e1u2g1t2c1u1c1f2c1u1g1b2e1t2c1e2c1s1e1u2e1t1g1d2c1w2d1d2c1s2g1s2e1s2d1h2c1t2d1f2e1t2g1k2c1v3e102c1s3f1t2e1u2c1m2c1u2e102e1u2g1z2c1u1c192c1u2g1u2e1u2c1y2c1u1d102e1t3e1v2c1u3c1t2c1u2e1r2e1u2e192c1s1e1x2e1u3f1b2c1v1e1e2c1s3g1d2e1s3d192c1u3d192e1t1f152c1u2d1d2c1s3f1q2e1u3d1d2c1t3d172e1s2e1f2c1v2d1b2c1t3f152e1s3d1v2c1s3d1c2e1u3f1b2c1v2e152c1r3g1d2e1s3d1d2c1u3d1d2e1t1g152c1u2d182c153e1y2e1s3e1l2c1u3e1o2e1t1e1i2c1u1c162c1u2e1u2e1t2e1g2c1u3c1x2e1s2g1r2c1v3c1y2c1u1f1r2e1t1c1u2c1s3c1z2e1s3g1s2c1v2d1j2c1u2g1x2e1u2c122c1u3e1f2e1t1e1s2c1v2c152c1u2e1v2e1s2c1h2c1t3e1d2e1u2g1o2c1w3c1t2c1s2e102e1t2e122c1r2e1o2e1t2e1c2c1w3e1y2c1s2e1h2e1u3e1q2c1u2c1a2e1s2e172c1w2e1t2c1t1e1r2e1s1e1z2c1u1e172e1t1e1i2c1t2e1w2c1s2g1f2e1u3d1w2c1t1e142e1t2g1s2c1w2e1j2c1t1f182e1r1d1l2c1u1e1y2e1u2g1z2c1w2e162c1t2f1t2e1u2d1v2c1u2c1o2e1t2e1b2c1v3d1j2c1s1g1j2e1u2e1s2c1s2e1f2e1s2g1y2c1w2e1u2c1t1f182e1s1e1v2c1t3c1j2e1s2g1o2c1v3c1j2c1u3e1y2e1u1c112c1t2c1k2e1s2g1v2c1w3d102c1u3e1e2e1t2c1v2c1t3e1b2e1u1g1s2c1u2e152c1s2g1j2e1u2e1j2c1s3c1o2e1s1e142c1v1c1j2c1t3g1z2e1s1e1l2c1s2e1o2e1s2g1o2c1v3d1x2c1t2g1y2e1u1c1l2c1s2c1s2e1s2e102c1v3e1q2c1r1g1j2e1s2c1w2c1r3c142e1u2g1j2c1w2e1d2c1t2e1s2e1u2c1r2c1t2e172e1t1e142c1w2e1v2c1u3f1s2e1s1e122c1t1c1v2e1u2e1x2c1v2c1t2c1s3g1j2e1s1d1u2c1t1d142e1s1e1o2c1u1e1q2c1t3f1s2e1t3e172c1t1c1t2e1t1f102c1u1c1k2c1t1e172e1u3c1z2c1u2d1t2e1s3f162c1v2c1w2c1s3g1u2e1r2c102c1t3e1h2e1t3g1t2c1w1e1r2c1s2e1e2e1u2e1g2c1s2e1t2e1s2e1q2c1v2e1q2c1u2e1r2e1t1e1t2c1u2c1o2e1t2f1y2c1u2d1r2c1u3f1x2e1s2c1i2c1u2e102e1u2e1d2c1u3d1y2c1s3g172e1u3c1r2c1t2e1a2e1s1f1s2c1t3c1d2c1t1e1f2e1t3d1u2c1t1e1v2e1s1e1w2c1v1c1f2c1t1g1d2e1u3c192c1u1d1o2e1r3g1c2c1w1e172c1s2g1r2e1t2e1t2c1r3c1f2e1t2e1d2c1v3e1s2c1s1e162e1u2d1d2c1s1c1t2e1u1f1h2c1u1c1s2c1t2e102e1s3e1f2c1s3d162e1u2g1d2c1t2e102c1r3f1c2e1t2c1f2c1s2e1h2e1s2e1j2c1w3e1u2c1s1g1j2e1t3e1y2c1t3c1c2e1t1f1b2c1u2d1r2c1s1g1z2e1s3d1z2c1s1d1r2e1t1e1d2c1v1e1g2c1r3g1f2e1s2c1s2c1s3d1g2e1r1e1v2c1v2d102c1s3g1q2e1t2e1i2c1u1e1i2e1r1f182c1w2e1u2c1u2g1i2e1s1e1u2c1r3e1i2e1t3g1t2c1t3d1g2c1u1g1h2e1s1e1m2c1u1e172e1u2f1g2c1v1e192c1u2g192e1u2e1y2c1u1d1y2e1u1g102c1t3e1d2c1r1e1r2e1t1c1h2c1u2c1f2e1r2e152c1t2c1c2c1u3e1v2e1u2d1x2c1t1d1k2e1r2e142c1v1d1a2c1t2g1t2e1s3d1f2c1s3d1t2e1u3f1d2c1v1d152c1s1g1d2e1s3d192c1u3d192e1t3f172c1u1d1d2c1s3f1o2e1s2c1w2c1s2d1c2e1s3f1d2c1w3d1c2c1t1f1b2e1s2d1f2c1s3d192e1u3f1b2c1v1d152c1s1f1d2e1s3d1d2c1u3e172e1r2e1r2c172d1r1c171m1q1g1c3e1c1c1i3c1p1g1j1f1i1c1d3c1g1d1g1f1g2e1f1e1b2c152c1u1e1o2e1r2c152c1s1c1o2e1s3g1d2c1u2c1e2c1s3g1g2e1s1d1x2c1t2e1j2e1u2g1r2c1u3e1z2c1s2e1c2e1s1c1x2c1u2c1h2e1s1e1s2c1s2c1w2c1t2e102e1s2c1z2c1t2d1u2e1s1e132c1t3e1y2c1u2e152e1r3e1u2c1u2c1k2e1u1e1x2c1u1c1x2c1s2f1w2e1r2c1t2c1s2d172e1t3e1x2c1s3d182c1s3e1b2e1q3d192c1u3e1d2e1s3f162c1s3d1d2c1s2f172e1r3d1z2c1s1d172e1s3e1i2c1s3d172c1s3f162e1q1d192c1s3d152e1s3f162c1s3d1v2c1s2f192e1q3e1g2c1s2d192e1s3f1c2c1s1d172c1s3e1q2e1q3d192c1u3d1t2e1s3f162c1u3e1y2c1s3f172e1q3d192c1s3d172e1s2e1s2c1s2e1f1c123g193f1o1c1m3d1r3b1d3f1c3e192c1m3c1y2d1k3g1c3e1d1e1m3c1d1c183g133g1f2c1b2d1k1e1c3e1g2e1q1e1c3e1f1c1j3e1d1f193d1j3d181c122e193g1d1e1g3d1g2c1c3f1s1g1i3c1l1c1i1e1h3g1c2g1i3d1k1e1k3e1k3g1c3f1d3e1j1e1h3e143e1c1g1d3d1s3c1d1c1c1e1i2g101d141e1f2d1b1g1h3d1q2d1s2d1f3c1d2g143g1j1e1a1e1i3c1j1e1c1g1d3c1x1c122c193f1s1f193d1w1e1s2e1f3e1s2e1r2c1l2c1u1c1t2e1t2g1f2c1u2e1u2c1s1g1x2e1r3c1e2c1s3c1z2e1t2g122c1r3c1q2c1t1e1w2e1r2e1k2c1u3e162e1s3e1u2c1t1e1f2c1t3e1a2e1s2c1t2c1s2e1u2e1u1e1f2c1t3e1j2c1s3g1w2e1s1e152c1u2e1h2e1s2g1w2c1t1c1r2c1u2g1v2e1q1e1m2c1t3c1t2e1u2e1i2c1s3c1z2c1t3g1s2e1q2e102c1u3c1u2e1s2g1j2c1s3d102c1t3e1t2e1r2e1w2c1t1e1z2e1t2g152c1u2d1r2c1r1e102e1s2e1s2c1u3d1o2e1u3e1p2c1u3c1z2c1t3g1f2e1r2e1r2c1u2c1u2e1s1g1w2c1s3c1r2c1u2f1j2e1r1e102c1t2d1u2e1u3g1j2c1t2e1m2c1t1e1y2e1q2c142c1u2e1x2e1t2g1x2c1t2e1s2c1u3g1g2e1r2e1g2c1t2c1h2e1u2e1s2c1u3c1i2c1s2g1y2e1q1e1w2c1s2e1p2e1t1g122c1u3d1w2c1t3f1z2e1r2c1l2c1t2c1o2e1s1e142c1t2c1g2c1t2g1s2e1s2e1u2c1u1e142e1u2g1h2c1u3e1m2c1t2g1q2e1s2e1g2c1u1e1v2e1u2f142c1t2d1m2c1s1g1q2e1s2d1w2c1t2e102e1t2e132c1t3c1h2c1u3e1t2e1r1e1x2c1s2c1r2e1s2e1s2c1u2d102c1u3g1o2e1r2c142c1u3e1s2e1s1e1p2c1s2e1x2c1s2e1w2e1q1c1s2c1t1e1h2e1u3e1p2c1u3e1f2c1t2e1v2e1s2c1w2c1t3e1s2e1s2g1v2c1s2c1d2c1u2e1d2e1q3c1i2c1t1e1h2e1u3g1r2c1t1c1f2c1t3g1t2e1p2c1w2c1u1d1x2e1t2g1j2c1u3d1l2c1t1e1r2e1s2e1t2c1r2c1y2e1t1g1d2c1t3c102c1t2g1d2e1r1c1v2c1u3e1i2e1t3e1o2c1t2d1l2c1u3e1s2e1r3d1e2c1t2e1v2e1t2e1f2c1t1e1h2c1u1g1r2e1r2c1z2c1u1e1v2e1t2e182c1s3c1c2c1t1g1d2e1q1e102c1t1e1o2e1t3g1d2c1t1c1r2c1s1e1c2e1p1e1f2c1u1e1p2e1u2f1e2c1t3e1e2c1r2e1c2e1q2e102c1s3e1r2e1r2g1p2c1s2e1z2c1t2f162e1r2d1d2c1u2e1t2e1s1g1d2c1t2e1k2c1r1e172e1p2e1a2c1t2e1g2e1s2f1y2c1u2e1b2c1t3f1f2e1q2e1h2c1s1e162e1t2g1w2c1s2e1r2c1u2e1r2e1p2e1l2c1t1e1g2e1t2g1u2c1s3c1r2c1r3g1f2e1p2e1f2c1r1e1q2e1s1f1q2c1r3e152c1u3e1y2e1r2e1x2c1u2c1f2e1t2f1r2c1s1e1f2c1t1g1r2e1s2e1h2c1u2d1z2e1s3e1r2c1u2e1k2c1t2g1d2e1s1e1l2c1r3e1s2e1s1g1r2c1s3e1x2c1u2g1x2e1r1e1h2c1t2e1t2e1r1g1d2c1s1e1m2c1r3g1x2e1s1e1i2c1t3c1v2e1s2g1u2c1s1e1i2c1s2g1u2e1q2e1u2c1u2e102e1r3e182c1t2e1r2c1t2g1r2e1r2d1l2c1u1d142e1s1e1r2c1u2e1m2c1r2g1t2e1s3c1y2c1s2c1h2e1t2e1r2c1t3c1j2c1t3f1b2e1q3d192c1u2d1b2e1t3f152c1s2d1d2c1s3f1c2e1s3d1d2c1t3d172e1s3f1d2c1s3d1c2c1u3g1b2e1r3d1x2c1t3c1w2e1u3f1b2c1t1d152c1r2f1d2e1q2d1q2c1u3d1d2e1t3f152c1s2d1d2c1s3f1r2e1s3d1d2c1t3d172e1s1e1q2e1l2c1u2c1s2e1s1e1g2c1u3e1z2c1s2f1f2e1s2e1l2c1r2e152e1u2f1a2c1s2c1r2c1u2e1q2e1q2c1q2c1r2e1u2e1s3e1u2c1u2e152c1u2e1t2e1s2e102c1s2d152e1t2g182c1u3d1f2c1s2g1d2e1s2e1a2c1t3e102e1u2g1d2c1u3d1t2c1t1e1y2e1s2c1s2c1s2c1s2e1s2e132c1s3c1y2c1u1e1t2e1q1c1u2c1u3c1z2e1t3f1r2c1s3d1b2c1t3g1f2e1r3e1d2c1u3d1b2e1t1g1o2c1t3c1x2c1s2e1p2e1r2e1s2c1t2c1y2e1t1e1p2c1u3e1y2c1u2e102e1s2c1m2c1s3c162e1t2f1d2c1u2c1v2c1t2e1w2e1s2c1l2c1t2c1o2e1t1e1q2c1t2e1t2c1u2e1t2e1s2d102c1u2e1u2e1u2e1r2c1s2e1j2c1r2e1w2e1r2c1m2c1u3d1o2e1u2f1x2c1s1e1x2c1t3e1y2e1r2e182c1t2d1x2e1t2g132c1s1d1r2c1t1g1t2e1s2e1r2c1r2e1h2e1s2e1e2c1u2e1f2c1s1e1q2e1q2e1z2c1u2c1s2e1u2g1q2c1s2c1r2c1u2e1i2e1s2e1t2c1t1c1s2e1s1g1v2c1t3c1i2c1s2e1x2e1s1e1y2c1t2c1k2e1u1g1f2c1u3c1j2c1t2g1y2e1q2c1h2c1u2c1v2e1u1e1r2c1s2c1y2c1t1f1r2e1r1e1k2c1u2c162e1t2g132c1t2c102c1u2f1d2e1r2c1w2c1s3e1h2e1t2e1x2c1s2e182c1u2g1q2e1q2c1z2c1s2e1k2e1t3e1y2c1s2c1j2c1u3g1t2e1q2c1w2c1t3e102e1t2g1p2c1u3e142c1s2g1f2e1r2e1t2c1s3c1w2e1t2f1t2c1s3c1w2c1u1e1f2e1r2c1y2c1s2e1t2e1u2g1j2c1s1d1e2c1t3f1q2e1r1e1k2c1u2c142e1r1g1c2c1u2e1j2c1t3g1s2e1p2c1d2c1r1c1r2e1t2e1g2c1u2e1f2c1r3g1y2e1r1e1f2c1r1e1s2e1u3e1i2c1u1e1y2c1s2g1d2e1q1c182c1u1c1f2e1u2g1i2c1t1e1q2c1t3e172e1r3e1t2c1s3e1r2e1r2g1u2c1t1c1d2c1t3g1r2e1r2c1c2c1t2e172e1r3g1p2c1r1c1d2c1u2g1c2e1r1e1i2c1u1d1w2e1t1g152c1s1c1c2c1s2e1p2e1r3c1t2c1t2e1b2e1t1g1t2c1t1e1w2c1s2g1o2e1s2e152c1s3c1a2e1t3g1j2c1u1d1x2c1t3g162e1q3e1t2c1t3e1f2e1s3e1b2c1s1e142c1t2g1r2e1r3e1t2c1s1e1t2e1t2g1d2c1u2e1r2c1s1f1x2e1q3e1i2c1s1d102e1t1g1u2c1u3d1d2c1u2g1d2e1p3d1z2c1t1e1t2e1r1e122c1s2c1w2c1s2e1j2e1r1e152c1u2c1t2e1t3g1c2c1r3e152c1u1e1t2e1s1c1k2c1t2c1k2e1s2f1k2c1r2c1e2c1t2g1r2e1s1c1s2c1r1c1h2e1t3g1v2c1t2c142c1t3g1u2e1r3d1w2c1u2e1z2e1t2g1p2c1t3e1f2c1t2e1q2e1r2e1d2c1u1e102e1u2e132c1t2e1s2c1r2e1r2e1s3d142c1t2d1f2e1u2f1o2c1t2d1j2c1u2g1d2e1q1c1w2c1t3d172e1s2f1b2c1s1d1b2c1u3g182e1r3d172c1s3d1c2e1s3f1o2c1u3e192c1t3f152e1q3d1f2c1s2e1p2e1r3f132c1s3d1d2c1s3f1r2e1s3d1x2c1t3d172e1s2f1b2c1s1d152c1u3g172e1r3d172c1s2d1c2e1s3f131c1t3e152c1t1e1y2e1q1c1w2c1s2e1s2e1u2e1b2c1t2e1w2c1t1g1h2e1r2c1x2c1t2e1c2e1t2e182c1s3c1y2c1s2g1w2e1q2c1z2c1s2c1w2e1t3g1j2c1u2e1q2c1u2e1e2e1r2c1z2c1t2c1o2e1t2g1e2c1t3c1f2c1u3e1i2e1r2c102c1u1e102e1u2g122c1s2e1y2c1s2g1i2e1r1e1k2c1s2c142e1t1g1x2c1s2d1r2c1s1g1t2e1r2d1t2c1s2c1j2e1t2f1j2c1t3c1t2c1t1e1j2e1s1c1t2c1u3c1y2e1s1e1f2c1u1c1j2c1t3e1t2e1s2e1f2c1t2e1o2e1u1e1q2c1u3c1w2c1u3e1j2e1p1d1d2c1s2e1v2e1s1e1x2c1u3d1l2c1t3e1o2e1r2c1y2c1t2e1s2e1t3e1y2c1t1e1m2c1u2e1d2e1s1c1j2c1t2e142e1u1e1s2c1u3c1w2c1t1e1o2e1r2e1w2c1t1e1o2e1u2g1v2c1u2e1y2c1t3e102e1s2e1y2c1s2e1x2e1t3g1s2c1u3e1m2c1s2e1j2e1q1e1v2c1u1c1z2e1s1e1q2c1s2e1t2c1u1g1x2e1s2e102c1s2e1u2e1t2g1w2c1r1c1z2c1u1g1y2e1r1e1y2c1r1e1s2e1s3f1i2c1s1e1t2c1t3e1w2e1s2c1u2c1u2e172e1s2g1j2c1u2c162c1t2g1i2e1s2c1d2c1t2e1v2e1u1e1s2c1s2c142c1u2f1t2e1r2d1s2c1t2c1o2e1u1e1u2c1t3c182c1r1e1p2e1s2c1m2c1t3c152e1u2e1j2c1s1c172c1u3e142e1s3c1x2c1u3c102e1s1e1p2c1s3c192c1t1e1x2e1s2c1l2c1t3d1t2e1s2g1x2c1u2e1u2c1s2e1y2e1r3c172c1t3c162e1t2e1j2c1r1c1y2c1t3f1j2e1p1e1f2c1t1e1a2e1r1g1h2c1t2e102c1t1g1g2e1r1e1d2c1u2d1t2e1t1g1t2c1t2e1r2c1u2g1x2e1r2d142c1r3c1o2e1s3g1o2c1s3c1c2c1u2g1x2e1r1c1s2c1u3d192e1s3g1b2c1s2d1r2c1r2f1f2e1s1c1w2c1s3e1r2e1t2g1d2c1s3e1t2c1t3g1b2e1q1d102c1s2d1b2e1s2g1j2c1t2e1c2c1u2e1d2e1r3e1c2c1t1e1p2e1u2e162c1r2c1f2c1t1g1t2e1s2e1d2c1t2c1s2e1u1g172c1s3c1c2c1s3f1w2e1r2e1q2c1t3c1s2e1s2e1b2c1t3c1a2c1t1g1r2e1s3d1r2c1t1d142e1t1e1q2c1s3e1j2c1u3g1f2e1q2d1c2c1s3c102e1t1e1d2c1t1e1c2c1t2e1c2e1r2e172c1t3c142e1s3g1g2c1s1d1y2c1s3e1q2e1q3c1r2c1s3c182e1s2g1g2c1t2e1f2c1r2g1p2e1p3e1g2c1r2d142e1r3f1i2c1s1e1h2c1t1g1d2e1s1d172c1t3e1t2e1u1g1y2c1u1e1r2c1t1g1w2e1q1c1x2c1u2d1z2e1t3f1d2c1u1e1x2c1t1g1k2e1q1c1m2c1s3e1s2e1s2f122c1t1c152c1t2g1z2e1s3c1u2c1s2e1u2e1r1g1t2c1s2e182c1s2g1t2e1s2e1r2c1t2e1f2e1t2g1s2c1r2d1z2c1t3f1d2e1p3c1l2c1u2c182e1s3f1b2c1u2c1d2c1s3f192e1s3e182c1t3d172e1s3f1d2c1s1d172c1u3g1c2e1r3e152c1s3d1c2e1s3f192c1u3d172c1t3f1s2e1q3d172c1u3d1d2e1t3f152c1s3d142c1s3f192e1r3d1b2c1t3d172e1s3f1d2c1s3d172c1u3g172e1r2c1a1d102c172e1r3f12121u1c1d1b1i1u2c2f1q1p1f141','3d3362b33333y331y371g27202q193x3e1b3q00111o25213o2o272c2q2m2y25381g23211i2c2b361c2x3s113z1o380w113z3b233v2139381c2v3u1z211o2z182t212p1z2238251s25353c16212v253c1y3u27111z3a251q27332e162z281w12111411133x3b2o192z261u3s2v2z2p113u263c153x392q17213610111m25113u281z3w281z3w26113w2o2139233x2c2b213x2b213x25203b3v2e1z112433163o02322c2b3w141o2c1d3o01312k241z211o2z111z2u291z211d3b3x2c1a1w12322v3w2s353e10111c1o11133x27231v302q12252720352c182833211d1g1a2c163z281y1z121z223u2711101o3u35013z243514352g1e3f1o1g1k1f1h1c1s3d1j2g1q3f1f3g1a3e1m2e1i1e1h2f1e3e1u3d1m2c1t3e1z2e1u2g102c1v2c1y2e1s3f1k2e1u2c1a2c1s3e1r2e1u2e1s2c1v1c1g2e1u2e142e1w2c112c1s2e1b2e1u2g1g2c1v3e1j2e1s2e1u2e1u1e162c1u2g1r2e1s2e112c1w2c1g2e1u3e1t2e1w2e1y2c1t3e1t2e1u2g1i2c1v2c1x2e1u2f1y2e1w2c1a2c1s2g1x2e1u2g1d2c1u1d162e1u3g1v2e1u2d1b2c1s3f192e1s1f1a2c1u3e1z2e1s3f192e1u3c1k2c1s2f172e1u3f162c1u2d172e1t3f1o2e1u2d1b2c1u3f142e1s3f1b2c1w3c1c2e1s2f172e1w3d1f2c1s3f172e1t3f1e2c1u1d172e1s3g1b2e1u2d192c1t3f1z2e1s3f182c1w3e1a2e1s2f182e1w3e1x2c1s3f172e1s3f1b2c1u3d1u2e1s2e1u2e1h1c1j3d1g1g1g3g1u1f161e1u2e1d1e1i1g121f163d1i2c1g1e1s2g1q3g1e3c1l3c1f2f1b1g1j2f1a3e141c191f1c1g1g3f1i2c1e3d1s3g1k1e1o1e1k1e1j1d1c1e1h1e1b2f1m3e1a3d1f3e1a1g1g3g161d1j1c121e1a1e1a1e1c1c1c3e1m1g1s2f1b2f1d1d1r3d1f1f1g1g1d1f1r3c142c141g101e1c3f1e3e1m1e1t2g1s2e1d1f1c3e1u1c1s3e1g3f1e3g161d1k1e1s1f1g1e1u2f1j3d1e1c1f1g1k1e123g1e3d1i1e1r3g1h2e1r1e102c1w1c102e1u2g1r2e1w3e1y2c1r2e1z2e1t1g182c1t2e162e1u1e1r2e1v2e1z2c1s1g1b2e1t2e1u2c1u3c1f2e1t2g1w2e1w2e1c2c1r2g1z2e1s2g172c1w2c1c2e1t1g1d2e1u1c1h2c1u2g1z2e1t2f1u2c1v1c1t2e1u3e1w2e1w2e1v2c1u1g102e1t1g112c1u1e1k2e1s3g1x2e1v3c1s2c1t3g1h2e1u3e1x2c1v1c102e1s1g182e1u1e1l2c1t1g142e1s2g1q2c1v2c1k2e1t2e1z2e1u3e1h2c1u2g1t2e1s2f1w2c1w3d1y2e1s2g152e1v2c122c1t2g1x2e1u2e1w2c1u2c102e1t3e1x2e1w2c1k2c1u3g152e1t3e172c1v2d1s2e1u2g1t2e1w1c1y2c1u2g1h2e1t2e1j2c1w2c172e1s2g1v2e1w3c1r2c1t2g1x2e1t2g172c1v1e1h2e1t2e1t2e1v2c1w2c1t2e1o2e1u1g162c1u2c1l2e1t2e1i2e1u1e1z2c1t2f1v2e1u1g1q2c1v1c1r2e1s3e1h2e1u1c1k2c1s1e1y2e1t3e1t2c1v3c1t2e1t2g1h2e1t1c102c1s2g1r2e1s3g102c1u2c1s2e1s2e1y2e1w1c1l2c1u2f1x2e1u1f122c1u3c1s2e1t2g1f2e1v3e172c1u2e1y2e1s1e1u2c1w2e1u2e1u1g1s2e1v2e1x2c1t2f1s2e1t2e102c1w2e1f2e1s1e1s2e1u2c1c2c1s1g1v2e1s2g1h2c1v2c102e1t2g1j2e1v2e1z2c1u2e1y2e1u3g1u2c1u3d1u2e1s2f102e1u2c102c1s2g1v2e1u2e1j2c1w3e102e1s2g152e1v2e1e2c1s2e1q2e1u3g1s2c1u2e142e1s2f162e1w2e1r2c1r2e1o2e1u2g1v2c1t2e102e1s1g1i2e1u2e1e2c1s3e1t2e1t1e1k2c1w1e1z2e1t2g1r2e1w2e162c1u3e1s2e1u2e1d2c1v3e1l2e1u2g1o2e1v1d1e2c1s3e1t2e1t2g162c1w2c1t2e1s2g1d2e1v3e182c1s3g1f2e1u2g102c1v3e1x2e1s3f1r2e1v1c1w2c1t3g1h2e1u1g1u2c1v1e1m2e1s3f1k2e1t3e1h2c1s1e1b2e1r2e1h2c1w1e1s2e1r1g1a2e1v2c1f2c1t2g142e1r2f1d2c1u2c1r2e1t1e1r2e1v2c1s2c1t3g1y2e1t1f1h2c1u1e1t2e1t1f1r2e1v3c1s2c1u2g152e1t1f1j2c1u3c1j2e1t2g1r2e1v1c1s2c1s1e1a2e1t2g1e2c1t1e1a2e1t3f1z2e1v1d112c1s3g1s2e1s1f1x2c1v1c1f2e1t2g1b2e1u3e1e2c1s1g1z2e1s3g1k2c1u3d102e1t2g162e1v1d1t2c1t1e1s2e1t2f1i2c1u2e1i2e1s2g1r2e1v2e1i2c1r3g1k2e1u1e1t2c1v3e1t2e1t1g1d2e1u2c1t2c1s2e1t2e1u1g1q2c1t3e1u2e1s2g1x2e1w1e1t2c1s2g1r2e1r2g1v2c1u1e192e1u1g1g2e1u1c1f2c1u1e1f2e1t1g1u2c1v2c1l2e1s2g1s2e1v2e1l2c1u2g1o2e1u1g102c1v3c1w2e1u1g1r2e1w3c1x2c1u2f1a2e1u2f1e2c1v2e1h2e1s2g1z2e1w2e1d2c1r3e1a2e1s3f1f2c1w3d1w2e1t1f152e1u3e1f2c1s3f1s2e1u3f1d2c1v1d172e1s2f1d2e1u3d192c1u3g1a2e1r1e1u2c1v2d1a2e1u3g1c2e1v3e1x2c1s3g1t2e1s3f1a2c1w1d1e2e1t1f152e1u3e1f2c1s3f1c2e1u3f1c2c1v1e172e102e1u2g1t2c1v2e1z2e1t2e1w2e1v1d182c1u1e1r2e1s2g1q2c1u1e1r2e1s2g1w2e1t1e1i2c1s3g1h2e1r2e1v2c1w2c1u2e1u1g1b2e1v2e1t2c1t3g1t2e1u2e1y2c1u3e1s2e1s2g1t2e1w2c1w2c1s1g102e1s2g1m2c1v3e1t2e1t3e1y2e1v1e112c1u2g1y2e1s1e112c1u2e1f2e1t2e1y2e1u1c1i2c1u2g1h2e1t2g122c1v3c142e1s2f1j2e1u3d112c1t1e1o2e1u1e1w2c1w2e1j2e1t2e1i2e1v2c1z2c1u3g1r2e1t2e172c1u1e1w2e1u2g102e1v2c1m2c1t1g1j2e1u2e182c1v3d1f2e1u2g162e1u2e112c1t3e1s2e1t2f1j2c1v3e1j2e1t2g1y2e1v1c102c1t1g102e1t2e1r2c1v3c1y2e1s3e1x2e1w2d1y2c1u3g1h2e1u2e1q2c1v3e1t2e1t2e1t2e1v3c1l2c1t3g1s2e1s2e112c1u1c102e1t2f1p2e1w2e1w2c1s2g1j2e1s1e122c1v1c1t2e1s3g102e1w1e162c1t1g1u2e1t2e1q2c1v3c1i2e1t3e1j2e1w2c1r2c1t2e1g2e1u2e1k2c1v2c1g2e1t1g1e2e1v2c102c1s2e1y2e1s1g112c1v2e1v2e1t3g1t2e1w2e1s2c1t2g1c2e1t2e1y2c1u3e1w2e1u2e1t2e1v2c1l2c1s3g1q2e1u2g1r2c1t2c142e1s2f1c2e1w2e1v2c1s1e152e1u3g1j2c1w2c1y2e1u2e1h2e1u2d1m2c1t3g1c2e1t1e1w2c1w2e1d2e1u2g1t2e1v2c1x2c1t3f1w2e1u2g1c2c1w3c1y2e1t2f1y2e1u2d1r2c1t1e1q2e1u1e122c1w3c1r2e1s3g1j2e1v2d1t2c1t2g1t2e1u2f1w2c1u2e1r2e1t2g1d2e1t3d1f2c1r2g1x2e1s2g1k2c1u1e102e1r3e1o2e1v3e1v2c1t3g1v2e1r3e182c1t3e1t2e1t2e1r2e1v2e1l2c1r2g1j2e1s2f1f2c1v2c1x2e1s1e1v2e1u3d1f2c1s3e182e1s1g1w2c1t3d1t2e1u2e152e1w2e1r2c1t3g1d2e1s2e1c2c1w1d1j2e1u1g1a2e1u1e1t2c1s2g192e1t2e1v2c1u3d1s2e1t2e1r2e1w2e1r2c1s1g1f2e1u2f1v2c1t1e1u2e1t3f1c2e1v2d1s2c1u3g1f2e1u2g1q2c1u2e142e1r2f1o2e1v1c1f2c1u2g1t2e1s1e1f2c1v3e1u2e1s3e1q2e1v2e1e2c1s2g162e1t2g1m2c1u2e1r2e1s2e1b2e1v2e1t2c1u1g172e1t2g1j2c1w3e1f2e1s1g1t2e1v1c1w2c1r2g172e1u2g1d2c1w2e1v2e1t2g1j2e1v3e1v2c1t1e1c2e1t3f1r2c1v3e182e1s1g1f2e1w2c1l2c1t2e1t2e1t2e1w2c1u3e1h2e1s1g1d2e1u1e1g2c1u3e1g2e1t1g112c1w3e1m2e1s2g1f2e1t2e1u2c1s3g162e1t2g1v2c1v1c1z2e1s1e1x2e1u2c162c1s2g1w2e1s3g1u2c1w1e1d2e1u2g1v2e1w2c1k2c1t2e1w2e1r2f162c1v2d1k2e1t2e1y2e1u2e1u2c1t2e102e1u1g162c1u1e1t2e1t2e1y2e1w2c1t2c1s3f1t2e1r3f1d2c1v2e152e1r2f1d2e1u3d1f2c1u3f1b2e1t3g192c1u3d1d2e1s3f1p2e1w3e1d2c1t3f172e1s2f1v2c1u1c1k2e1t1f152e1u3e1f2c1t3f1s2e1t2e1f2c1v1e152e1s3f1d2e1u3d1t2c1u3f1d2e1t3f192c1u2d1d2e1s2e172e1v2e1y2c1t3e1f2e1t1f1a2c1w1e1x2e1s3e1y2e1u2d1t2c1s2g1u2e1r1f1a2c1u2e1u2e1s2g1y2e1v1c1t2c1t2g1e2e1s3g1v2c1v1c1y2e1u3g102e1w2d102c1r1e1j2e1t2e122c1v1c1x2e1u2g162e1w2d1l2c1t3e1y2e1u2e1a2c1v3e1d2e1s3e182e1w2c1w2c1u2e1t2e1t2g1j2c1v3c1y2e1t2e1s2e1u1e1w2c1u1f1i2e1t2g1q2c1w3d1s2e1u2g1f2e1u2e1y2c1u3f1w2e1u3g1u2c1w2c152e1t2e1t2e1w1e1s2c1t1e1t2e1t2g102c1w3c1u2e1t2e1y2e1w1e1l2c1r1f1j2e1s2g1u2c1v1c1i2e1t1f1s2e1w3e1l2c1u2e1o2e1t3e1m2c1u2c142e1t3g1w2e1w1c1u2c1u3e182e1s1e1z2c1w2c1s2e1t2e1j2e1w1e1y2c1u1e1y2e1u2e1w2c1v3e182e1s2e1t2e1u3d1v2c1s2e1t2e1t2g1a2c1u1e1l2e1t2e1r2e1u1e1t2c1u2e1x2e1r2e102c1w1e1v2e1u3e172e1w1c102c1t2e1u2e1u2e1x2c1v3c1y2e1t1e1r2e1v3c1k2c1t3e1x2e1t2g1j2c1v1e142e1s3e1y2e1v1c1v2c1t3e1y2e1t2e1u2c1v2c1l2e1t2g1u2e1v3c1a2c1s1e1r2e1s2g1y2c1v1e1l2e1t2g1t2e1w2e1u2c1s2e1i2e1s2g1u2c1w3c102e1r1g1j2e1u2c1w2c1u2e1o2e1t2e1x2c1v1c142e1t2g1d2e1v1e1x2c1u3e1k2e1t1g1z2c1w2d1c2e1u2e162e1v3e1v2c1u3g1q2e1t2f1v2c1w2e1d2e1t2g1f2e1u1e1e2c1u2f182e1t3g1t2c1v3d1z2e1u1g1j2e1t1c102c1t3g1t2e1t1g192c1u1e1h2e1t3e1d2e1v2c172c1u3g1r2e1s2g1u2c1w2d182e1t2g1r2e1u2e1t2c1u1f1o2e1u2f102c1w1e1t2e1t2g1f2e1u1c1t2c1t1e1s2e1u2e172c1v1e102e1s3f1y2e1v1e1y2c1s1g1s2e1u1g1h2c1w3e1d2e1t1g1d2e1v2c1d2c1r3g1r2e1s2g1h2c1u1e1e2e1u2g1d2e1v3e1l2c1s1g1r2e1t2e1v2c1v2e1t2e1t3g1b2e1w2e1c2c1s2f1h2e1t2f1a2c1t1e1w2e1t3f1c2e1v2d1f2c1r2g1d2e1s1g1t2c1w2e1h2e1r3e1w2e1t1d1h2c1t2g1d2e1s2f112c1t2e1s2e1u3e1v2e1w1e1m2c1s2e142e1s1g182c1v2e1h2e1s1f1d2e1v2e192c1t3g1j2e1t3g112c1w3c102e1u2g192e1w2e1f2c1u2g1d2e1t2e1w2c1v2e1z2e1r2e1r2e1w2e1f2c1t1g1r2e1t1g1i2c1v2e1h2e1t2g1d2e1t2e1y2c1s2g1f2e1t1e1v2c1u1d1w2e1u2f1u2e1v1e1f2c1t3g1x2e1s2g1v2c1u2e1j2e1s2g1u2e1v3c1r2c1r1e1d2e1r2e1j2c1v2d1s2e1r3e1j2e1v2c102c1u2g1p2e1t2g1h2c1v1e1d2e1t2g1b2e1u2d112c1t3f1s2e1t1e1f2c1v2e1t2e1t1g1u2e1v1c1h2c1t2e1x2e1u1g1v2c1w1e1u2e1u3f1u2e1t3d1f2c1s3f192e1u3f1f2c1v3d172e1s2f1d2e1u3d1e2c1u3g1b2e1t3g192c1u2d1f2e1s3f1p2e1w3e1f2c1u2e1q2e1s3f1f2c1w3d1d2e1t1f152e1w1e1f2c1s3f1q2e1u3g1f2c1v3e172e1s3f1d2e1u3d1c2c1u3g1b2e1s1e1u2c103d1t3e1t1e122u143c181c1m3g1g2g1d3f162c1k3d1c1g1g1f1o2g1l1c143e1e1e1r3g122e1w2e1t2c1u2e1z2e1s2e1i2c1w3c1v2e1u2g1u2e1v2c1v2c1w2g1g2e1r2e1z2c1w2d102e1u2e162e1u2e1z2c1w2g1b2e1q1f182c1u3c112e1s1g1e2e1w1c1w2c1v2e1k2e1s2e182c1u2e1r2e1s1f172e1w2e1r2c1w1g1x2e1q2g102c1u3d122e1s2e1u2e1u1d1m2c1t2g1v2e1r3g1i2c1u1d1b2e1u3f162e1u3d1b2c1v3f162e1q1f192c1w3d1e2e1s2f152e1w3e1i2c1u3f192e1s3f1f2c1u3d1a2e1u3g1c2e1u3d192c1u3f172e1q2f192c1w3c1c2e1s3f162e1u3e1c2c1u3f182e1q3f1c2c1u1d192e1t3f192e1u3d1b2c1u3f152e1q2f192c1w3e1y2e1s1f152e1u3d1d2c1u3f172e1q3e112c1u3c1y2e1k1e103f1q1e1m1d163f121f122g1u2e1e1d163f103f1g1f1f3c1f2d181g1c1f191f1s3d1e1e1i3f1g1e1b1e1e1c1e1e1r3e1c1e163f151e1j2c1d1f1k1f1d1e1i2c1u2e1l3g1d1e1h3e1e2d1d1e1l1f181e102e1b2d1d2d1d1f1b2f191e1a1c1f3d1a3f153e1g1f1u3d1h2e1e3f1f1e1d3e1d1c1b1d1t1f1s1g101e1w1e163d1e3f171f1f1f1u2e1l2e1r1e1a3g161f1r3e1f1c1j3e1c1e1e2e1e1e1j2c1k1g1c3f1d2e1a1c1k2c1w2g1h2e1q2g1a2c1u1c102e1s2e162e1w3d102c1w1g1y2e1s1f1v2c1u2e1z2e1u2e1t2e1v1e1l2c1v2e1o2e1p2e162c1u1c1z2e1u2e1v2e1v1c1y2c1w1e1r2e1s2g1r2c1v2e1k2e1u2e1w2e1u2e122c1w3g1o2e1r2e1u2c1w2c1j2e1s2e1y2e1w1c102c1t1e1u2e1q1e112c1w1c1l2e1t2g1h2e1u1d1u2c1u3f1w2e1r2f1s2c1u1e102e1t2g1w2e1w2e122c1v1g1y2e1s2g122c1w3e122e1s1e1o2e1v2c102c1w3g1o2e1r3g1f2c1v2c1u2e1t2g1h2e1v2e1v2c1w2e1r2e1s2e192c1w2e1l2e1u2g1r2e1v1e1u2c1v2g1u2e1s3f1s2c1v2c172e1u2g1d2e1v2c102c1v2e1z2e1r3g1i2c1v1e122e1s2g1o2e1v2e1v2c1v1e1u2e1r2g102c1w3d1d2e1u2g142e1v2e1x2c1v1e1f2e1s2g1u2c1u3c1y2e1t1e1h2e1v3c1b2c1u1e102e1p2g1v2c1v2e112e1s2g1w2e1u2c112c1u2e1h2e1s2e122c1t2c1q2e1t2g142e1v1c1i2c1v2e1h2e1s2f1d2c1u3e192e1s2g1b2e1v3d1l2c1v3g182e1r2e1q2c1v2c1m2e1s2e1r2e1v2c1k2c1w2g1r2e1r2e1z2c1u1c1u2e1u2e1h2e1v3c1v2c1v2f1h2e1s1e1w2c1v2d102e1u2f1r2e1v2e1x2c1u2f1y2e1r2g1l2c1u1c1q2e1t1e1g2e1t2d1s2c1w1e1v2e1q3e1u2c1w3e122e1u2f1q2e1u2e1f2c1w2g1v2e1s2g1j2c1v2e162e1s2e1r2e1w2e102c1u1g1v2e1q1g1l2c1w3c1l2e1s2e1p2e1v2e1t2c1t2g162e1s2g102c1u2c1y2e1u1e1g2e1u3e1s2c1u2e1s2e1q1g1y2c1v1e122e1t1g1g2e1v2c1z2c1w2e1v2e1r1g112c1w1e1v2e1r3e1d2e1w2c172c1u1f1s2e1q2g162c1v1d1h2e1t1e142e1v2e1e2c1w1e182e1r1f1x2c1u3d1w2e1s2f1a2e1u2c1h2c1u1f1t2e1r1f1y2c1u3c1b2e1t2e1u2e1u2c1d2c1w2g1h2e1r1e1f2c1u1e1u2e1t2g1b2e1v1c1u2c1v3g1p2e1s2g1d2c1v2e1v2e1r2f1b2e1v2c1d2c1u3g1t2e1r1f1h2c1t3d1a2e1t2e1p2e1w2c1t2c1u3f1b2e1q2e122c1w2e1v2e1u2g1w2e1t2d1y2c1v2f1b2e1s1g1c2c1v3e1s2e1t3g1t2e1u1c1d2c1v3f1d2e1p2g1h2c1v1e112e1s1g1x2e1u1d1z2c1v1g1y2e1q3e1j2c1w1d1h2e1u3e1p2e1u2e1z2c1t3f1q2e1r1e1j2c1v1e1q2e1t1g1d2e1u2e1r2c1u2e1z2e1s2e1t2c1u2e112e1t2e1v2e1v2c1f2c1t1g1h2e1r2e1i2c1v1e182e1t1g1v2e1v2c1h2c1u2e1r2e1p2g1v2c1w1c1m2e1u2g1p2e1w2d1f2c1t1g102e1s2g1f2c1u1e1u2e1s1e1f2e1u1c1w2c1v2e1s2e1r2f1d2c1u2e1k2e1s3g1d2e1u3e1l2c1w3f1f2e1s1g1w2c1w2c102e1u1f132e1v3c1t2c1w3f1b2e1r3g192c1u3d1e2e1s1f1h2e1w3e1d2c1v3f172e1q3f1e2c1u3d1b2e1u3f1a2e1v1e172c1w2e142e1q3f1d2c1v1e192e1s2f1b2e1u1d1a2c1w3f1b2e1p3f192c1u3d1e2e1s1f1o2e1w3e1e2c1v3f172e1q2f1z1c1x2c1v1e1y2e1s2g192c1w2e1w2e1u3e1b2e1u2e1y2c1w1e1y2e1q2g1u2c1w2c1x2e1u1e1w2e1w2c1v2c1w2e1d2e1s2g1u2c1u2c1x2e1t2f142e1v1e1h2c1v2g1z2e1q2f102c1w2e1l2e1t3e162e1u1d122c1v1g1u2e1r2f1q2c1u2e1a2e1u2g1d2e1w1e1z2c1u3g1t2e1r1e122c1v2c1z2e1s2g1r2e1w1d112c1t1f1e2e1s2e1t2c1v3e1u2e1t3f1g2e1v2c102c1v2f1o2e1r1g162c1v3e102e1u2f1y2e1u1c1l2c1v2g1u2e1r1g1j2c1u2d1l2e1t2e1f2e1w1c1l2c1w2g1y2e1q3e182c1u2c1z2e1u2g1v2e1w2c1q2c1v3e1k2e1r1g122c1w1e172e1u3f1p2e1w2e1l2c1v2g1j2e1r2e1r2c1v2e1s2e1u3g142e1w2e1v2c1w2g1o2e1r1e1q2c1w2c1y2e1t2e1u2e1u2e1l2c1u2e1s2e1s2g1x2c1w3c1x2e1s1g1r2e1w1c1l2c1t2g1i2e1r2e1v2c1u1e1s2e1u2e1t2e1w2e172c1v2g152e1s2g1x2c1u3d1t2e1u2g1h2e1w2c1q2c1w2e1s2e1s2g102c1w1e1i2e1t2g142e1v2c1l2c1v1g1s2e1s2g1t2c1u2e1l2e1t2e1s2e1v1c1k2c1w2g152e1r1g1q2c1u2e1v2e1u2f1q2e1w2e1l2c1w1f1j2e1p2f122c1u3c1k2e1t2e142e1u2c1h2c1w1e1v2e1p2e1q2c1v2e102e1s3e1r2e1v2c1v2c1w2e1a2e1s2g1y2c1w2e1a2e1u2e182e1t3c1d2c1u1g1v2e1s2g1w2c1v3d1h2e1u3e132e1w2e1z2c1w2g162e1s2e1e2c1v2e1w2e1s3e1y2e1v2c1i2c1u3g1t2e1r2e172c1v2c1h2e1u3f1u2e1v1c1f2c1w1g142e1q2f1z2c1v2e1h2e1r1g1y2e1w2e1d2c1t2e1s2e1s1f1a2c1u3c182e1t1g1p2e1v1c172c1v3e1u2e1s2e162c1w2e1h2e1s3f1b2e1u2d1f2c1t1f182e1q3f1s2c1w3d182e1u2e1b2e1v2c182c1v2g1h2e1r3g1f2c1w1d182e1t1g1b2e1v1c182c1v2f172e1r3g1f2c1v2e1x2e1t2g1e2e1u1e1e2c1v3e1o2e1r2g1x2c1v3e1d2e1s3e1p2e1u1e1f2c1v2g1d2e1s1g182c1v3e1t2e1u3g1b2e1v1d182c1w2f1h2e1p2g182c1t3d102e1s1e1q2e1v1d1s2c1v1f1h2e1q1g1y2c1v2e1f2e1s2f1j2e1u2e192c1v2g1b2e1r2g1v2c1u1c1r2e1u2g142e1v2e1x2c1w1e1f2e1r1e1a2c1w1e102e1s1f1v2e1u2c1z2c1u3g1t2e1p1g1e2c1u2e1h2e1s2g1b2e1v2d182c1v2g142e1r2g112c1u2e1z2e1r1g1d2e1w2e1h2c1t2g1t2e1s2f1h2c1w2e1k2e1u1e1r2e1v2d1h2c1w2e1g2e1r2g1v2c1t2c1u2e1t2e1y2e1w1e1u2c1u1e1t2e1q2e162c1u1c1b2e1u2g1s2e1w2c1w2c1w3e1o2e1s3e1l2c1t2e1x2e1t1g1t2e1w2e1e2c1w1g102e1q1e112c1v3e1z2e1u2e1w2e1u3d1m2c1v3f172e1q2f1e2c1u3d1f2e1u3f1a2e1v3e172c1u1f1c2e1q3f1t2c1w3d192e1t1g132e1u3d1f2c1u3f1z2e1s2e1u2c1u3d1f2e1s1f152e1w3e1d2c1w2g172e1q1f1v2c1u3e1f2e1u3f1a2e1v3e172c1u3f1c2e1q3f1t2c1w1d182e1u1f142e1v2c122c1w3e1d2e1s1g1j2c1v3c1y2e1u3g1s2e1u2e102c1v3e1r2e1s2g1b2c1v1c1m2e1t2f1h2e1v1e112c1u1g182e1r2e1u2c1w2e1t2e1s3e1p2e1w2e172c1v2g1d2e1s2e1x2c1u1c1q2e1r3g1u2e1v2e172c1v3g1p2e1r2e172c1w3c1u2e1s2f1o2e1w2e1x2c1u1e1x2e1q2e102c1w3e1u2e1r1g122e1u3e1t2c1u1g1t2e1s3e1x2c1v1c1m2e1u1e1d2e1v3c1d2c1w2g1j2e1s2e1v2c1u3c1s2e1u2g1a2e1w2e1l2c1u2g1y2e1r2f1u2c1w3e1h2e1u2g1d2e1w3c1l2c1u1g1t2e1s2g1q2c1w3c1t2e1t1g1u2e1v3c1z2c1u2g1y2e1s2g162c1v2e1j2e1u2f1o2e1v2c1y2c1w2e1u2e1s2e1r2c1v3c1h2e1u2g1d2e1v2e182c1w2e1t2e1s1e112c1w3d172e1t3e1h2e1w2e1y2c1v1e1v2e1q1e122c1w2c122e1t1g1v2e1w2c162c1v2e1j2e1p1g1q2c1w2e1q2e1u2e1u2e1u2e102c1w2g1c2e1q2e1j2c1w2e112e1t2f1k2e1v3e1v2c1u1g1v2e1s2g122c1v2d1v2e1u2e1h2e1w2e1t2c1u2e1o2e1s3g122c1u2c1l2e1t3e1u2e1v2e112c1u1f1t2e1q1e1t2c1u1c1z2e1s2e1o2e1w2d1w2c1v2e1j2e1s2e1q2c1w1c1a2e1t2g1g2e1v2d1l2c1u2g1z2e1s2g1y2c1w1e182e1s1e1d2e1u3c1i2c1u1e1j2e1q3e1h2c1v2d1c2e1u2g142e1u1c1e2c1v3f1j2e1r1e1j2c1u1e1g2e1t1e152e1v3e1v2c1v1g142e1q3g1y2c1u1c122e1t3e1x2e1t1c102c1v2f192e1q1e1h2c1w2e1v2e1t2g1r2e1u1e1t2c1v1e1x2e1q3g1v2c1v1e1v2e1s2e1f2e1t3e1w2c1w3e1x2e1r1e1v2c1v1e102e1t2g1u2e1v2e1u2c1w2f1p2e1q1e1e2c1v3e1c2e1t1g1c2e1u1e1r2c1w1g1e2e1r1e1a2c1v2e1f2e1t3e152e1v1c1i2c1w1g1d2e1q2g1f2c1w2e1d2e1u2g122e1v1e1f2c1w2e152e1p2e1j2c1u1d1v2e1t2g1v2e1w3e102c1v3f1r2e1p2f162c1v3e1f2e1r3e1p2e1w2c1e2c1u2e1g2e1s2f1d2c1u3c1q2e1t3f152e1v1e1e2c1w3g1r2e1p1f1q2c1v2e162e1t2g1r2e1u2c1t2c1w1g1x2e1q1g182c1u3d1h2e1r1f142e1v1c1e2c1v2g1i2e1s2f1z2c1w2c1h2e1t1e142e1v1d1h2c1w2e1d2e1q2g1e2c1v3e1a2e1r2g1v2e1w2e162c1u1g1h2e1r2e1v2c1v1e112e1t1e1r2e1u1e1h2c1u2g1b2e1q3g1t2c1w3e1t2e1r1e1d2e1w1e182c1v2e1d2e1r1g112c1u2e1k2e1s2f1k2e1u2c1g2c1w2f1p2e1q3g1i2c1t2e1v2e1r2g1v2e1v2e1i2c1w2e1d2e1p2e172c1t2c1d2e1u3e1i2e1u3c1s2c1v2e1r2e1s1e1v2c1w2d162e1s2g1r2e1t2e1d2c1w2f1s2e1s1e1d2c1v3e1w2e1s3f182e1u3e1d2c1v3f152e1q3f1e2c1u3d1d2e1u3f192e1v1d172c1u2f1d2e1q3f1d2c1w3d1f2e1t1g1w2e1w2e1t2c1w3f1c2e1r3f192c1u3d1e2e1u1f1p2e1w3e1e2c1v2g152e1q2f1e2c1u3d1d2e1u3f192e1v1e172c1u1e1x2e1w3e1v2c1h321j2j1k1g1a1e1m2e161e1e3g1f1f1c3g161d1k1e1j1g1r2e1g2g1y2c1t1e1g2e1s1e1s2e1v2c1m2c1u2e142e1q2g1r2c1u1d192e1s2g1k2e1w1e1z2c1s2g1w2e1q3f122c1u2c1w2e1q1f1i2e1t2e1x2c1t3g1e2e1q2e1w2c1u1d1r2e1r2g1r2e1u2c1y2c1s2g1c2e1s1e112c1u3c1r2e1s2e122e1u2e1r2c1u1e1i2e1s3e1j2c1w2d1z2e1q3e1x2e1v1d1w2c1s1f152e1r3e182c1u3d182e1s3f162e1u3d192c1s3e192e1q3f192c1w3e1t2e1q1f172e1u3d1d2c1s3f152e1q3g182c1u1d192e1q3f1e2e1u3d192c1u3f122e1q2f1b2c1u3d1z2e1q1f172e1u3e1y2c1s3f172e1r3f1d2c1u3d172e1q3e1c2e1u3d1a2c1t3f172e1q1f192c1v3c192e1q3f152e1u3d1b2c1s2e1s2e1q2e1y1c1h1c123e141e1i3g1d3c163c121f122g1q2e1d3c1s3c183e1d1e1e3g161e1j3e191f1d3f1q1g1r3c1f1c1f3f1q2g1k1e1d3c1f3e1c3e1k1g1d2g1e3e1e1c1s1f1d3e1b2f181e1u1d1b1f1h3f1d1g1i3d1i2c1f1e1o3f1a3f1l3d1a3d142e181e1d3f1e3d1a3e1f3f1k3e101f163c1g1c1d3f1q3f1g1g1e3e1r1e1d1e121e1q3f1r3c1a3c1t3e1d1g1e1g1k3d191e1e3e1j1e1d1e1e2c1u1d1f3f1k1g1d3e1m1e1r3c121e1s2g1w2e1u1c1k2c1t1e1x2e1s2e1w2c1w2c1m2e1q3e162e1v2d162c1r3f1q2e1r2g162c1u3c1h2e1s2g1r2e1u2e172c1t2f142e1s2e1f2c1v2d1a2e1s2e1r2e1w2d1w2c1t1f1h2e1s2g112c1w2e152e1s1e1k2e1w1c1s2c1t2e1q2e1s2e1m2c1v2c1s2e1q3e1d2e1w2c172c1s3g1t2e1s2e162c1v1e142e1q3g1o2e1u3c122c1s3e1p2e1q1f112c1u2e172e1r2f1q2e1w2e1h2c1s1g1x2e1s1e1w2c1u2e1f2e1s2g1q2e1v1c102c1t2e132e1s2f102c1w1c102e1s1e1y2e1w2c1y2c1u2e1e2e1r2e122c1u1e1y2e1q2f1k2e1v1d1r2c1s3e122e1s2g1w2c1w1c1k2e1s2g1p2e1w2e1r2c1s1f1q2e1r1e1w2c1w2e152e1s1e1y2e1w2d1r2c1u1g1s2e1r3g1d2c1u2c1y2e1s1g1k2e1u2d1y2c1s2g1j2e1r2g122c1v3c102e1q3e1r2e1w2e1w2c1u1g1i2e1q2g1v2c1u1e1z2e1q2e1v2e1v2e1h2c1s2e1w2e1q2g172c1t1c1z2e1s2g1r2e1v2c1k2c1t3e1x2e1q1e1u2c1u1e1j2e1q3e1w2e1u1c1z2c1t3e1y2e1s2g122c1w3d152e1s3e1i2e1t1c1v2c1s3e1u2e1r2e1y2c1v2c152e1q2g1y2e1w3c162c1s2f1j2e1s3e1x2c1u3d1v2e1q1e1d2e1w3e1l2c1u1e132e1s2g102c1u2c1v2e1r3e1s2e1w2e122c1s2e1t2e1s1e1y2c1w3c1r2e1q1e162e1v2e1e2c1r2e142e1r1f1j2c1w3e102e1p1g1r2e1u1e1j2c1u2f1r2e1s2f1a2c1v2e1e2e1p2g1t2e1v1e1t2c1r2e1j2e1r2g122c1u2d1u2e1r2g1f2e1w2e162c1t2e1c2e1p1g1y2c1v2d1e2e1s2e122e1v2e1t2c1r2g1t2e1q2g1f2c1u2d1h2e1r3g1t2e1v3d1l2c1s2g1y2e1r3g122c1u3d1f2e1q1g1h2e1u2c1f2c1r3e132e1r3g1f2c1u3c1d2e1r2g1h2e1v3e1f2c1u3g1w2e1r2g1a2c1v2e1s2e1p2g1w2e1v2e1e2c1s2e1x2e1r1f1v2c1v2e1x2e1r2f1r2e1v1e1u2c1t1g1b2e1r1g1v2c1w3e1f2e1r2e1r2e1t1e1w2c1s3g1u2e1r3e1w2c1t2e172e1s2f1o2e1v3e1l2c1s2g1x2e1r2g1v2c1w1e1q2e1q3f1r2e1w3d1g2c1u1f1w2e1r1e182c1v1c1e2e1q3e1r2e1v3c1d2c1r2g1d2e1p2g112c1u1d102e1q3e1o2e1u2e1q2c1t2e1x2e1q3f1j2c1t3c1h2e1q2e1p2e1v3e1y2c1s2g142e1s1e1u2c1u2e1x2e1q2g1d2e1w2e1b2c1t2g1e2e1q1g182c1v2e1t2e1r2g1k2e1t1e1v2c1s2e1f2e1p1e1j2c1w1e1c2e1p2g1d2e1v2e112c1s2f1t2e1p2g1k2c1u2e1t2e1r3g1p2e1t2e1r2c1r1g122e1q1e1v2c1w2e1r2e1p2g1r2e1v2c1e2c1u3e1i2e1r2g1u2c1w2c1t2e1q2f1d2e1w3d1t2c1s2g1q2e1s2e1e2c1t3d1f2e1r2f152e1v3e1x2c1s1e1d2e1q3f1t2c1w3d192e1r1g132e1u3e1f2c1s3f182e1s3f1f2c1v3d172e1q1f1b2e1v2c102c1t3f152e1q1f1e2c1u3c1q2e1s3g1q2e1v3d172c1r3f1d2e1q3f1q2c1w3d1d2e1r1f132e1u3d1f2c1s3f1d1e1y2e1w2e1w2c1t1e1f2e1q2e172c1v2d1w2e1s2g1r2e1w2e1v2c1t2g1r2e1r2e1v2c1w2e1u2e1s3g1r2e1v2c1x2c1t1e1d2e1r2g1u2c1u3c1s2e1s1g1r2e1w1c1t2c1s3e1v2e1s2g102c1v2c1w2e1r3e1q2e1w1e182c1u3g1q2e1s2e162c1v1c1l2e1s1e1y2e1w1c1t2c1t2g1y2e1p2e162c1u2e1j2e1s3g1d2e1u3c182c1t2f152e1r1g182c1u3c102e1r2g132e1v3c102c1u2g1f2e1r1g112c1v3c1v2e1r2e1w2e1v1d1s2c1t2e1i2e1r3e102c1w2e1t2e1r2g1w2e1v1d182c1t2g1w2e1s2f1q2c1v1c1y2e1r2e1v2e1u2e1v2c1s2g1f2e1q1e1u2c1v3c1w2e1r2e1w2e1v1e1v2c1u2e1u2e1r2e1q2c1t1c1z2e1r2g1w2e1v1e102c1s2g1w2e1s2g1j2c1w2e102e1r2g1v2e1w2c1w2c1r1e1u2e1s2g1j2c1v1c1j2e1r2g1y2e1v2c1w2c1u2g1x2e1s1e1y2c1v3d1e2e1q2e1q2e1u1e1s2c1r1g1t2e1r3g1x2c1w1e1r2e1r2g1u2e1v2e1j2c1s2g1f2e1p2g122c1v1c1x2e1s3e1c2e1v2c1w2c1s1e1g2e1s1g122c1v2e1w2e1s3f1x2e1w2c1r2c1t1e1f2e1s2e1u2c1v3e1j2e1s2g1b2e1w3e1v2c1t3f1v2e1s2g1w2c1w3c1t2e1r2f1s2e1w2e112c1u2e1s2e1s1g1w2c1v3e1v2e1r2f1o2e1v2c1y2c1u1g1d2e1q1e1w2c1u2c1a2e1s2e1s2e1w1d122c1s1e1r2e1r3e182c1w2e1s2e1s2g1p2e1v2c122c1u3g1x2e1q1g1a2c1u2c1l2e1r2g1p2e1v2c1v2c1s2g1r2e1q2g1d2c1v3e1d2e1s3e1k2e1w1e1u2c1u3e1f2e1p1g1v2c1u2c1e2e1p1e1s2e1t2d1h2c1t3g1r2e1s2e1y2c1u1e142e1s2g1h2e1v2e1k2c1t2e122e1r1e1h2c1v3e1y2e1q3f1d2e1v3c1f2c1t3g1r2e1r3f1h2c1v2e172e1r2g1a2e1w1d1e2c1s2g1w2e1p3f1h2c1v2e1c2e1r2f1p2e1w3e1r2c1t2e1a2e1s2g1f2c1w1e1q2e1s1g1h2e1t2e1l2c1t1e1j2e1q1f1l2c1v2e1r2e1q1g1a2e1w1e1t2c1t2f1g2e1r2g1h2c1v1e1r2e1q3e1q2e1v3e1e2c1u1e152e1p3g1j2c1u2d152e1q3f142e1v3e102c1u1g1a2e1r1g1d2c1w3c1q2e1q1f142e1w1e1d2c1t2g1r2e1q2g1v2c1w2c1d2e1s2f142e1w2e1h2c1r2e1d2e1p1g1a2c1t3e1r2e1p2g132e1t1e1f2c1t2f1g2e1r2g1u2c1w2e1x2e1s3g1d2e1w2c1u2c1s2g1d2e1r1f112c1v2e1h2e1r2g1f2e1u2c1r2c1t3g1x2e1s1g1v2c1w2c1x2e1q3f1k2e1v2e1j2c1t1e142e1s2e1t2c1t2d142e1q1e1c2e1v2e1t2c1t3g1r2e1s2e192c1v1e1s2e1p2e1p2e1w2d1h2c1s2g1t2e1r1e1r2c1v2c1x2e1r1e192e1v1d1u2c1u3g1u2e1r1e1y2c1u2c1r2e1s3g1f2e1u3e1f2c1t3f1p2e1s3f1d2c1v3d152e1q2g1b2e1u3d1e2c1u3f1b2e1r3g192c1u2d1d2e1q3f182e1w3e1t2c1t2g1d2e1q3f1d2c1w3d1b2e1r1g132e1v2d1f2c1s3f1r2e1s1f1d2c1v3e152e1q2f1b2e1u3d1r2c1u3f172e1d3f102c1w3c1f2e1s2g1k2e1v2d1y2c1r1e1v2e1r2e1v2c1w1e1j2e1q1e1s2e1t2d1s2c1u1e1w2e1s2e162c1v3e1t2e1p2g1u2e1w2c1t2c1t2e162e1s2e1v2c1w2c1y2e1q2g1p2e1w1c1z2c1t2e1y2e1r2f122c1v1e102e1r2e1r2e1v1d1i2c1u2g1r2e1r2f1x2c1v3c1t2e1q1e1d2e1u2e1z2c1s2e1d2e1q1e1w2c1u1c1i2e1s2g1r2e1u1e1y2c1s2g1o2e1s2g122c1v2c1k2e1r2e1h2e1v1e112c1s2f1i2e1s2g1h2c1v2e152e1r1g1o2e1w1c1v2c1s3e1k2e1q2e162c1t1e172e1q2g1d2e1v1c1q2c1u1g1h2e1s3e1a2c1v2e1e2e1q2g1w2e1u1e1z2c1t1f1a2e1s1e1m2c1w3c1r2e1r3f1d2e1v2c1v2c1s2g1f2e1r2g162c1t1c1k2e1q2e1v2e1w2c1l2c1u2f1s2e1r3g1u2c1v3e102e1q2g1u2e1v2d1r2c1s2g132e1q2e102c1w1e1u2e1s3e1d2e1w2c1g2c1u2e1h2e1r2f1q2c1v2c1l2e1r2e1w2e1v1c1v2c1t2e1v2e1r1e1j2c1v3e1h2e1r2e1h2e1u1e1g2c1s1f1d2e1r3e1m2c1v3e102e1r2e1u2e1w2c1x2c1u2g1r2e1s2e1q2c1v2d1v2e1q1e1s2e1w3c1u2c1u2g1d2e1r2g1z2c1w2c1w2e1r3g1o2e1u2e1x2c1s2e1b2e1s2g162c1w1c1l2e1q3g1r2e1u2c102c1t1f1p2e1s1g1m2c1w2c162e1r2g132e1v2c122c1u2f1b2e1r3f162c1w1e1e2e1r2g1w2e1v3c192c1u2g1p2e1r2g1x2c1w2e1w2e1q1f122e1u1e182c1s2e1w2e1r2g1j2c1t2c102e1r3e1h2e1v3d1l2c1s2g1b2e1r1g1v2c1w2d1l2e1q2g1g2e1w2c1x2c1s2f1d2e1s2g1x2c1w2e1s2e1r1g1t2e1w2c172c1s2g122e1p2g162c1v2e1y2e1r2e1f2e1w3d102c1s2e142e1r1e1v2c1t1c1v2e1q2e1b2e1t1e1e2c1u2g1v2e1s2g102c1v2e182e1r2g1d2e1u1e1z2c1r2f1u2e1s1g1u2c1v1e1t2e1r2g1a2e1v2e1i2c1t2e1p2e1q3g1u2c1v2d1f2e1r2g1w2e1v3d1u2c1t3e1d2e1q1f112c1v2e1c2e1r2f1u2e1v2e1e2c1t3g1x2e1q2e122c1v3e1d2e1r1f1c2e1v2c1l2c1t3g1i2e1s2e1c2c1v2e102e1p2f1r2e1v2d112c1s2g1h2e1p3g1d2c1v3d1t2e1r2g1u2e1v1c1e2c1t3e142e1s2f1j2c1t2e1c2e1q3g1a2e1v2c102c1t1e1p2e1r1g1v2c1t1d1z2e1r1g122e1w2e1z2c1t2g1c2e1r1g1i2c1u2c1l2e1q2g1g2e1v1e1f2c1s1e1d2e1r2e1j2c1t2d1h2e1q1e1c2e1v2e1t2c1r1g1b2e1p1e1i2c1v3e1h2e1s3f1e2e1v3e162c1t1g1o2e1q1g1h2c1v1c1r2e1r2g1a2e1w2e1t2c1t2g1b2e1r2g1w2c1u2c1z2e1q3e1s2e1w2e1u2c1t2g1r2e1r3e1y2c1w1e1a2e1s2e132e1w3e1x2c1s2e132e1q1e1u2c1w3d1d2e1r1f132e1u3d1f2c1s3f172e1s3f1d2c1v3d172e1q3f1b2e1u3d192c1u3f192e1r3g192c1u2e102e1s2g152e1v3e172c1s3f1b2e1q3f1d2c1w3d1d2e1r1g132e1u2d1f2c1s3f1a2e1s3f1f2c1v3d172e1q2f1p2e1m2c1v2c1r2e162e1f141d1h1d1b2k1s1p1f2d1d241m','e801960200507d7e0c16b202ce2b102a'));//]]>  
+$(document).ready(function(){$(&quot;.footer h2&quot;).wrapInner(&quot;<span/>&quot;);});
+$(document).ready(function(){$(&quot;.sidebar h2&quot;).wrapInner(&quot;<span/>&quot;);});
+$(document).ready(function() {$(document).on(&quot;click&quot;, &#39;.bitz&#39;, function() {if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {var text = $(this).attr(&quot;data-text&quot;);var url = $(this).attr(&quot;data-href&quot;);var message = encodeURIComponent(text) + &quot; - &quot; + encodeURIComponent(url);var whatsapp_url = &quot;whatsapp://send?text=&quot; + message;window.location.href = whatsapp_url;} else {alert(&quot;This function works on Mobile Device only&quot;);}});});
+$(document).ready(function() {$(&#39;.PopularPosts img&#39;).attr(&#39;src&#39;, function(i, src) {return src.replace( &#39;s72-c&#39;, &#39;s400&#39; );});});
+</script>
+
+</head>
+ 
+<body>
+
+  <b:if cond='data:blog.pageType == &quot;index&quot;'>
+    <div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
+      <meta expr:content='data:blog.title' itemprop='name'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta expr:content='data:blog.metaDescription' itemprop='description'/>
+      </b:if>
+    </div>
+  </b:if>
+
+  <div class='ct-wrapper'>
+
+<div class='mage'>
+
+<nav class='top-nav'>
+
+<div class='container'>
+   
+   
+<form action='/search' id='peekar'>
+<input name='q' onblur='if (this.value == &quot;&quot;) {this.value = &quot;Search this site...&quot;;}' onfocus='if (this.value == &quot;Search this site...&quot;) {this.value = &quot;&quot;;}' type='text' value='Search this site...'/>
+<button title='Search' type='submit'><span class='fa fa-search'/></button>
+</form>
+
+<ul class='Pagemenu'>
+
+<!-- Customize Navigation Menu Here -->
+
+</ul>
+</div>
+</nav>
+
+</div><!-- mage -->
+  <div class='clear'/>
+
+<div class='container'>
+    <div class='header-wrapper'>
+      <div class='header-inner-wrap'>
+        <b:section class='header' id='header' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='Header1' locked='true' title='Insituto Cultivar 2 (Cabeçalho)' type='Header' version='1' visible='true'>
+            <b:includable id='main'>
+
+  <b:if cond='data:useImage'>
+    <b:if cond='data:imagePlacement == &quot;BEHIND&quot;'>
+      <!--
+      Show image as background to text. You can't really calculate the width
+      reliably in JS because margins are not taken into account by any of
+      clientWidth, offsetWidth or scrollWidth, so we don't force a minimum
+      width if the user is using shrink to fit.
+      This results in a margin-width's worth of pixels being cropped. If the
+      user is not using shrink to fit then we expand the header.
+      -->
+      <b:if cond='data:mobile'>
+          <div id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+                <b:include name='title'/>
+            </div>
+            <b:include name='description'/>
+          </div>
+        <b:else/>
+          <div expr:style='&quot;background-image: url(\&quot;&quot; + data:sourceUrl + &quot;\&quot;); &quot;                        + &quot;background-position: &quot;                        + data:backgroundPositionStyleStr + &quot;; &quot;                        + data:widthStyleStr                        + &quot;min-height: &quot; + data:height                        + &quot;_height: &quot; + data:height                        + &quot;background-repeat: no-repeat; &quot;' id='header-inner'>
+            <div class='titlewrapper' style='background: transparent'>
+                <b:include name='title'/>
+            </div>
+            <b:include name='description'/>
+          </div>
+        </b:if>
+    <b:else/>
+      <!--Show the image only-->
+      <div id='header-inner'>
+       <a expr:href='data:blog.homepageUrl' style='display: block'>
+          <img expr:alt='data:title' expr:height='data:height' expr:id='data:widget.instanceId + &quot;_headerimg&quot;' expr:src='data:sourceUrl' expr:width='data:width' style='display: block'/>
+          </a>
+        <!--Show the description-->
+        <b:if cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;'>
+          <b:include name='description'/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <!--No header image -->
+    <div id='header-inner'>
+      <div class='titlewrapper'>
+          <b:include name='title'/>
+      </div>
+      <b:include name='description'/>
+    </div>
+  </b:if>
+</b:includable>
+            <b:includable id='description'>
+  <div class='descriptionwrapper'>
+    <p class='description'><span><data:description/></span></p>
+  </div>
+</b:includable>
+            <b:includable id='title'>
+
+<b:if cond='data:blog.pageType != &quot;item&quot;'>
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<h1 class='title'>
+<a expr:href='data:blog.homepageUrl' expr:title='data:blog.title' itemprop='url'>
+<span itemprop='name'><data:title/></span>
+</a>
+</h1>
+<b:else/>
+<h2 class='title'>
+<a expr:href='data:blog.homepageUrl' expr:title='data:blog.title' itemprop='url'>
+<span itemprop='name'><data:title/></span>
+</a>
+</h2>
+</b:if>
+<b:else/>
+<h2 class='title'>
+<a expr:href='data:blog.homepageUrl' expr:title='data:blog.title' itemprop='url'>
+<span itemprop='name'><data:title/></span>
+</a>
+</h2>
+</b:if>
+
+</b:includable>
+          </b:widget>
+        </b:section>
+      </div>
+      <b:section class='header-right' id='header-right' maxwidgets='1' showaddelement='yes'/>
+      <div class='clear'/>
+    </div> 
+</div>    <div class='clear'/>
+
+<div class='container'>
+
+<nav class='main-nav' itemscope='itemscope' itemtype='http://schema.org/SiteNavigationElement' role='navigation'>
+
+  <div class='resp-desk'><a href='#' id='duled'><i class='fa fa-reorder'/>  Início</a></div>    
+   
+<div class='social-ico'>
+
+<!-- Social Profile Icons -->
+
+<a href='https://www.facebook.com/cultivarprojetos/' rel='nofollow' title='Curta'><i class='fa fa-facebook'/></a>
+<a href='RSS-FEED-URL' rel='nofollow' title='Rss feeds'><i class='fa fa-rss'/></a>
+</div>
+
+<ul class='menu'>
+
+<!-- Customize Navigation Menu Here -->
+
+<li class='home '><a expr:href='data:blog.homepageUrl'>Início</a></li>
+
+<li><a href='https://institutocultivar2.blogspot.com.br/p/quem-somos.html' itemprop='url'><span itemprop='name'>Quem somos</span></a></li>
+
+<li><a class='with-ul' href='http://institutocultivar2.blogspot.com.br/p/projetos-executados.html' itemprop='url'><span itemprop='name'>Projetos executados</span></a>
+<ul class='sub-menu'>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projeto Teste 01</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projeto Teste 02</a></li>
+<li><a href='#'>Projeto 03</a>
+</li>
+</ul>
+</li>
+
+<li><a href='http://institutocultivar2.blogspot.com.br/p/parceiros.html' itemprop='url'><span itemprop='name'>Parceiros</span></a></li>
+
+<li><a href='http://institutocultivar2.blogspot.com.br/p/estatuto.html' itemprop='url'><span itemprop='name'>Estatuto</span></a></li>
+
+
+</ul>
+
+</nav>
+</div>
+
+
+<div class='clear'/>
+
+    <div class='outer-wrapper'>
+  
+<div class='container'>
+
+<b:section class='crosscol' id='crosscol' showaddelement='yes'>
+  <b:widget id='HTML5' locked='false' title='' type='HTML' visible='true'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+</b:section><div class='clear'/>
+
+</div><!--Div Container-->
+
+<div class='container'>
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+</b:if>
+
+</div><!--Div Container-->
+
+<div class='container'>
+
+    <div class='main-wrapper'>
+
+        <div class='main-inner-wrap'>
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+<div class='clear'/>
+
+</b:if>
+
+          <b:section class='content' id='content' showaddelement='no'>
+            <b:widget id='Blog1' locked='true' title='Postagens no blog' type='Blog' version='1' visible='true'>
+              <b:includable id='main' var='top'>
+
+	  <b:include data='posts' name='breadcrumb'/>
+
+  <b:if cond='data:mobile == &quot;false&quot;'>
+
+    <div class='blog-posts hfeed'>
+
+      <b:include data='top' name='status-message'/>
+
+      <data:defaultAdStart/>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.isDateStart'>
+          <b:if cond='data:post.isFirstPost == &quot;false&quot;'>
+            &lt;/div&gt;&lt;/div&gt;
+          </b:if>
+        </b:if>
+        <b:if cond='data:post.isDateStart'>
+          &lt;div class=&quot;date-outer&quot;&gt;
+        </b:if>
+        <b:if cond='data:post.dateHeader'>
+          <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+        </b:if>
+        <b:if cond='data:post.isDateStart'>
+          &lt;div class=&quot;date-posts&quot;&gt;
+        </b:if>
+        <div class='post-outer'>
+        <b:include data='post' name='post'/>
+        <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+          <b:include data='post' name='comments'/>
+        </b:if>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:include data='post' name='comments'/>
+        </b:if>
+        </div>
+        <b:if cond='data:post.includeAd'>
+          <b:if cond='data:post.isFirstPost'>
+            <data:defaultAdEnd/>
+          <b:else/>
+            <data:adEnd/>
+          </b:if>
+          <div class='inline-ad'>
+            <data:adCode/>
+          </div>
+          <data:adStart/>
+        </b:if>
+      </b:loop>
+      <b:if cond='data:numPosts != 0'>
+        &lt;/div&gt;&lt;/div&gt;
+      </b:if>
+      <data:adEnd/>
+    </div>
+
+    <!-- nextprev button -->
+    <b:include name='nextprev'/>
+
+
+    <b:if cond='data:top.showStars'>
+      <script src='//www.google.com/jsapi' type='text/javascript'/>
+      <script type='text/javascript'>
+        google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
+        function initialize() {
+          google.annotations.setApplicationId(<data:top.blogspotReviews/>);
+          google.annotations.createAll();
+          google.annotations.fetch();
+        }
+        google.setOnLoadCallback(initialize);
+      </script>
+    </b:if>
+
+  <b:else/>
+    <b:include name='mobile-main'/>
+  </b:if>
+
+  <b:if cond='data:top.showDummy'>
+    <data:top.dummyBootstrap/>
+  </b:if>
+
+</b:includable>
+              <b:includable id='backlinkDeleteIcon' var='backlink'>
+  <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
+    <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
+      <img src='//www.blogger.com/img/icon_delete13.gif'/>
+    </a>
+  </span>
+</b:includable>
+              <b:includable id='backlinks' var='post'>
+  <a name='links'/><h4><data:post.backlinksLabel/></h4>
+  <b:if cond='data:post.numBacklinks != 0'>
+    <dl class='comments-block' id='comments-block'>
+      <b:loop values='data:post.backlinks' var='backlink'>
+        <div class='collapsed-backlink backlink-control'>
+          <dt class='comment-title'>
+            <span class='backlink-toggle-zippy'>&#160;</span>
+            <a expr:href='data:backlink.url' rel='nofollow'><data:backlink.title/></a>
+            <b:include data='backlink' name='backlinkDeleteIcon'/>
+          </dt>
+          <dd class='comment-body collapseable'>
+            <data:backlink.snippet/>
+          </dd>
+          <dd class='comment-footer collapseable'>
+            <span class='comment-author'><data:post.authorLabel/> <data:backlink.author/></span>
+            <span class='comment-timestamp'><data:post.timestampLabel/> <data:backlink.timestamp/></span>
+          </dd>
+        </div>
+      </b:loop>
+    </dl>
+  </b:if>
+  <p class='comment-footer'>
+    <a class='comment-link' expr:href='data:post.createLinkUrl' expr:id='data:widget.instanceId + &quot;_backlinks-create-link&quot;' target='_blank'><data:post.createLinkLabel/></a>
+  </p>
+</b:includable>
+              <b:includable id='breadcrumb' var='posts'>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+<div id='breadcrumbs'>
+<ul>
+
+<b:loop values='data:posts' var='post'><b:if cond='data:post.labels'>
+
+<span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title' style='padding-left:8px; color:#909090'><i class='fa fa-home'/> Home</span></a></span>  
+
+<b:loop values='data:post.labels' var='label'><li itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;amp;max-results=6&quot;' itemprop='url'><span itemprop='title'><i class='fa fa-angle-right fa-fw'/> <data:label.name/></span></a></li><b:if cond='data:label.isLast != &quot;true&quot;'/></b:loop>
+
+  <li><a><i class='fa fa-angle-right fa-fw'/> <data:post.title/></a></li>
+
+</b:if></b:loop>
+
+</ul>
+</div>
+
+</b:if>
+
+</b:includable>
+              <b:includable id='comment-form' var='post'>
+  <div class='comment-form'>
+    <b:if cond='data:mobile'>
+      <h4 id='comment-post-message'>
+        <a expr:id='data:widget.instanceId + &quot;_comment-editor-toggle-link&quot;' expr:title='data:postCommentMsg' href='javascript:void(0)'><data:postCommentMsg/></a></h4>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>      
+        <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+        <a expr:href='&quot;http://www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;pageID=&quot; + data:post.id' id='comment-editor-src' title='comment editor'/>
+      <iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+        </b:if>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+        <a expr:href='&quot;http://www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:post.id' id='comment-editor-src' title='comment editor'/>
+      <iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+        </b:if>
+    <b:else/>
+      <h4 id='comment-post-message'><data:postCommentMsg/></h4>
+<div id='threaded-comment-form'>
+      <p><data:blogCommentMessage/>
+  </p>
+
+      <data:blogTeamBlogMessage/>    
+        <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+        <a expr:href='&quot;http://www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;pageID=&quot; + data:post.id' id='comment-editor-src' title='comment editor'/>
+      <iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+        </b:if>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+        <a expr:href='&quot;http://www.blogger.com/comment-iframe.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:post.id' id='comment-editor-src' title='comment editor'/>
+      <iframe class='blogger-iframe-colorize blogger-comment-from-post' height='410' id='comment-editor' name='comment-editor'/>
+        </b:if>
+      </div>
+    </b:if>
+    <data:post.friendConnectJs/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+    </script>
+  </div>
+</b:includable>
+              <b:includable id='commentDeleteIcon' var='comment'>
+  <span expr:class='&quot;item-control &quot; + data:comment.adminClass'>
+    <b:if cond='data:showCmtPopup'>
+      <div class='goog-toggle-button'>
+        <div class='goog-inline-block comment-action-icon'/>
+      </div>
+    <b:else/>
+      <a class='comment-delete' expr:href='&quot;http://www.blogger.com/delete-comment.g?blogID=&quot; + data:blog.blogId + &quot;&amp;amp;postID=&quot; + data:comment.id' title='delete comment'>delete</a>
+    </b:if>
+  </span>
+</b:includable>
+              <b:includable id='comment_count_picker' var='post'>
+  <b:if cond='data:post.commentSource == 1'>
+    <span class='cmt_count_iframe_holder' expr:data-count='data:post.numComments' expr:data-onclick='data:post.addCommentOnclick' expr:data-post-url='data:post.url' expr:data-url='data:post.canonicalUrl'>
+    </span>
+  <b:else/>
+    <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
+      <data:post.commentLabelFull/>:
+    </a>
+  </b:if>
+</b:includable>
+              <b:includable id='comment_picker' var='post'>
+  <b:if cond='data:post.commentSource == 1'>
+    <b:include data='post' name='iframe_comments'/>
+  <b:else/>
+    <b:if cond='data:post.showThreadedComments'>
+      <b:include data='post' name='threaded_comments'/>
+    <b:else/>
+      <b:include data='post' name='comments'/>
+    </b:if>
+  </b:if>
+</b:includable>
+              <b:includable id='comments' var='post'>
+<div class='comments' id='comments'>
+<b:if cond='data:post.allowComments'>
+  <b:if cond='data:post.numComments != 0'>
+   <h3>
+    <b:if cond='data:post.numComments == 1'>1 <data:commentLabel/>:
+     <b:else/>
+     <data:post.numComments/> <data:commentLabelPlural/>
+    </b:if>
+   </h3>
+<a class='click-comment' expr:title='data:commentLabelPlural' href='#comment-form'>Write <data:commentLabelPlural/></a>
+  </b:if>
+               
+  <b:if cond='data:post.commentPagingRequired'>
+   <span class='paging-control-container'>
+    <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl' expr:title='data:post.oldestLinkText'><data:post.oldestLinkText/></a>
+    &#160;
+    <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl' expr:title='data:post.olderLinkText'><data:post.olderLinkText/></a>
+    &#160;
+    <data:post.commentRangeText/>
+    &#160;
+    <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl' expr:title='data:post.newerLinkText'><data:post.newerLinkText/></a>
+    &#160;
+    <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl' expr:title='data:post.newestLinkText'><data:post.newestLinkText/></a>
+   </span>
+  </b:if>
+                       
+  <div class='clear'/>
+  <div id='comment_block'>
+   <b:loop values='data:post.comments' var='comment'>
+                                                                             
+   <div data-level='0' expr:class='data:comment.adminClass' expr:id='data:comment.anchorName'>                                                                                      
+      <b:if cond='data:post.adminClass == data:comment.adminClass'>
+       &lt;div class=&#39;comment_inner comment_admin&#39;&gt;
+       <b:else/>
+                            &lt;div class=&#39;comment_inner&#39;&gt;
+      </b:if>
+         
+    <div class='comment_body'>
+    <div class='comment_header'>
+     <div class='comment_avatar_wrap'>
+   
+     </div>
+                         
+     <div class='clear'/>
+    </div>
+
+     <div class='comment_name'>
+      <b:if cond='data:comment.authorUrl'>
+       <a expr:href='data:comment.authorUrl' expr:title='data:comment.author' rel='nofollow' target='_blank'><data:comment.author/></a>
+       <b:else/>
+       <data:comment.author/>
+      </b:if>
+<div class='comment_author_flag'>AUTHOR</div>
+</div>
+<span class='comment_service'>
+      <span class='comment_date'><a expr:href='data:comment.url' rel='nofollow' title='comment permalink'>
+                  <data:comment.timestamp/>
+                </a></span>
+<b:include data='comment' name='commentDeleteIcon'/>
+  </span>
+     <b:if cond='data:comment.isDeleted'>
+      <span class='deleted-comment'><data:comment.body/></span>
+      <b:else/>
+      <p><data:comment.body/></p>
+<a class='comment_reply' expr:href='&quot;#r_&quot;+data:comment.anchorName' expr:id='&quot;r&quot;+data:comment.anchorName' onclick='javascript:Display_Reply_Form(this)' title='Reply'>Reply</a>
+                        <div class='clear'/>
+                    </b:if>
+                 <div class='comment_avatar'>
+      <img alt='avatar' expr:src='data:comment.authorAvatarSrc' expr:title='data:comment.author'/>
+              </div>                                         
+    </div>                         
+     <div class='clear'/>
+     &lt;/div&gt;
+     <div class='clear'/>
+           
+    <div class='comment_child'/>
+    <div class='comment_reply_form' expr:id='&quot;r_f_&quot;+data:comment.anchorName'/>              
+    </div>
+   </b:loop>              
+   </div>    
+    <div class='clear'/>
+    <b:if cond='data:post.commentPagingRequired'>
+     <span class='paging-control-container'>
+       <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl' expr:title='data:post.oldestLinkText'><data:post.oldestLinkText/></a>
+       &#160;
+       <a expr:class='data:post.oldLinkClass' expr:href='data:post.olderLinkUrl' expr:title='data:post.olderLinkText'><data:post.olderLinkText/></a>
+       &#160;
+       <data:post.commentRangeText/>
+       &#160;
+       <a expr:class='data:post.newLinkClass' expr:href='data:post.newerLinkUrl' expr:title='data:post.newerLinkText'><data:post.newerLinkText/></a>
+       &#160;
+       <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl' expr:title='data:post.newestLinkText'><data:post.newestLinkText/></a>
+     </span>
+    </b:if>
+    <div class='clear'/>
+  <div class='comment_form' id='comment-form'>         
+         
+
+   <b:if cond='data:post.embedCommentForm'>
+    <b:if cond='data:post.allowNewComments'>   
+     <b:include data='post' name='threaded-comment-form'/>
+       <b:else/>
+       <data:post.noNewCommentsText/>
+    </b:if>
+    <b:else/>
+    <b:if cond='data:post.allowComments'>
+     <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick' expr:title='data:postCommentMsg'><data:postCommentMsg/></a>
+    </b:if>
+   </b:if>
+  </div>
+ </b:if>
+</div>                
+       <script type='text/javascript'>
+       //<![CDATA[
+       if (typeof(jQuery) == 'undefined') {
+ //output the script (load it from google api)
+ document.write("<scr" + "ipt type=\"text/javascript\" src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js\"></scr" + "ipt>");
+}
+       //]]>
+       </script>
+     
+       <script async='async' src='//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js' type='text/javascript'/>
+       <script type='text/javascript'>
+      
+         <b:if cond='data:post.numComments != 0'>
+         var Items = <data:post.commentJso/>;
+         var Msgs = <data:post.commentMsgs/>;
+         var Config = <data:post.commentConfig/>;
+
+        <b:else/>
+         var Items = {};
+         var Msgs = {};
+         var Config = {&#39;maxThreadDepth&#39;:&#39;0&#39;};
+        </b:if>
+       //<![CDATA[
+       //Global setting
+        Config.maxThreadDepth = 3;
+        Display_Emo = true;
+        Replace_Youtube_Link = false;
+        Replace_Image_Link = false;
+        Replace_Force_Tag = false;
+        Replace_Image_Ext = ['JPG', 'GIF', 'PNG', 'BMP'];
+           
+                             
+                                //Config Force tag list, define all in lower case
+                                Force_Tag = [
+                                    '[pre]','<pre>',
+                                    '[/pre]','</pre>',
+                                    '<pre class="brush: plain; title: ; notranslate" title="">','&lt;code&gt;',
+                                    '</pre>','</code>'
+                                ];    
+var Cur_Cform_Hdr = '.comment_form';
+var Cur_Cform_Url = $('#comment-editor')
+    .attr('src');
+
+function trim(str) {
+    var whitespace = ' \n\r\t\f\x5b\x5d\x7c\x7d\x3c\x3e\x0b\xa0\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u200b\u2028\u2029\u3000';
+    for (var i = 0; i < str.length; i++) {
+        if (whitespace.indexOf(str.charAt(i)) != -1) {
+            str = str.substring(0, i);
+            break
+        }
+    }
+    return str
+}
+$('#comment_block .comment_body p')
+    .html(function (index, oldhtml) {
+        if (Replace_Youtube_Link) {
+            var search_key = 'http://www.youtube.com/watch?v=';
+            var check_index = oldhtml.indexOf(search_key);
+            while (check_index != -1) {
+                ht = oldhtml.substring(check_index);
+                yt_link = trim(ht);
+                var yt_code_index = yt_link.indexOf('&');
+                var yt_code = '';
+                if (yt_code_index == -1) {
+                    yt_code = yt_link.substring(search_key.length)
+                } else {
+                    yt_code = yt_link.substring(search_key.length, yt_code_index)
+                }
+                var yt_video = '<iframe class="comment_youtube" src="http://www.youtube.com/embed/' + yt_code + '?autohide=1" frameborder="0" allowfullscreen></iframe>';
+                oldhtml = oldhtml.substring(0, check_index) + yt_video + oldhtml.substring(check_index + yt_link.length);
+                check_index = oldhtml.indexOf(search_key);
+                if (check_index == -1) {
+                    search_key = 'https://www.youtube.com/watch?v=';
+                    check_index = oldhtml.indexOf(search_key)
+                }
+            }
+        }
+        if (Replace_Image_Link) {
+            var save_html = '';
+            var temp_html = oldhtml;
+            for (var i = 0; i < Replace_Image_Ext.length; i++) {
+                var search_key = '.' + Replace_Image_Ext[i];
+                var upper_html = temp_html.toUpperCase();
+                var check_index = upper_html.indexOf(search_key);
+                while (check_index != -1) {
+                    img_src = temp_html.substring(0, check_index + search_key.length);
+                    upper_html = img_src.toUpperCase();
+                    var http_search = 'HTTP://';
+                    var find_http = upper_html.indexOf(http_search);
+                    var save_http = '';
+                    while (find_http != -1) {
+                        save_http = http_search.toLowerCase();
+                        img_src = img_src.substring(find_http + http_search.length);
+                        upper_html = img_src.toUpperCase();
+                        find_http = upper_html.indexOf(http_search)
+                    }
+                    http_search = 'HTTPS://';
+                    upper_html = img_src.toUpperCase();
+                    find_http = upper_html.indexOf(http_search);
+                    while (find_http != -1) {
+                        save_http = http_search.toLowerCase();
+                        img_src = img_src.substring(find_http + http_search.length);
+                        upper_html = img_src.toUpperCase();
+                        find_http = upper_html.indexOf(http_search)
+                    }
+                    if (save_http == '' || img_src.length < 6) {
+                        break
+                    }
+                    img_src = save_http + img_src;
+                    save_html += temp_html.substring(0, check_index + search_key.length - img_src.length) + '<img src="' + img_src + '" class="comment_img"/>';
+                    temp_html = temp_html.substring(check_index + search_key.length);
+                    upper_html = temp_html.toUpperCase();
+                    check_index = upper_html.indexOf(search_key)
+                }
+            }
+            oldhtml = save_html + temp_html
+        }
+        if (Replace_Force_Tag) {
+            var length = Force_Tag.length;
+            if (length % 2 == 1) {
+                length--
+            }
+            for (var i = 0; i < length; i += 2) {
+                while (1) {
+                    var temp_html = oldhtml.toLowerCase();
+                    check_index = temp_html.indexOf(Force_Tag[i]);
+                    if (check_index != -1) {
+                        oldhtml = oldhtml.substring(0, check_index) + Force_Tag[i + 1] + oldhtml.substring(check_index + Force_Tag[i].length)
+                    } else {
+                        break
+                    }
+                }
+            }
+        }
+        return oldhtml
+    });
+$('.comment_wrap .comment_body p')
+    .html(function (i, h) {
+        temp = h.toLowerCase();
+        index = temp.indexOf('@<a href="#c');
+        if (index != -1) {
+            index_tail = temp.indexOf('</a>', index);
+            if (index_tail != -1) {
+                h = h.substring(0, index) + h.substring(index_tail + 4)
+            }
+        }
+        return h
+    });
+
+function Valid_Par_Id(par_id) {
+    r = par_id.indexOf('c');
+    if (r != -1) par_id = par_id.substring(r + 1);
+    return par_id
+}
+
+function Cform_Ins_ParID(par_id) {
+    par_id = '&parentID=' + par_id + '#%7B';
+    n_cform_url = Cur_Cform_Url.replace(/#%7B/, par_id);
+    return n_cform_url
+}
+
+function Reset_Comment_Form() {
+    html = $(Cur_Cform_Hdr)
+        .html();
+    $(Cur_Cform_Hdr)
+        .html('');
+    Cur_Cform_Hdr = '.comment_form';
+    $(Cur_Cform_Hdr)
+        .html(html);
+    $('#comment-editor')
+        .attr('src', Cur_Cform_Url)
+}
+
+function Display_Reply_Form(e) {
+    par_id = $(e)
+        .attr('id');
+    par_id = Valid_Par_Id(par_id);
+    html = $(Cur_Cform_Hdr)
+        .html();
+    if (Cur_Cform_Hdr == '.comment_form') {
+        reset_html = '<a href="#origin_cform" onclick="Reset_Comment_Form()">' + Msgs.addComment + '</a><a name="origin_cform"/>';
+        $(Cur_Cform_Hdr)
+            .html(reset_html)
+    } else {
+        $(Cur_Cform_Hdr)
+            .html('')
+    }
+    Cur_Cform_Hdr = '#r_f_c' + par_id;
+    $(Cur_Cform_Hdr)
+        .html(html);
+    $('#comment-editor')
+        .attr('src', Cform_Ins_ParID(par_id))
+}
+cur_url = window.location.href;
+search_formid = '#comment-form_';
+search_index = cur_url.indexOf(search_formid);
+if (search_index != -1) {
+    ret_id = cur_url.substring(search_index + search_formid.length);
+    Display_Reply_Form('#rc' + ret_id)
+}
+for (var i = 0; i < Items.length; i++) {
+    if ('parentId' in Items[i]) {
+        var par_id = Items[i].parentId;
+        var par_level = parseInt($('#c' + par_id + ':first')
+            .attr('level'));
+        $('#c' + par_id + ' .comment_child:first')
+            .html(function (index, oldhtml) {
+                var child_id = Items[i].id;
+                if (par_level >= Config.maxThreadDepth) {
+                    $('#c' + child_id + ':first .comment_reply')
+                        .remove()
+                }
+                var child_html = $('#c' + child_id + ':first')
+                    .html();
+                child_html = '<div class="comment_wrap" id="c' + child_id + '" level="' + (par_level + 1) + '">' + child_html + '</div>';
+                $('#c' + child_id)
+                    .remove();
+                return (oldhtml + child_html)
+            })
+    }
+}
+
+var avatar=$("#comments");
+avatar.find('.comment_avatar img').each(function() {
+        var ava = $(this).attr('src');
+        $(this).show().attr('src', ava.replace(/\/s[0-9]+(\-c)?\//,"/s100-c/"));
+});      
+//]]>
+</script>
+</b:includable>
+              <b:includable id='feedLinks'>
+  <b:if cond='data:blog.pageType != &quot;item&quot;'> 
+    <b:if cond='data:feedLinks'>
+      <div class='blog-feeds'>
+        <b:include data='feedLinks' name='feedLinksBody'/>
+      </div>
+    </b:if>
+
+    <b:else/>
+    <div class='post-feeds'>
+      <b:loop values='data:posts' var='post'>
+        <b:if cond='data:post.allowComments'>
+          <b:if cond='data:post.feedLinks'>
+            <b:include data='post.feedLinks' name='feedLinksBody'/>
+          </b:if>
+        </b:if>
+      </b:loop>
+    </div>
+  </b:if>
+</b:includable>
+              <b:includable id='feedLinksBody' var='links'>
+  <div class='feed-links'>
+  <data:feedLinksMsg/>
+  <b:loop values='data:links' var='f'>
+     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'><data:f.name/> (<data:f.feedType/>)</a>
+  </b:loop>
+  </div>
+</b:includable>
+              <b:includable id='iframe_comments' var='post'>
+
+  <b:if cond='data:post.allowIframeComments'>
+    <script expr:src='data:post.iframeCommentSrc' type='text/javascript'/>
+    <div class='cmt_iframe_holder' expr:data-href='data:post.canonicalUrl' expr:data-viewtype='data:post.viewType'/>
+
+    <b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
+      <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
+    </b:if>
+  </b:if>
+</b:includable>
+              <b:includable id='mobile-index-post' var='post'>
+  <div class='mobile-date-outer date-outer'>
+    <b:if cond='data:post.dateHeader'>
+      <div class='date-header'>
+        <span><data:post.dateHeader/></span>
+      </div>
+    </b:if>
+
+    <div class='mobile-post-outer'>
+      <a expr:href='data:post.url'>
+        <h3 class='mobile-index-title entry-title' itemprop='name'>
+          <data:post.title/>
+        </h3>
+
+        <div class='mobile-index-arrow'>&amp;rsaquo;</div>
+
+        <div class='mobile-index-contents'>
+          <b:if cond='data:post.thumbnailUrl'>
+            <div class='mobile-index-thumbnail'>
+              <div class='Image'>
+                <img expr:src='data:post.thumbnailUrl'/>
+              </div>
+            </div>
+          </b:if>
+
+          <div class='post-body'>
+            <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
+          </div>
+        </div>
+
+        <div style='clear: both;'/>
+      </a>
+
+      <div class='mobile-index-comment'>
+        <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+          <b:if cond='data:post.allowComments'>
+            <b:if cond='data:post.numComments != 0'>
+              <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+            </b:if>
+          </b:if>
+        </b:if>
+      </div>
+    </div>
+  </div>
+</b:includable>
+              <b:includable id='mobile-main' var='top'>
+
+    <div class='blog-posts hfeed'>
+
+      <b:include data='top' name='status-message'/>
+
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-index-post'/>
+        </b:loop>
+      <b:else/>
+        <b:loop values='data:posts' var='post'>
+          <b:include data='post' name='mobile-post'/>
+        </b:loop>
+      </b:if>
+    </div>
+
+   <b:include name='mobile-nextprev'/>
+</b:includable>
+              <b:includable id='mobile-nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-newer-link'>
+      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>&amp;lsaquo;</a>
+      </div>
+    </b:if>
+
+    <b:if cond='data:olderPageUrl'>
+      <div class='mobile-link-button' id='blog-pager-older-link'>
+      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>&amp;rsaquo;</a>
+      </div>
+    </b:if>
+
+    <div class='mobile-link-button' id='blog-pager-home-link'>
+    <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
+    </div>
+
+    <div class='mobile-desktop-link'>
+      <a class='home-link' expr:href='data:desktopLinkUrl'><data:desktopLinkMsg/></a>
+    </div>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+              <b:includable id='mobile-post' var='post'>
+  <div class='date-outer'>
+    <b:if cond='data:post.dateHeader'>
+      <h2 class='date-header'><span><data:post.dateHeader/></span></h2>
+    </b:if>
+    <div class='date-posts'>
+      <div class='post-outer'>
+
+        <div class='post hentry uncustomized-post-template'>
+          <a expr:name='data:post.id'/>
+          <b:if cond='data:post.title'>
+            <h1 class='post-title entry-title'>
+              <b:if cond='data:post.link'>
+                <a expr:href='data:post.link'><data:post.title/></a>
+              <b:else/>
+                <b:if cond='data:post.url'>
+                  <b:if cond='data:blog.url != data:post.url'>
+                    <a expr:href='data:post.url'><data:post.title/></a>
+                  <b:else/>
+                    <data:post.title/>
+                  </b:if>
+                <b:else/>
+                  <data:post.title/>
+                </b:if>
+              </b:if>
+            </h1>
+          </b:if>
+
+          <div class='post-header'>
+            <div class='post-header-line-1'/>
+          </div>
+
+          <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
+            <data:post.body/>
+            <div style='clear: both;'/>
+          </div>
+
+          <div class='post-footer'>
+            <div class='post-footer-line post-footer-line-1'>
+              <span class='post-author vcard'>
+                <b:if cond='data:top.showAuthor'>
+                  <b:if cond='data:post.authorProfileUrl'>
+                    <span class='fn'>
+                      <a expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                        <data:post.author/>
+                      </a>
+                    </span>
+                  <b:else/>
+                    <span class='fn'><data:post.author/></span>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-timestamp'>
+                <b:if cond='data:top.showTimestamp'>
+                  <data:top.timestampLabel/>
+                  <b:if cond='data:post.url'>
+                    <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published' expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr></a>
+                  </b:if>
+                </b:if>
+              </span>
+
+              <span class='post-comment-link'>
+                <b:if cond='data:blog.pageType != &quot;item&quot;'>
+                  <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+                    <b:if cond='data:post.allowComments'>
+                      <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 1'>1 <data:top.commentLabel/><b:else/><data:post.numComments/> <data:top.commentLabelPlural/></b:if></a>
+                    </b:if>
+                  </b:if>
+                </b:if>
+              </span>
+            </div>
+
+            <div class='post-footer-line post-footer-line-2'>
+              <b:if cond='data:top.showMobileShare'>
+                <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
+                  <a href='javascript:void(0);'><data:shareMsg/></a>
+                </div>
+              </b:if>
+              <b:if cond='data:top.showDummy'>
+                <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
+              </b:if>
+            </div>
+
+          </div>
+        </div>
+        <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+          <b:include data='post' name='comment_picker'/>
+        </b:if>
+        <b:if cond='data:blog.pageType == &quot;item&quot;'>
+          <b:include data='post' name='comment_picker'/>
+        </b:if>
+      </div>
+    </div>
+  </div>
+</b:includable>
+              <b:includable id='nextprev'>
+  <div class='blog-pager' id='blog-pager'>
+    <b:if cond='data:newerPageUrl'>
+      <span id='blog-pager-newer-link'>
+      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
+      </span>
+    </b:if>
+
+    <b:if cond='data:olderPageUrl'>
+      <span id='blog-pager-older-link'>
+      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
+      </span>
+    </b:if>
+
+    <a class='home-link' expr:href='data:blog.homepageUrl'><i class='fa fa-home'/></a>
+
+    <b:if cond='data:mobileLinkUrl'>
+      <div class='blog-mobile-link'>
+        <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
+      </div>
+    </b:if>
+
+  </div>
+  <div class='clear'/>
+</b:includable>
+              <b:includable id='post' var='post'>
+             <div class='post hentry uncustomized-post-template' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<div itemType='https://schema.org/WebPage' itemprop='mainEntityOfPage' itemscope='itemscope'/>
+<div itemprop='image' itemscope='itemscope' itemtype='https://schema.org/ImageObject'>
+<meta expr:content='data:post.firstImageUrl' itemprop='url'/>
+<meta content='700' itemprop='width'/>
+<meta content='700' itemprop='height'/>
+</div>
+<div itemprop='publisher' itemscope='itemscope' itemtype='https://schema.org/Organization' style='display:none;'>
+<div itemprop='logo' itemscope='itemscope' itemtype='https://schema.org/ImageObject'>
+<meta expr:content='data:post.authorProfileUrl' itemprop='url'/>
+<meta content='100' itemprop='width'/>
+<meta content='100' itemprop='height'/>
+</div>
+<span itemprop='name'><data:post.author/></span>
+</div>
+
+<a expr:name='data:post.id'/>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+
+<b:if cond='data:post.title'>
+<h1 class='post-title entry-title' itemprop='name headline'>
+<b:if cond='data:post.link'>       
+<a expr:href='data:post.link'><data:post.title/></a>    
+<b:else/>
+<b:if cond='data:post.url'>
+<b:if cond='data:blog.url != data:post.url'>
+<a expr:href='data:post.url'><data:post.title/></a>
+<b:else/>
+<data:post.title/>
+</b:if>
+<b:else/>
+<data:post.title/>
+</b:if>
+</b:if>
+</h1>
+</b:if>
+
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+
+<b:if cond='data:post.title'>
+<h2 class='post-title entry-title' itemprop='name headline'>
+<b:if cond='data:post.link'>
+<a expr:href='data:post.link'><data:post.title/></a>  
+<b:else/>
+<b:if cond='data:post.url'>
+<b:if cond='data:blog.url != data:post.url'>
+<a expr:href='data:post.url'><data:post.title/></a>
+<b:else/>
+<data:post.title/>
+</b:if>
+<b:else/>
+<data:post.title/>
+</b:if>
+</b:if>
+</h2>
+</b:if>
+
+</b:if>
+
+<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+<div class='post-header'>
+<div class='post-header-line-1'>
+          
+
+</div>
+</div>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<!-- Show Ads Below Post Title -->
+
+</b:if>
+
+      <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div itemprop='description articleBody'><p><data:post.body/></p></div>
+<b:else/>
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<data:post.body/>
+<b:else/>
+
+<b:if cond='data:post.firstImageUrl'>
+<a expr:href='data:post.url' expr:title='data:post.title'><div class='bukshan'><img expr:src='data:post.firstImageUrl'/></div>
+</a><b:else/>
+<a expr:href='data:post.url' expr:title='data:post.title'><div class='bukshan'><img src='http://1.bp.blogspot.com/-Nit_LiUtMHE/VflsSxNxENI/AAAAAAAADiM/CuVVm4SVl8E/s320/No-image-bt9.jpg'/></div>
+</a>
+</b:if> 
+ 
+<b:if cond='data:post.title'>
+<h2 class='post-title entry-title' itemprop='name headline'>
+<b:if cond='data:post.link'>
+<a expr:href='data:post.link'><data:post.title/></a>  
+<b:else/>
+<b:if cond='data:post.url'>
+<b:if cond='data:blog.url != data:post.url'>
+<a expr:href='data:post.url'><data:post.title/></a>
+<b:else/>
+<data:post.title/>
+</b:if>
+<b:else/>
+<data:post.title/>
+</b:if>
+</b:if>
+</h2>
+</b:if>
+
+<div expr:id='&quot;summary&quot; + data:post.id'><div itemprop='description articleBody'><data:post.body/></div></div>
+<script type='text/javascript'>bintiz(&quot;summary<data:post.id/>&quot;,&quot;<data:post.title/>&quot;,&quot;<data:post.url/>&quot;,&quot;&quot;);</script>    
+
+<a class='button blue' expr:href='data:post.url'>Read More</a>
+
+</b:if>
+</b:if>
+
+      <div style='clear: both;'/> <!-- clear for photos floats -->
+    </div>
+
+    <div class='post-footer'>
+    <div class='post-footer-line post-footer-line-1'>
+      <b:if cond='data:blog.pageType == &quot;item&quot;'>
+        <!-- Post-Footer -->
+      
+<div class='spinner'>    
+<li><a class='fb-ico' expr:href='&quot;http://www.facebook.com/share.php?u=&quot; + data:post.url + &quot;&amp;t=&quot; + data:post.title + &quot; &quot;' target='_blank' title='Share on facebook'><i class='fa fa-facebook'/> <span class='sit'>Facebook</span></a></li>
+
+<li><a class='twi-ico' expr:href='&quot;http://twitter.com/share?original_referer=&quot; + data:post.url + &quot;&amp;source=web&amp;text=&quot; + data:post.title' target='_blank' title='Tweet this'><i class='fa fa-twitter'/> <span class='sit'>Twitter</span></a></li>
+
+<li><a class='go-ico' data-title='Google+' expr:href='&quot;https://plus.google.com/share?url=&quot; + data:post.url' target='_blank' title='Share on google+'><i class='fa fa-google'/> <span class='sit'>Google</span></a></li>
+
+<li><a class='bitz' expr:data-href='data:post.url' expr:data-text='data:post.title' href='#' title='Share on whatsapp'><i class='fa fa-whatsapp'/> <span class='sit'>Whatsapp</span></a></li>
+
+</div>
+
+
+   </b:if>
+    </div>
+      <div class='post-footer-line post-footer-line-2'>
+      <b:if cond='data:blog.pageType == &quot;item&quot;'>
+  
+
+</b:if>
+</div>
+
+      <div class='post-footer-line post-footer-line-3'>
+<span class='post-location'>
+<b:if cond='data:top.showLocation'>
+<b:if cond='data:post.location'>
+<data:postLocationLabel/>
+<a expr:href='data:post.location.mapsUrl' target='_blank'><data:post.location.name/></a>
+</b:if>
+</b:if>
+</span> 
+</div>
+
+    </div>
+  </div>
+
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<div id='related-posts'>
+<b:loop values='data:post.labels' var='label'>
+<b:if cond='data:label.isLast != &quot;true&quot;'>
+</b:if>
+<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels_thumbs&amp;max-results=8&quot;' type='text/javascript'/>
+</b:loop>
+<script type='text/javascript'>
+var currentposturl=&quot;<data:post.url/>&quot;;
+var maxresults=3;
+var relatedpoststitle=&quot;Related Products &quot;;
+removeRelatedDuplicates_thumbs();
+printRelatedLabels_thumbs();
+</script>
+</div>
+<div class='clear'/>  
+
+<div class='auth-panel'>
+<img class='author_avatar' expr:alt='data:post.author' expr:src='data:post.authorPhoto.url' height='96' width='96'/>
+<h4>About <data:post.author/>  - <a href='facebook-url' target='_blank' title='Like on facebook'><i class='fa fa-facebook'/></a> <a href='twitter-url' target='_blank' title='follow on twitter'><i class='fa fa-twitter'/></a> <a href='google-url' target='_blank' title='Add to circle'><i class='fa fa-google'/></a></h4>
+<p>
+<!-- Change Author Info Here -->
+
+Author Description here.. Nulla sagittis convallis. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo.
+</p>
+</div>
+
+<!-- Subscribe Email Form -->
+
+<form action='http://feedburner.google.com/fb/a/mailverify' class='sub-dd' method='post' onsubmit='window.open(&apos;http://feedburner.google.com/fb/a/mailverify?uri=bloggertheme09&amp;loc=en_US;, &apos;popupwindow&apos;, scrollbars=yes,width=550,height=520&apos;);return true' target='popupwindow'>Subscribe to this Blog via Email : <input name='email' style='width: 160px; background-color: rgb(255, 255, 160);' type='text'/> <input name='uri' type='hidden' value='bloggertheme09'/><input name='loc' type='hidden' value='en_US'/><input type='submit' value='Subscribe'/> </form>
+
+</b:if>
+
+</b:includable>
+              <b:includable id='postQuickEdit' var='post'>
+  <b:if cond='data:post.editUrl'>
+    <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
+      <a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg'>
+        <img alt='' class='icon-action' height='18' src='http://img2.blogblog.com/img/icon18_edit_allbkg.gif' width='18'/>
+      </a>
+    </span>
+  </b:if>
+</b:includable>
+              <b:includable id='shareButtons' var='post'>
+  <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
+</b:includable>
+              <b:includable id='status-message'>
+  <b:if cond='data:navMessage'>
+  <div class='status-msg-wrap'>
+    <div class='status-msg-body'>
+      <data:navMessage/>
+    </div>
+    <div class='status-msg-border'>
+      <div class='status-msg-bg'>
+        <div class='status-msg-hidden'><data:navMessage/></div>
+      </div>
+    </div>
+  </div>
+  <div style='clear: both;'/>
+  </b:if>
+</b:includable>
+              <b:includable id='threaded-comment-form' var='post'>
+<div class='comment-form'>
+    <a name='comment-form'/>
+    <b:if cond='data:mobile'>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' style='display: none' width='100%'/>
+    <b:else/>
+      <p><data:blogCommentMessage/></p>
+      <data:blogTeamBlogMessage/>
+      <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+      <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' frameborder='0' height='410' id='comment-editor' name='comment-editor' src='' width='100%'/>
+    </b:if>
+    <data:post.friendConnectJs/>
+    <data:post.cmtfpIframe/>
+    <script type='text/javascript'>
+      BLOG_CMT_createIframe(&#39;<data:post.appRpcRelayPath/>&#39;, &#39;<data:post.communityId/>&#39;);
+    </script>
+  </div>
+</b:includable>
+              <b:includable id='threaded_comment_css'>
+  <style>
+.comments {
+  clear: both;
+  margin-top: 0;
+  margin-bottom: 2px;
+  line-height: 1.5em;
+}
+.comments .comments-content {
+  font-size: 12px;line-height: 1.5em;
+  margin-bottom: 16px;
+}
+.comments .comment .comment-actions a {
+      display: inline-block;outline: none;float:left;color:#fff;background:#4d90f0;text-align: center;font-size:11px;line-height:11px;padding: 8px 12px;margin-top:-3px;font-family:Helvetica,serif;font-weight:bold;
+}
+.comments .comment .comment-actions a:hover {
+  text-decoration:none; background:#FF6100;
+}
+.comments .comments-content .comment-thread ol {
+  list-style-type: none;
+  padding: 7px 0 30px;
+  text-align: left;line-height: 1.7em;
+}
+
+.comments .comments-content .comment-thread ol li.comment{ list-style-type: none;margin-bottom:20px;padding:0px 5px 10px;background: #fff;}
+
+.comments .comments-content .inline-thread {
+  padding: 0.5em 1em;
+}
+.comments .comments-content .comment-thread {
+  margin: 8px 0px;
+}
+.comments .comments-content .comment-thread:empty {
+  display: none;
+}
+.comments .comments-content .comment-replies {
+  margin-top: 1em;
+  margin-left: 36px;
+}
+.comments .comments-content .comment {
+  margin-bottom:16px;
+  padding-bottom:8px;
+}
+.comments .comments-content .comment:first-child {
+  padding-top:16px;
+}
+.comments .comments-content .comment:last-child {
+  border-bottom:0;
+  padding-bottom:0;
+}
+.comments .comments-content .comment-body {
+  position:relative;
+}
+.comments .comments-content .user {
+  font-style:normal;font-size:11px;
+  font-weight:bold;margin-left:0px;
+}
+.comments .comments-content .icon.blog-author {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin: 0 0 -4px 6px;
+}
+.comments .comments-content .datetime {
+  margin-right:6px;color:#999; font-style:italic; font-size:11px;float:right;
+}
+
+.comments .comments-content .comment-header{background:#f6f6f6 url(http://3.bp.blogspot.com/-SoC9wNTGz_I/UJlVuavO8EI/AAAAAAAACFI/3vgDFPkmE6E/s1600/divider.png) repeat-x bottom;display:block;padding:7px;margin:0;height:22px;}
+
+
+.comments .comments-content .comment-content {
+      margin:0 0 8px;border:1px solid #ddd;padding:10px;
+}
+.comments .comments-content .comment-content {
+  text-align:justify;line-height: 1.7em;
+}
+.comments .comments-content .owner-actions {
+  position:absolute;
+  right:0;
+  top:0;
+}
+.comments .comments-replybox {
+  border: none;
+  height: 250px;
+  width: 100%;
+}
+.comments .comment-replybox-single {
+  margin-top: 5px;background:#f0f0f0;
+  margin-left: 58px;padding-left:10px;
+}
+.comments .comment-replybox-thread {
+  margin-top: 5px;
+}
+.comments .comments-content .loadmore a {
+  display: block;
+  padding: 10px 16px;
+  text-align: center;
+}
+.comments .thread-toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+.comments .continue {
+  cursor: pointer;
+}
+.comments .continue a {
+  display: block;
+  padding: 0.5em;
+  font-weight: bold;
+}
+.comments .comments-content .loadmore {
+  cursor: pointer;
+  max-height: 3em;
+  margin-top: 3em;
+}
+.comments .comments-content .loadmore.loaded {
+  max-height: 0px;
+  opacity: 0;
+  overflow: hidden;
+}
+.comments .thread-chrome.thread-collapsed {
+  display: none;
+}
+.comments .thread-toggle {
+  display: inline-block;
+}
+.comments .thread-toggle .thread-arrow {
+  display: inline-block;
+  height: 6px;
+  width: 7px;
+  overflow: visible;
+  margin: 0.3em;
+  padding-right: 4px;
+}
+.comments .thread-expanded .thread-arrow {
+  background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC&quot;) no-repeat scroll 0 0 transparent;
+}
+.comments .thread-collapsed .thread-arrow {
+  background: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAJUlEQVR42mNgAILy8vL/DLgASBKnApgkVgXIkhgKiNKJ005s4gDLbCZBiSxfygAAAABJRU5ErkJggg==&quot;) no-repeat scroll 0 0 transparent;
+}
+.comments .avatar-image-container {
+  float: left;
+  width: 50px;background:#eee;
+  max-height: 50px;
+  overflow: hidden;margin:0;
+}
+.comments .avatar-image-container img {
+  max-width: 50px; height: 50px;margin:0;
+}
+.comments .comment-block {
+  margin-left: 58px;
+  position: relative;padding:0 0 10px 0;
+}
+
+/* Responsive styles. */
+@media screen and (max-device-width: 470px) {
+  .comments .comments-content .comment-replies {
+    margin-left: 0;
+  }
+}
+  </style>
+</b:includable>
+              <b:includable id='threaded_comment_js' var='post'>
+  <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+
+  <script type='text/javascript'>
+    (function() {
+      var items = <data:post.commentJso/>;
+      var msgs = <data:post.commentMsgs/>;
+      var config = <data:post.commentConfig/>;
+
+// <![CDATA[
+      var cursor = null;
+      if (items && items.length > 0) {
+        cursor = parseInt(items[items.length - 1].timestamp) + 1;
+      }
+
+      var bodyFromEntry = function(entry) {
+        if (entry.gd$extendedProperty) {
+          for (var k in entry.gd$extendedProperty) {
+            if (entry.gd$extendedProperty[k].name == 'blogger.contentRemoved') {
+              return '<span class="deleted-comment">' + entry.content.$t + '</span>';
+            }
+          }
+        }
+        return entry.content.$t;
+      }
+
+      var parse = function(data) {
+        cursor = null;
+        var comments = [];
+        if (data && data.feed && data.feed.entry) {
+          for (var i = 0, entry; entry = data.feed.entry[i]; i++) {
+            var comment = {};
+            // comment ID, parsed out of the original id format
+            var id = /blog-(\d+).post-(\d+)/.exec(entry.id.$t);
+            comment.id = id ? id[2] : null;
+            comment.body = bodyFromEntry(entry);
+            comment.timestamp = Date.parse(entry.published.$t) + '';
+            if (entry.author && entry.author.constructor === Array) {
+              var auth = entry.author[0];
+              if (auth) {
+                comment.author = {
+                  name: (auth.name ? auth.name.$t : undefined),
+                  profileUrl: (auth.uri ? auth.uri.$t : undefined),
+                  avatarUrl: (auth.gd$image ? auth.gd$image.src : undefined)
+                };
+              }
+            }
+            if (entry.link) {
+              if (entry.link[2]) {
+                comment.link = comment.permalink = entry.link[2].href;
+              }
+              if (entry.link[3]) {
+                var pid = /.*comments\/default\/(\d+)\?.*/.exec(entry.link[3].href);
+                if (pid && pid[1]) {
+                  comment.parentId = pid[1];
+                }
+              }
+            }
+            comment.deleteclass = 'item-control blog-admin';
+            if (entry.gd$extendedProperty) {
+              for (var k in entry.gd$extendedProperty) {
+                if (entry.gd$extendedProperty[k].name == 'blogger.itemClass') {
+                  comment.deleteclass += ' ' + entry.gd$extendedProperty[k].value;
+                } else if (entry.gd$extendedProperty[k].name == 'blogger.displayTime') {
+                  comment.displayTime = entry.gd$extendedProperty[k].value;
+                }
+              }
+            }
+            comments.push(comment);
+          }
+        }
+        return comments;
+      };
+
+      var paginator = function(callback) {
+        if (hasMore()) {
+          var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
+          if (cursor) {
+            url += '&published-min=' + new Date(cursor).toISOString();
+          }
+          window.bloggercomments = function(data) {
+            var parsed = parse(data);
+            cursor = parsed.length < 50 ? null
+                : parseInt(parsed[parsed.length - 1].timestamp) + 1
+            callback(parsed);
+            window.bloggercomments = null;
+          }
+          url += '&callback=bloggercomments';
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        }
+      };
+      var hasMore = function() {
+        return !!cursor;
+      };
+      var getMeta = function(key, comment) {
+        if ('iswriter' == key) {
+          var matches = !!comment.author
+              && comment.author.name == config.authorName
+              && comment.author.profileUrl == config.authorUrl;
+          return matches ? 'true' : '';
+        } else if ('deletelink' == key) {
+          return config.baseUri + '/delete-comment.g?blogID='
+               + config.blogId + '&postID=' + comment.id;
+        } else if ('deleteclass' == key) {
+          return comment.deleteclass;
+        }
+        return '';
+      };
+
+      var replybox = null;
+      var replyUrlParts = null;
+      var replyParent = undefined;
+
+      var onReply = function(commentId, domId) {
+        if (replybox == null) {
+          // lazily cache replybox, and adjust to suit this style:
+          replybox = document.getElementById('comment-editor');
+          if (replybox != null) {
+            replybox.height = '250px';
+            replybox.style.display = 'block';
+            replyUrlParts = replybox.src.split('#');
+          }
+        }
+        if (replybox && (commentId !== replyParent)) {
+          document.getElementById(domId).insertBefore(replybox, null);
+          replybox.src = replyUrlParts[0]
+              + (commentId ? '&parentID=' + commentId : '')
+              + '#' + replyUrlParts[1];
+          replyParent = commentId;
+        }
+      };
+
+      var hash = (window.location.hash || '#').substring(1);
+      var startThread, targetComment;
+      if (/^comment-form_/.test(hash)) {
+        startThread = hash.substring('comment-form_'.length);
+      } else if (/^c[0-9]+$/.test(hash)) {
+        targetComment = hash.substring(1);
+      }
+
+      // Configure commenting API:
+      var configJso = {
+        'maxDepth': config.maxThreadDepth
+      };
+      var provider = {
+        'id': config.postId,
+        'data': items,
+        'loadNext': paginator,
+        'hasMore': hasMore,
+        'getMeta': getMeta,
+        'onReply': onReply,
+        'rendered': true,
+        'initComment': targetComment,
+        'initReplyThread': startThread,
+        'config': configJso,
+        'messages': msgs
+      };
+
+      var render = function() {
+        if (window.goog && window.goog.comments) {
+          var holder = document.getElementById('comment-holder');
+          window.goog.comments.render(holder, provider);
+        }
+      };
+
+      // render now, or queue to render when library loads:
+      if (window.goog && window.goog.comments) {
+        render();
+      } else {
+        window.goog = window.goog || {};
+        window.goog.comments = window.goog.comments || {};
+        window.goog.comments.loadQueue = window.goog.comments.loadQueue || [];
+        window.goog.comments.loadQueue.push(render);
+      }
+    })();
+// ]]>
+  </script>
+</b:includable>
+              <b:includable id='threaded_comments' var='post'>
+
+ <b:include name='threaded_comment_css'/>
+
+  <div class='comments' id='comments'>
+    <a name='comments'/>
+    <h4>
+      <b:if cond='data:post.numComments == 1'>
+        1 <data:commentLabel/>:
+      <b:else/>
+        <data:post.numComments/> <data:commentLabelPlural/>:
+      </b:if>
+    </h4>
+
+    <div class='comments-content'>
+      <b:if cond='data:post.embedCommentForm'>
+        <b:include data='post' name='threaded_comment_js'/>
+      </b:if>
+      <div id='comment-holder'>
+         <data:post.commentHtml/>
+      </div>
+    </div>
+
+    <p class='comment-footer'>
+      <b:if cond='data:post.allowNewComments'>
+        <b:include data='post' name='threaded-comment-form'/>
+      <b:else/>
+        <data:post.noNewCommentsText/>
+      </b:if>
+    </p>
+
+    <b:if cond='data:showCmtPopup'>
+      <div id='comment-popup'>
+        <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
+        </iframe>
+      </div>
+    </b:if>
+
+    <div id='backlinks-container'>
+    <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
+       <b:if cond='data:post.showBacklinks'>
+         <b:include data='post' name='backlinks'/>
+       </b:if>
+    </div>
+    </div>
+  </div>
+</b:includable>
+            </b:widget>
+          </b:section>
+
+<b:if cond='data:blog.url == data:blog.homepageUrl'>
+
+<b:section class='ganed tob-contid1' id='lists5' preferred='yes'/>   
+<div class='clear'/>
+
+
+</b:if>
+
+
+        </div><!-- main-inner-wrap -->
+      </div><!-- /main-wrapper -->
+
+
+      <div class='sidebar-wrapper'>
+
+        <b:section class='sidebar' id='sidebar' showaddelement='yes'>
+          <b:widget id='PopularPosts2' locked='false' title='Mais lidas' type='PopularPosts' version='1' visible='true'>
+            <b:includable id='main'>
+  <b:if cond='data:title'><h2><data:title/></h2></b:if>
+  <div class='widget-content popular-posts'>
+    <ul>
+      <b:loop values='data:posts' var='post'>
+      <li>
+        <b:if cond='data:showThumbnails == &quot;false&quot;'>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (1) No snippet/thumbnail -->
+            <a expr:href='data:post.href'><data:post.title/></a>
+          <b:else/>
+            <!-- (2) Show only snippets -->
+            <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            <div class='item-snippet'><data:post.snippet/></div>
+          </b:if>
+        <b:else/>
+          <b:if cond='data:showSnippets == &quot;false&quot;'>
+            <!-- (3) Show only thumbnails -->
+            <div class='item-thumbnail-only'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href'>
+                    <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+            </div>
+            <div style='clear: both;'/>
+          <b:else/>
+            <!-- (4) Show snippets and thumbnails -->
+            <div class='item-content'>
+              <b:if cond='data:post.thumbnail'>
+                <div class='item-thumbnail'>
+                  <a expr:href='data:post.href'>
+                    <img alt='' border='0' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:width='data:thumbnailSize'/>
+                  </a>
+                </div>
+              </b:if>
+              <div class='item-title'><a expr:href='data:post.href'><data:post.title/></a></div>
+              <div class='item-snippet'><data:post.snippet/></div>
+            </div>
+            <div style='clear: both;'/>
+          </b:if>
+        </b:if>
+      </li>
+      </b:loop>
+    </ul>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+          </b:widget>
+          <b:widget id='BlogArchive1' locked='false' title='Arquivo' type='BlogArchive' visible='true'>
+            <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+  <div id='ArchiveList'>
+  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+    <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
+    <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
+    <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
+  </div>
+  </div>
+  <b:include name='quickedit'/>
+  </div>
+</b:includable>
+            <b:includable id='flat' var='data'>
+  <ul class='flat'>
+    <b:loop values='data:data' var='i'>
+      <li class='archivedate'>
+        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
+      </li>
+    </b:loop>
+  </ul>
+</b:includable>
+            <b:includable id='interval' var='intervalData'>
+  <b:loop values='data:intervalData' var='interval'>
+    <ul class='hierarchy'>
+      <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
+        <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
+        <a class='post-count-link' expr:href='data:interval.url'>
+          <data:interval.name/>
+        </a>
+        <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
+        <b:include cond='data:interval.data' data='interval.data' name='interval'/>
+        <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
+      </li>
+    </ul>
+  </b:loop>
+</b:includable>
+            <b:includable id='menu' var='data'>
+  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
+    <option value=''><data:title/></option>
+    <b:loop values='data:data' var='i'>
+      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
+    </b:loop>
+  </select>
+</b:includable>
+            <b:includable id='posts' var='posts'>
+  <ul class='posts'>
+    <b:loop values='data:posts' var='post'>
+      <li><a expr:href='data:post.url'><data:post.title/></a></li>
+    </b:loop>
+  </ul>
+</b:includable>
+            <b:includable id='toggle' var='interval'>
+  <a class='toggle' href='javascript:void(0)'>
+    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
+      <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+        &#9660;&#160;
+      <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
+        &#9668;&#160;
+      <b:else/>
+        &#9658;&#160;
+      </b:if>
+    </span>
+  </a>
+</b:includable>
+          </b:widget>
+          <b:widget id='Label1' locked='false' title='Nuvem de tags' type='Label' visible='true'>
+            <b:includable id='main'>
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2><data:title/></h2>
+  </b:if>
+  <div expr:class='&quot;widget-content &quot; + data:display + &quot;-label-widget-content&quot;'>
+    <b:if cond='data:display == &quot;list&quot;'>
+      <ul>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <b:if cond='data:blog.url == data:label.url'>
+              <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+            <b:else/>
+              <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+            </b:if>
+            <b:if cond='data:showFreqNumbers'>
+              <span dir='ltr'>(<data:label.count/>)</span>
+            </b:if>
+          </li>
+        </b:loop>
+      </ul>
+    <b:else/>
+      <b:loop values='data:labels' var='label'>
+        <span expr:class='&quot;label-size label-size-&quot; + data:label.cssSize'>
+          <b:if cond='data:blog.url == data:label.url'>
+            <span expr:dir='data:blog.languageDirection'><data:label.name/></span>
+          <b:else/>
+            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+          </b:if>
+          <b:if cond='data:showFreqNumbers'>
+            <span class='label-count' dir='ltr'>(<data:label.count/>)</span>
+          </b:if>
+        </span>
+      </b:loop>
+    </b:if>
+    <b:include name='quickedit'/>
+  </div>
+</b:includable>
+          </b:widget>
+        </b:section>
+      </div><!-- sidebar-wrapper -->
+
+      <div class='clear'/>
+
+</div><!--Div Container-->
+
+    </div><!-- outer-wrapper -->
+
+  <div id='footer'>
+<div class='mage1'>
+
+<div class='container'>
+
+      <b:section class='footer boxer lefter' id='footer1' preferred='yes'/>
+      <b:section class='footer boxer lefter tagcloud1' id='footer2' preferred='yes'/>
+      <b:section class='footer boxer lefter' id='footer3' preferred='yes'/>
+  <div class='clear'/>
+
+      </div><!--Div Container-->
+      </div><!-- mage1 -->
+
+  </div><!-- footer -->
+  <div class='footer-credits'>
+  <div class='mage2'>
+<div class='container'>
+      <div class='attribution lefter'>&#169; Feito para <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> utilizando como base o templade de <a href='http://www.bloggertheme9.com/' id='credit'>Bloggertheme9</a>. <span class='deen'>Powered by <a href='https:blogger.com/'>Blogger</a>.</span>
+
+</div>
+</div>
+</div><!-- mage2 -->
+
+</div><!-- footer-credits -->
+
+  </div><!-- ct-wrapper -->
+
+<div id='fb-root'/>
+<script type='text/javascript'>
+//<![CDATA[
+
+//Facebook Script
+(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//connect.facebook.net/en_US/all.js#xfbml=1";fjs.parentNode.insertBefore(js,fjs)}(document,'script','facebook-jssdk'));
+
+//]]>
+</script>
+
+<!-- Page Counter - Edit Number Of Post To Show On Each Page -->
+
+<script type='text/javascript'>
+
+var home_page=&quot;/&quot;;
+var urlactivepage=location.href;
+var postperpage=7;
+var numshowpage=2;
+var upPageWord =&#39;Previous&#39;;
+var downPageWord =&#39;Next&#39;;
+
+</script>
+
+<script type='text/javascript'>
+//<![CDATA[
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('5 G;5 i;5 b;5 n;1f();x 1g(15){5 6=\'\';H=I(K/2);3(H==K-H){K=H*2+1}J=b-H;3(J<1)J=1;o=I(15/j)+1;3(o-1==15/j)o=o-1;L=J+K-1;3(L>o)L=o;6+="<4 e=\'1y\'>1z "+b+\' 1A \'+o+"</4>";5 16=I(b)-1;3(b>1){3(b==2){3(i=="w"){6+=\'<4 e="1B"><a f="\'+y+\'">\'+M+\'</a></4>\'}c{6+=\'<4 e="k"><a f="/r/s/\'+n+\'?&7-l=\'+j+\'">\'+M+\'</a></4>\'}}c{3(i=="w"){6+=\'<4 e="k"><a f="#" z="N(\'+16+\');A B">\'+M+\'</a></4>\'}c{6+=\'<4 e="k"><a f="#" z="O(\'+16+\');A B">\'+M+\'</a></4>\'}}}1h(5 g=J;g<=L;g++){3(b==g){6+=\'<4 e="1C">\'+g+\'</4>\'}c 3(g==1){3(i=="w"){6+=\'<4 e="k"><a f="\'+y+\'">1</a></4>\'}c{6+=\'<4 e="k"><a f="/r/s/\'+n+\'?&7-l=\'+j+\'">1</a></4>\'}}c{3(i=="w"){6+=\'<4 e="k"><a f="#" z="N(\'+g+\');A B">\'+g+\'</a></4>\'}c{6+=\'<4 e="k"><a f="#" z="O(\'+g+\');A B">\'+g+\'</a></4>\'}}}5 17=I(b)+1;3(b<o){3(i=="w"){6+=\'<4 e="k"><a f="#" z="N(\'+17+\');A B">\'+1i+\'</a></4>\'}c{6+=\'<4 e="k"><a f="#" z="O(\'+17+\');A B">\'+1i+\'</a></4>\'}}5 C=u.1D("C");5 18=u.1E("1F-1G");1h(5 p=0;p<C.P;p++){C[p].1j=6}3(C&&C.P>0){6=\'\'}3(18){18.1j=6}}x 1a(Q){5 R=Q.R;5 1k=I(R.1H$1I.$t,10);1g(1k)}x 1f(){5 d=m;3(d.9("/r/s/")!=-1){3(d.9("?S-7")!=-1){n=d.D(d.9("/r/s/")+14,d.9("?S-7"))}c{n=d.D(d.9("/r/s/")+14,d.9("?&7"))}}3(d.9("?q=")==-1&&d.9(".6")==-1){3(d.9("/r/s/")==-1){i="w";3(m.9("#E=")!=-1){b=m.D(m.9("#E=")+8,m.P)}c{b=1}u.1l("<h T=\\""+y+"U/V/W?7-l=1&X=Y-Z-h&11=1a\\"><\\/h>")}c{i="s";3(d.9("&7-l=")==-1){j=1J}3(m.9("#E=")!=-1){b=m.D(m.9("#E=")+8,m.P)}c{b=1}u.1l(\'<h T="\'+y+\'U/V/W/-/\'+n+\'?X=Y-Z-h&11=1a&7-l=1" ><\\/h>\')}}}x N(F){12=(F-1)*j;G=F;5 13=u.1m(\'1n\')[0];5 v=u.1o(\'h\');v.1p=\'1q/1r\';v.1s("T",y+"U/V/W?1t-1u="+12+"&7-l=1&X=Y-Z-h&11=1b");13.1v(v)}x O(F){12=(F-1)*j;G=F;5 13=u.1m(\'1n\')[0];5 v=u.1o(\'h\');v.1p=\'1q/1r\';v.1s("T",y+"U/V/W/-/"+n+"?1t-1u="+12+"&7-l=1&X=Y-Z-h&11=1b");13.1v(v)}x 1b(Q){1c=Q.R.1K[0];5 1w=1c.1x.$t.D(0,19)+1c.1x.$t.D(1L,1M);5 1d=1N(1w);3(i=="w"){5 1e="/r?S-7="+1d+"&7-l="+j+"#E="+G}c{5 1e="/r/s/"+n+"?S-7="+1d+"&7-l="+j+"#E="+G}1O.f=1e}',62,113,'|||if|span|var|html|max||indexOf||nomerhal|else|thisUrl|class|href|jj|script|jenis|postperpage|showpageNum|results|urlactivepage|lblname1|maksimal|||search|label||document|newInclude|page|function|home_page|onclick|return|false|pageArea|substring|PageNo|numberpage|nopage|nomerkiri|parseInt|mulai|numshowpage|akhir|upPageWord|redirectpage|redirectlabel|length|root|feed|updated|src|feeds|posts|summary|alt|json|in||callback|jsonstart|nBody||banyakdata|prevnomer|nextnomer|blogPager||hitungtotaldata|finddatepost|post|timestamp|alamat|halamanblogger|loophalaman|for|downPageWord|innerHTML|totaldata|write|getElementsByTagName|head|createElement|type|text|javascript|setAttribute|start|index|appendChild|timestamp1|published|showpageOf|Page|of|showpage|showpagePoint|getElementsByName|getElementById|blog|pager|openSearch|totalResults|20|entry|23|29|encodeURIComponent|location'.split('|'),0,{}))
+
+//]]>
+</script>
+
+</body>
+</html>
