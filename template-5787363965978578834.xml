@@ -192,7 +192,7 @@ body#layout .outer-wrapper, body#layout .sidebar-wrapper, body#layout .ct-wrappe
 
 .menu ul ul {left: 149px; top: 0px; visibility: hidden; opacity: 0; transform: translate(20px,20px); transition: all 0.2s ease-out;}
 
-.menu ul ul:after {content: " "; left: -6px; top: 10%; border: solid transparent; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-right-color: #63704b; border-width: 6px; margin-top: -6px;}
+.menu ul ul:after {content: " "; left: -6px; top: 10%; border: solid transparent; height: 0; width: 0; position: absolute; pointer-events: none; border-color: rgba(255, 255, 255, 0); border-right-color: #fff; border-width: 6px; margin-top: -6px;}
 
 .menu li>ul ul:hover {visibility: visible; opacity: 1; transform: translate(0,0);}
 
@@ -882,8 +882,19 @@ $(document).ready(function() {$(&#39;.PopularPosts img&#39;).attr(&#39;src&#39;,
 
 <li><a class='with-ul' href='#' itemprop='url'><span itemprop='name'>Projetos</span></a>
 <ul class='sub-menu'>
-<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projetos Nacionais</a></li>
-<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projetos Regionais</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projetos Nacionais</a>
+<ul>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projeto 01</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projeto 02</a></li>
+</ul>
+</li>
+
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projetos Regionais</a>
+<ul>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projeto 01</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projeto 02</a></li>
+</ul>
+</li>
 <li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projetos Locais</a></li>
 </ul>
 </li>
@@ -2514,7 +2525,7 @@ avatar.find('.comment_avatar img').each(function() {
   <div class='footer-credits'>
   <div class='mage2'>
 <div class='container'>
-      <div class='attribution lefter'>&#169; Feito para <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> utilizando como base o templade de <a href='http://www.bloggertheme9.com/' id='credit'>Bloggertheme9</a>. <span class='deen'>Powered by <a href='https:blogger.com/'>Blogger</a></span>
+      <div class='attribution lefter'>&#169; Feito para <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> utilizando como base o templade de <a href='http://www.bloggertheme9.com/' id='credit'>Bloggertheme9</a>. <span class='deen'>Powered by <a href='http://www.blogger.com/'>Blogger</a></span>
 
 </div>
 </div>
