@@ -128,13 +128,13 @@ body#layout .outer-wrapper, body#layout .sidebar-wrapper, body#layout .ct-wrappe
 .ct-wrapper, .crosscol, .post, .sidebar-wrapper, .buzed{overflow:hidden;}
 
 
-#header{ float:left; width: 32%; }
+#header{ float:left; width: 100%; }
 #header-inner{ margin: 22px 0 22px 18px; padding: 0; }
 #header h1, #header h2 { font-size: 40px; text-transform: uppercase; font-varient: small-caps; line-height: 46px; letter-spacing:.4px;}
 #header h1 a, #header h2 a{ color:#444; }
 #header h1 a:hover,#header h2 a:hover { color:#7a7b7b; }
 #header p.description{font-family: georgia; color:#444; font-size: 14px; letter-spacing: 0.8px; font-style: italic; text-transform: capitalize; disply: inline-block; }
-#header img{ border:0 none; background:none; height:auto;}
+#header img{ border:0 none; background:none; height:auto; margin: 0 auto;}
 
 
 .lefter{margin-left:10px; margin-right:10px;}
@@ -170,12 +170,11 @@ body#layout .outer-wrapper, body#layout .sidebar-wrapper, body#layout .ct-wrappe
 
 .menu li{margin-left: -4px;}
 
-.menu li a {border-left: 1px solid #63704b; border-right: 1px solid #fff; font-size: 14px; font-weight: bold; padding: 15px 20px; text-transform: uppercase; text-decoration: none; line-height:18px; display: block; color: #fff; transition: all 0.2s ease-in-out 0s;}
+.menu li a {border-left: 1px solid #63704b; border-right: 0px solid #fff; font-size: 14px; font-weight: bold; padding: 15px 20px; text-transform: uppercase; text-decoration: none; line-height:18px; display: block; color: #fff; transition: all 0.2s ease-in-out 0s;}
 
 .menu li::after {content: '';display: block; width: 0; height: 3px; background: #fff; transition: width .3s;}
-.menu li:hover::after, .menu li.home::after{width: 100%; //transition: width .3s;}
 
-.menu li a:hover,.menu li:hover>a {}
+.menu li a:hover,.menu li:hover>a {color:#dfe3d6;}
 
 .menu ul {visibility: hidden; opacity: 0; margin: 0; padding: 0; width: 160px; position: absolute; left: 0px;  background: #fff; z-index: 9;    transform: translate(0,20px); transition: all 0.2s ease-out;}
 
@@ -221,6 +220,7 @@ a.homer {}
 .post-title a {}
 .post-title a:hover {color:#7a7b7b;}
 .post-body { padding: 0; margin:0; text-transform: auto; word-wrap:break-word;  }
+.post-body a {font-weight: bold; color: #444!important}
 .post-header {color: #999999; font-size: 12px;}
 .post-author a{color:#333333;}
 .post-body img {}
@@ -246,19 +246,8 @@ h2.btitle a:hover{color:#dfe3d6;}
 
 .meta-date{color: #aaa; font-size: 13px; font-weight: 500;}
 
-a.button {color: #fff; padding: 7px 14px; margin:8px 0 0; cursor: pointer; display: inline-block; font-size: 13px; font-weight: 700; overflow: hidden; text-transform: uppercase; transition: background-color 0.2s ease-in-out 0s;}
+a.button {color: #fff!important; padding: 7px 14px; margin:8px 0 0; cursor: pointer; display: inline-block; font-size: 13px; font-weight: 700; overflow: hidden; text-transform: uppercase; transition: background-color 0.2s ease-in-out 0s;}
 
-
-#blog-pager-newer-link{float:left;font-size:100%;border-right:1px solid #eee;}
-#blog-pager-older-link{float:right;font-size:100%;border-left:1px solid #eee;}
-.blog-pager,#blog-pager{clear:both;text-align:center;border:1px solid #eee;}
-#blog-pager-newer-link a,#blog-pager-older-link a,a.home-link{color:#666;transition:all .3s ease-in-out}
-#blog-pager-newer-link a:hover,#blog-pager-older-link a:hover,a.home-link:hover{color:#dfe3d6}
-a.blog-pager-older-link,a.blog-pager-newer-link,a.home-link{display:block;padding:8px 20px;transition:all .3s ease-in-out;}
-a.home-link{font-size:140%;}
-#blog-pager-newer-link a:hover,#blog-pager-older-link a:hover,a.home-link:hover,a.home-box:hover,.mobile-desktop-link a.home-link:hover{color:#dfe3d6;}
-.mobile-desktop-link a.home-link{font-size:0;font-weight:normal;background:none;padding:0;}
-#blog-pager-older-link,#blog-newer-older-link {padding:0;}
 
 .spinner{margin:30px auto auto;}
 .spinner li{list-style:none; display:inline;}
@@ -287,14 +276,6 @@ ul.social-profile-icons { float: right; width: auto; margin: 4px 0 0; }
 ul.social-profile-icons li {border: none !important; list-style-type: none !important; margin: 0 !important; padding: 0 !important; }
 ul.social-profile-icons li a, ul.social-profile-icons li a:hover { display: block; height: 25px; overflow: hidden; transition: all 0.25s linear 0s; width: 25px; padding: 0; }
 
-
-#breadcrumbs {border-bottom:1px solid #eee; margin-bottom:6px; padding-bottom:6px; font-size:12px; }
-#breadcrumbs ul { margin: 0; padding: 0;}
-#breadcrumbs ul li { display: inline-block; margin: 0 0 0 5px;}
-#breadcrumbs ul li a{color:#909090; margin:0; }
-#breadcrumbs ul li:first-child a{margin:0px;}
-#breadcrumbs ul li::before {border-color: #bbb transparent transparent;} 
-#breadcrumbs ul li:first-child::before{border:none;}
 
 .seat-bottom{margin-bottom:10px;}
 
@@ -346,7 +327,7 @@ ul.social-profile-icons li a, ul.social-profile-icons li a:hover { display: bloc
 .footer-credits .attribution {  }
 #footer a, .footer-credits a { color:#d0d0d0;  }
 #footer a:hover, .footer-credits a:hover { color: #D4D4D4; }
-.mage2{background:#505050; padding:22px 20px;}
+.mage2{background:#63704b; padding:22px 20px;}
 .deen{float:right;}
 
 .form-go{ border: medium none; box-shadow: none; color: #fff; cursor: pointer; float: right; font-size: 13px; font-weight: 700; height: 40px; line-height: 18px; margin: -40px 0 0; padding: 10px 15px; position: relative; text-transform: uppercase; transition: all 0.2s ease-in-out 0s; z-index: 5;}
@@ -359,7 +340,7 @@ h3.kate{font-size:18px; text-transform:uppercase; margin-top:30px;}
 .related-post:first-child{margin-left:0px;}
 .kate{margin-top:25px !important;}  
 
-#comments{background:#fff;clear:both;margin-top:20px;line-height:1em;padding:20px;border:1px solid #e6e6e6;}
+#comments{background:#fff;clear:both;margin-top:20px;margin-bottom:20px;line-height:1em;padding:20px;}
 #comments h3{display:inline;line-height:20px;margin-bottom:20px;margin-top:-20px;margin-left:-20px;font-family:&#39;Open Sans&#39;,sans-serif;font-size:14px;position:absolute;background:#fff;color:#999;font-weight:700;text-transform:uppercase;padding:10px 20px 10px 50px;border:1px solid #e6e6e6;border-top:none;border-left:none;}
 #comments h3:before {font-family:fontawesome;content:"\f086"; margin-right:10px;font-size:20px;padding:10px 15px;position:absolute;left:0;top:0;font-weight:normal;}
 #comments .click-comment{background:#fff;color:#999;float:right;text-decoration:none;display:inline;line-height:20px;margin-bottom:20px;margin-top:-20px;margin-right:-20px;font-family:&#39;Open Sans&#39;,sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;padding:10px 20px;border:1px solid #e6e6e6;border-top:none;border-right:none;}
@@ -483,7 +464,7 @@ a.button,
 /***** Scheme Hover Colors *****/
 .form-go:hover,
 a:hover.button
-{background:#666;}
+{color #7a7b7b}
 
 
 /***** Bootstrap *****/
@@ -497,7 +478,7 @@ a:hover.button
 
 @media (max-width: 1050px) {
 
-#header {width: 25%;}
+#header {width: 100%;}
 .main-wrapper { margin-right:330px; width:auto; }
 .sidebar-wrapper{ float: right; width:300px;}
 blockquote:before{margin: 2% 14px 0 0;}
@@ -512,7 +493,7 @@ blockquote:before{margin: 2% 14px 0 0;}
 
 @media (max-width: 1000px) {
 
-#header {width: 32%;}
+#header {width: 100%;}
 .main-wrapper { margin-right:315px; width:auto; }
 .sidebar-wrapper{ float: right; width:300px;}
 .doze li img{width:100px; height:100px;}
@@ -555,7 +536,7 @@ nav {margin: 0; background: none;}
 
 @media (max-width: 800px) {
 
-#header {width: 200%;}
+#header {width: 100%;}
 .header-right {display:block; }
 .ct-wrapper{ padding:0 0px;}
 .main-wrapper { margin-right:0px; width:auto; }
@@ -891,20 +872,27 @@ $(document).ready(function() {$(&#39;.PopularPosts img&#39;).attr(&#39;src&#39;,
 
 <li class='home '><a expr:href='data:blog.homepageUrl'>Início</a></li>
 
-<li><a href='https://institutocultivar2.blogspot.com.br/p/quem-somos.html' itemprop='url'><span itemprop='name'>Quem somos</span></a></li>
-
-<li><a class='with-ul' href='http://institutocultivar2.blogspot.com.br/p/projetos-executados.html' itemprop='url'><span itemprop='name'>Projetos executados</span></a>
+<li><a class='with-ul' href='#' itemprop='url'><span itemprop='name'>Quem somos?</span></a>
 <ul class='sub-menu'>
-<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projeto Teste 01</a></li>
-<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projeto Teste 02</a></li>
-<li><a href='#'>Projeto 03</a>
-</li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/objetivos.html'>Objetivos</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/historico.html'>Histórico</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/estatuto.html'>Estatuto e Diretoria</a></li>
 </ul>
 </li>
 
+<li><a class='with-ul' href='#' itemprop='url'><span itemprop='name'>Projetos</span></a>
+<ul class='sub-menu'>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-01.html'>Projetos Nacionais</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projetos Regionais</a></li>
+<li><a href='http://institutocultivar2.blogspot.com.br/p/teste-02.html'>Projetos Locais</a></li>
+</ul>
+</li>
+
+<li><a href='http://institutocultivar2.blogspot.com.br/p/biblioteca.html' itemprop='url'><span itemprop='name'>Biblioteca</span></a></li>
+
 <li><a href='http://institutocultivar2.blogspot.com.br/p/parceiros.html' itemprop='url'><span itemprop='name'>Parceiros</span></a></li>
 
-<li><a href='http://institutocultivar2.blogspot.com.br/p/estatuto.html' itemprop='url'><span itemprop='name'>Estatuto</span></a></li>
+<li><a href='http://institutocultivar2.blogspot.com/p/contato.html' itemprop='url'><span itemprop='name'>Contato</span></a></li>
 
 
 </ul>
@@ -1075,21 +1063,6 @@ $(document).ready(function() {$(&#39;.PopularPosts img&#39;).attr(&#39;src&#39;,
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 
-<div id='breadcrumbs'>
-<ul>
-
-<b:loop values='data:posts' var='post'><b:if cond='data:post.labels'>
-
-<span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title' style='padding-left:8px; color:#909090'><i class='fa fa-home'/> Home</span></a></span>  
-
-<b:loop values='data:post.labels' var='label'><li itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;amp;max-results=6&quot;' itemprop='url'><span itemprop='title'><i class='fa fa-angle-right fa-fw'/> <data:label.name/></span></a></li><b:if cond='data:label.isLast != &quot;true&quot;'/></b:loop>
-
-  <li><a><i class='fa fa-angle-right fa-fw'/> <data:post.title/></a></li>
-
-</b:if></b:loop>
-
-</ul>
-</div>
 
 </b:if>
 
@@ -1609,7 +1582,9 @@ avatar.find('.comment_avatar img').each(function() {
       </b:if>
     </div>
 
-   <b:include name='mobile-nextprev'/>
+
+ 
+  <div class='clear'/>
 </b:includable>
               <b:includable id='mobile-nextprev'>
   <div class='blog-pager' id='blog-pager'>
@@ -1733,28 +1708,7 @@ avatar.find('.comment_avatar img').each(function() {
   </div>
 </b:includable>
               <b:includable id='nextprev'>
-  <div class='blog-pager' id='blog-pager'>
-    <b:if cond='data:newerPageUrl'>
-      <span id='blog-pager-newer-link'>
-      <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
-      </span>
-    </b:if>
-
-    <b:if cond='data:olderPageUrl'>
-      <span id='blog-pager-older-link'>
-      <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
-      </span>
-    </b:if>
-
-    <a class='home-link' expr:href='data:blog.homepageUrl'><i class='fa fa-home'/></a>
-
-    <b:if cond='data:mobileLinkUrl'>
-      <div class='blog-mobile-link'>
-        <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
-      </div>
-    </b:if>
-
-  </div>
+  
   <div class='clear'/>
 </b:includable>
               <b:includable id='post' var='post'>
@@ -1871,7 +1825,7 @@ avatar.find('.comment_avatar img').each(function() {
 <div expr:id='&quot;summary&quot; + data:post.id'><div itemprop='description articleBody'><data:post.body/></div></div>
 <script type='text/javascript'>bintiz(&quot;summary<data:post.id/>&quot;,&quot;<data:post.title/>&quot;,&quot;<data:post.url/>&quot;,&quot;&quot;);</script>    
 
-<a class='button blue' expr:href='data:post.url'>Read More</a>
+<a class='button blue' expr:href='data:post.url'>Leia mais</a>
 
 </b:if>
 </b:if>
@@ -1920,35 +1874,10 @@ avatar.find('.comment_avatar img').each(function() {
   </div>
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-<div id='related-posts'>
-<b:loop values='data:post.labels' var='label'>
-<b:if cond='data:label.isLast != &quot;true&quot;'>
-</b:if>
-<script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=related_results_labels_thumbs&amp;max-results=8&quot;' type='text/javascript'/>
-</b:loop>
-<script type='text/javascript'>
-var currentposturl=&quot;<data:post.url/>&quot;;
-var maxresults=3;
-var relatedpoststitle=&quot;Related Products &quot;;
-removeRelatedDuplicates_thumbs();
-printRelatedLabels_thumbs();
-</script>
-</div>
+
 <div class='clear'/>  
 
-<div class='auth-panel'>
-<img class='author_avatar' expr:alt='data:post.author' expr:src='data:post.authorPhoto.url' height='96' width='96'/>
-<h4>About <data:post.author/>  - <a href='facebook-url' target='_blank' title='Like on facebook'><i class='fa fa-facebook'/></a> <a href='twitter-url' target='_blank' title='follow on twitter'><i class='fa fa-twitter'/></a> <a href='google-url' target='_blank' title='Add to circle'><i class='fa fa-google'/></a></h4>
-<p>
-<!-- Change Author Info Here -->
 
-Author Description here.. Nulla sagittis convallis. Curabitur consequat. Quisque metus enim, venenatis fermentum, mollis in, porta et, nibh. Duis vulputate elit in elit. Mauris dictum libero id justo.
-</p>
-</div>
-
-<!-- Subscribe Email Form -->
-
-<form action='http://feedburner.google.com/fb/a/mailverify' class='sub-dd' method='post' onsubmit='window.open(&apos;http://feedburner.google.com/fb/a/mailverify?uri=bloggertheme09&amp;loc=en_US;, &apos;popupwindow&apos;, scrollbars=yes,width=550,height=520&apos;);return true' target='popupwindow'>Subscribe to this Blog via Email : <input name='email' style='width: 160px; background-color: rgb(255, 255, 160);' type='text'/> <input name='uri' type='hidden' value='bloggertheme09'/><input name='loc' type='hidden' value='en_US'/><input type='submit' value='Subscribe'/> </form>
 
 </b:if>
 
@@ -1972,6 +1901,7 @@ Author Description here.. Nulla sagittis convallis. Curabitur consequat. Quisque
       <data:navMessage/>
     </div>
     <div class='status-msg-border'>
+
       <div class='status-msg-bg'>
         <div class='status-msg-hidden'><data:navMessage/></div>
       </div>
@@ -2580,24 +2510,11 @@ Author Description here.. Nulla sagittis convallis. Curabitur consequat. Quisque
 
     </div><!-- outer-wrapper -->
 
-  <div id='footer'>
-<div class='mage1'>
-
-<div class='container'>
-
-      <b:section class='footer boxer lefter' id='footer1' preferred='yes'/>
-      <b:section class='footer boxer lefter tagcloud1' id='footer2' preferred='yes'/>
-      <b:section class='footer boxer lefter' id='footer3' preferred='yes'/>
-  <div class='clear'/>
-
-      </div><!--Div Container-->
-      </div><!-- mage1 -->
-
-  </div><!-- footer -->
+<!-- footer -->
   <div class='footer-credits'>
   <div class='mage2'>
 <div class='container'>
-      <div class='attribution lefter'>&#169; Feito para <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> utilizando como base o templade de <a href='http://www.bloggertheme9.com/' id='credit'>Bloggertheme9</a>. <span class='deen'>Powered by <a href='https:blogger.com/'>Blogger</a>.</span>
+      <div class='attribution lefter'>&#169; Feito para <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> utilizando como base o templade de <a href='http://www.bloggertheme9.com/' id='credit'>Bloggertheme9</a>. <span class='deen'>Powered by <a href='https:blogger.com/'>Blogger</a></span>
 
 </div>
 </div>
